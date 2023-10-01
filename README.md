@@ -1,5 +1,5 @@
 # PMLBook.github.io
-Principle of Machine Learnign: Deployment-first-view
+Principles of Machine Learnign: A Deployment-first Perspective
 
 
 <!-- Google tag (gtag.js) -->
