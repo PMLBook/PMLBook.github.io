@@ -1,0 +1,756 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Introduction &#8212; Principles of Machine Learning: A Deployment-First Perspective</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pml_admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-0HQMPESCSN"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-0HQMPESCSN');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch_introduction';</script>
+    <link rel="shortcut icon" href="_static/pml_ico.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Regression" href="Ch_regression.html" />
+    <link rel="prev" title="Welcome to our Principles of Machine Learning" href="welcome.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pml_logo4.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/pml_logo4.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    Welcome to our Principles of Machine Learning
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_regression.html">2. Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_methodology1.html">3. Methodology I: Three basic tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_classification1.html">4. Classification I: The geometric view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_discovery.html">5. Structure discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_density.html">6. Density estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_classification2.html">7. Classification II: The probabilistic view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_methodology2.html">8. Methodology II: Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_feature.html">9. Feature Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_ensemble.html">10. Ensemble methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_neuralnets.html">11. Neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_optimisation.html">12. Optimisation methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_methodology3.html">13. Methodology III: Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_ethics.html">14. The machine learning professional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_appendix.html">15. Appendix</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/PMLBook/PMLBook.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/PMLBook/PMLBook.github.io/issues/new?title=Issue%20on%20page%20%2FCh_introduction.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Ch_introduction.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-mouse-to-whale-through-rabbit">1.1. From mouse to whale, through rabbit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">1.2. What is machine learning?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-data">1.2.1. What is data?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-knowledge">1.2.2. What is knowledge?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-deployment-first-view">1.2.3. The deployment-first view</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-machine-learning-taxonomy">1.3. The machine learning taxonomy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">1.3.1. Supervised learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">1.3.2. Unsupervised learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-scope-of-machine-learning">1.4. The scope of machine learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-and-science">1.4.1. Data and science</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#related-fields">1.4.2. Related fields</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-this-book">1.5. Structure of this book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-first-top-tip">1.6. Summary and first top tip</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
+<span id="intro"></span><h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
+<p>In this chapter we first define machine learning and discuss the dataset-first and deployment-first views of machine learning. Then, a taxonomy that organises machine learning problems and techniques into different families is introduced. Understanding this taxonomy will allow us to cast real-world problems into machine learning problems and select the right approaches to solve them. Next, the scope of machine learning and its relation to other disciplines, including statistics and computer science, is discussed. Finally, we conclude this chapter discussing the organisation of this book and sharing with you our first top tip.</p>
+<div class="section" id="from-mouse-to-whale-through-rabbit">
+<span id="intro1"></span><h2><span class="section-number">1.1. </span>From mouse to whale, through rabbit<a class="headerlink" href="#from-mouse-to-whale-through-rabbit" title="Permalink to this heading">#</a></h2>
+<p>Behind a façade of simplicity hides a complex and truly fascinating biological system: the heart. It is astonishing to learn that the billions of cells that form the heart not only contract uninterruptedly and in perfect synchrony during the entire lifetime of the organism: they do so at the required rate. Our heart rate is on average around 80 beats per minute (bpm), that is if we are referring to adults, as the heart of an infant beats faster. When we relax our heart rate goes down, it goes up when we exercise. Stop for a second and think of billions of individual cells contracting at unison to meet the instantaneous demand of your body. Truly amazing.</p>
+<p>Humans are, of course, not the only living organisms equipped with a heart, other animals do too and they have their own heart rates as well. You might be familiar with the basic observation that smaller animals have a faster heart than bigger ones, in the same way as children (small humans) have faster hearts than adults (big humans). Using this qualitative observation we would be able to conclude, for instance, that a rabbit’s heart should surely be faster than our heart. This is indeed the case, but how fast is it? In principle the only way for us to find out would be to get hold of a rabbit, feel her pulse, and count the number of beats that she produces within a minute. Can you think of a way for us to find the heart rate of a rabbit that does not involve <em>measuring</em> it?</p>
+<p>Understanding the differences in heart rate across different animal species is an interesting scientific question that many researchers have explored in the past. In a study by <a class="reference external" href="https://www.ahajournals.org/doi/10.1161/01.CIR.0000146785.15995.67">Noujaim et al</a> you can find the average heart rate of several animal species together with their body mass, from the tiny wild mouse to the massive humpback whale. We have plotted these values in <a class="reference internal" href="#hrvsbm"><span class="std std-numref">Fig. 1.1</span></a>. Go ahead and have a look at them.</p>
+<div class="figure align-default" id="hrvsbm">
+<img alt="_images/HRvsBM_earth.svg" src="_images/HRvsBM_earth.svg" /><p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Heart rate and body mass of several animal species, from the tiny wild mouse (top left) to the massive humback whale (bottom right). Note that the body mass axis uses a logarithmic scale, where g stands for <em>gram</em>, kg for <em>kilogram</em> and t for <em>ton</em>. Data from <a class="reference external" href="https://www.ahajournals.org/doi/10.1161/01.CIR.0000146785.15995.67">Noujaim et al</a>.</span><a class="headerlink" href="#hrvsbm" title="Permalink to this image">#</a></p>
+</div>
+<p><a class="reference internal" href="#hrvsbm"><span class="std std-numref">Fig. 1.1</span></a> supports our earlier understanding that smaller animals have a faster heart rate. At one end of the graph we have the wild mice, weighting barely more than 20 g and beating at nearly 500 bpm. At the other we have the humpback whale, which weights 30 t and has a heart that beats at 30 bpm. Between the wild mouse and the humpback whale, the heart rate decreases as the body mass increases. Let us get back to the heart of a rabbit.</p>
+<!-- Can you use {numref}`HrvsBM` to provide a quantitative *guess* for a rabbit's heart rate? Would you say it is lower than 100 bpm? Between 100 bpm and 300 bpm? Higher than 300 bpm? -->
+<div class="question1 admonition">
+<p class="admonition-title">Question for you</p>
+<p>Can you use <a class="reference internal" href="#hrvsbm"><span class="std std-numref">Fig. 1.1</span></a> to provide a quantitative <em>guess</em> for a rabbit’s heart rate? Would you say it is lower than 100 bpm? Between 100 bpm and 300 bpm? Higher than 300 bpm?</p>
+<p>Submit your response here: <a href="https://forms.office.com/e/xtd6zLArg7" target = "_blank">Your Response</a></p>
+</div>
+<p>If your guess was somewhere between 100 bpm and 300 bpm, you guessed right. In fact, it is around 250 bpm. The point is not, however, what the right answer is, but <em>how we arrived at it</em>. Note that the heart rate of a rabbit is a quantity that can be measured. However, instead of measuring it, you just did something else and arrived to a quantitatively correct answer. So what did you do? Give it a few moments to reflect about it.</p>
+<p>This is what you migth have done. First you have observed there is an association between body mass and heart rate. Then you must have thought that the body mass of a rabbit is somewhere between, say 1 kg and 10 kg. Looking at <a class="reference internal" href="#hrvsbm"><span class="std std-numref">Fig. 1.1</span></a> you have noted that animals that weight 1 kg have on average a heart rate of 300 bpm, whereas animals that weight 10 kg have on average a heart rate of 100 bpm. Conclusion: the heart rate of a rabbit must be somewhere between both values, i.e. between 100 bpm and 300 bpm.</p>
+<p>Is this, or something along these lines, what you did? If this is the case congratulations: <strong>you have just solved a machine learning problem</strong>. Simple as it may look, this problem contains all the ingredients that you will find in any machine learning problem. Note that we could have asked ourselves about the heart rate of any animal species and following the same procedure, we would have been able to obtain a sensible guess. Thus, the procedure that we have just created allows us to map the body mass of an animal species to its heart rate. Crucially, we have solved this problem using previous observations consisting of the body mass and heart rate of <em>other</em> animal species. In other words, we have used <strong>data</strong>.</p>
+</div>
+<div class="section" id="what-is-machine-learning">
+<span id="intro2"></span><h2><span class="section-number">1.2. </span>What is machine learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this heading">#</a></h2>
+<p>In the previous section we used a collection of observations consisting of the body mass and heart rate of different animal species, to build a mechanism that can map the body mass of <em>any</em> animal to its heart rate. Why did we declare that we had solved a machine learning problem?</p>
+<p>Let us first read the words of some of the most influential machine learning experts. According to <a class="reference external" href="https://www.deeplearningbook.org/">Goodfellow, Bengio and Courville</a>, machine learning is the <em>ability to acquire <strong>knowledge</strong>, by extracting patterns from raw <strong>data</strong></em>. <a class="reference external" href="https://www.statlearning.com/">James, Witten, Hastie and Tibshirani</a> define machine learning as <em>a set of tools for <strong>modeling</strong> and <strong>understanding</strong> complex <strong>datasets</strong></em>. Note that both definitions include two main components:</p>
+<ol class="arabic simple">
+<li><p>Data / datasets.</p></li>
+<li><p>Knowledge / modeling / understanding.</p></li>
+</ol>
+<p>Hence, if we want to understand what machine learning is, we need to first explore what we mean by data and knowledge.</p>
+<div class="section" id="what-is-data">
+<h3><span class="section-number">1.2.1. </span>What is data?<a class="headerlink" href="#what-is-data" title="Permalink to this heading">#</a></h3>
+<p>Data can be defined as the <strong>materialisation</strong> of an action, an observation or a measurement. A <a class="reference external" href="https://en.wikipedia.org/wiki/Linear_B">clay tablet containing symbols written in an ancient script</a> is data, and so is the collection of bits stored on a hard drive that encode a digital picture.</p>
+<p>In machine learning we use data formatted as <strong>datasets</strong>. Datasets are collections of <strong>items</strong> described by the same set of pre-defined <strong>attributes</strong>. Each attribute has a type that can be simple or complex:</p>
+<ul class="simple">
+<li><p>Simple attributes incude <strong>continuous</strong> values (e.g. a temperature, a stock price) and <strong>discrete</strong>, also known as <strong>categorical</strong>, values (e.g. a symbol in a writing system).</p></li>
+<li><p>Complex attributes can be seen as collections of simple values (e.g. a digital image consisting of RGB pixels).</p></li>
+</ul>
+<p>Datasets can be represented as tables, where each row corresponds to an item and each column to one of the attributes. For instance, <a class="reference internal" href="#hrcsbmtable"><span class="std std-numref">Table 1.1</span></a> represents a dataset consisting of the body mass and heart rate of 3 animal species, namely the wild mouse, the rabbit and the humpback whale.</p>
+<table class="table" id="hrcsbmtable">
+<caption><span class="caption-number">Table 1.1 </span><span class="caption-text">Body mass and heart rate of three animal species</span><a class="headerlink" href="#hrcsbmtable" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Species (ID)</p></th>
+<th class="head"><p>Body mass [g]</p></th>
+<th class="head"><p>Heart rate [bpm]</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wild Mouse</p></td>
+<td><p><span class="math notranslate nohighlight">\(22\)</span></p></td>
+<td><p>480</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rabbit</p></td>
+<td><p><span class="math notranslate nohighlight">\(2.5\times 10^3\)</span></p></td>
+<td><p>250</p></td>
+</tr>
+<tr class="row-even"><td><p>Humpback whale</p></td>
+<td><p><span class="math notranslate nohighlight">\(30\times 10^6\)</span></p></td>
+<td><p>30</p></td>
+</tr>
+</tbody>
+</table>
+<p>Note that the first column in <a class="reference internal" href="#hrcsbmtable"><span class="std std-numref">Table 1.1</span></a> corresponds to the item’s identifier and should not be seen as an attribute. The attributes are the body mass and the heart rate.</p>
+<p>Datasets can also be represented as points in a space known as the <strong>attribute space</strong>, where each axis corresponds to one attribute. <a class="reference internal" href="#hrvsbm"><span class="std std-numref">Fig. 1.1</span></a> is an example of an attribute-space representation of a dataset, in this case the dataset that consists of the body mass and heart rate of several animal species. Each animal species (item) is represented as a point in a 2D space, where the coordinates of the point are the body mass attribute and the heart rate attribute. We will sometimes use the terms <strong>sample</strong> and <strong>point</strong> as synonyms of the term item, and the term <strong>feature</strong> as synonym of the term attribute.</p>
+</div>
+<div class="section" id="what-is-knowledge">
+<h3><span class="section-number">1.2.2. </span>What is knowledge?<a class="headerlink" href="#what-is-knowledge" title="Permalink to this heading">#</a></h3>
+<p>Knowledge can be an evasive concept, yet according to the definitions that we have presented, machine learning <em>extracts knowledge</em> from datasets. Therefore, in machine learning we must be able to represent knowledge somehow. Here are different ways to <strong>represent knowledge</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Propoposition</strong>, i.e. as a statement that can be true or false. An example of a proposition is <em>smaller animals have faster heart rates</em>.</p></li>
+<li><p><strong>Narrative</strong>, description or story. For instance, <em>the size and heart rate of an animal are associated and in general we observe that larger animals tend to have a slower heart rate than smaller animals, for instance, the wild rabbit […].</em></p></li>
+<li><p><strong>Model</strong>, i.e. a quantitative relationship between attributes. For instance, using the dataset shown in <a class="reference internal" href="#hrvsbm"><span class="std std-numref">Fig. 1.1</span></a>, <a class="reference external" href="https://www.ahajournals.org/doi/10.1161/01.CIR.0000146785.15995.67">Noujaim et al</a> suggested that the body mass <span class="math notranslate nohighlight">\(m\)</span> in kg and heart rate <span class="math notranslate nohighlight">\(r\)</span> in bpm of an animal species are related by the mathematical expression <span class="math notranslate nohighlight">\(r = 235 \times m^{-1/4}\)</span>.</p></li>
+</ol>
+<p>In machine learning we use <strong>models</strong> to represent the knowledge that we extract from a dataset. Models can be expressed using mathematical notation (e.g. <span class="math notranslate nohighlight">\(r = 235 \times m^{-1/4}\)</span>) or equivalently can be implemented as a computer program. For instance, the relationship between heart rate and body mass proposed by <a class="reference external" href="https://www.ahajournals.org/doi/10.1161/01.CIR.0000146785.15995.67">Noujaim et al</a> can be expressed in the Python programming language as</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="mi">235</span> <span class="o">*</span> <span class="n">m</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The question arises, why would we want to extract knowledge from a dataset?</p>
+</div>
+<div class="section" id="the-deployment-first-view">
+<h3><span class="section-number">1.2.3. </span>The deployment-first view<a class="headerlink" href="#the-deployment-first-view" title="Permalink to this heading">#</a></h3>
+<p>The dataset-first perspective of machine learning states that machine learning is a <em>set of tools for extracting knowledge from datasets</em>. In other words, the starting point in machine learning is a <strong>dataset</strong> and its output is a <strong>model</strong>. We find that dataset-first views of machine learning can make it harder for us, specially beginners, to understand why we want to build a model, how to buid a model correctly or even whether it makes sense to use machine learning at all.</p>
+<p>Before formally presenting the deployment-first perspective of machine learning, let us return to our toy problem of guessing the heart rate of an animal species given its body mass. What are the steps that we, as machine learning experts, would have taken in the context of this problem? First of all, the need to know the heart rate of an animal species without having to measure it would have prompted us to formulate our problem. Right afterwards, we would have acknowledged that we do not know the exact relationship between heart rate and body mass, nor we are  aware of any laws in biology that put together would allow us to derive such relationship. In the absence of previous knowledge, we would have measured the average body mass and heart rate of several animal species. In other words, we would have obtained a suitable dataset. Using the dataset we would have built a model, for instance the one according to which the heart rate <span class="math notranslate nohighlight">\(r\)</span> of an animal is calculated as <span class="math notranslate nohighlight">\(r = 235 \times m^{-1/4}\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is the body mass. Once the model is built, we would have discarded the dataset, as all our learning is done. Every time we ask ourselves about the heart rate <span class="math notranslate nohighlight">\(r\)</span> of an animal species, we would simply plug the value of its body mass <span class="math notranslate nohighlight">\(m\)</span> into the model <span class="math notranslate nohighlight">\(r = 235 \times m^{-1/4}\)</span> and compute <span class="math notranslate nohighlight">\(r\)</span>. Putting our model to work is what we call <strong>deployment</strong>.</p>
+<p>In summary, the steps we would have taken are:</p>
+<ol class="arabic simple">
+<li><p>Formulate a problem (<em>guess the heart rate of an animal species given its body mass</em>).</p></li>
+<li><p>Secure a dataset (the samples shown in <a class="reference internal" href="#hrvsbm"><span class="std std-numref">Fig. 1.1</span></a>).</p></li>
+<li><p>Build a solution (<span class="math notranslate nohighlight">\(r = 235 \times m^{-1/4}\)</span>).</p></li>
+<li><p>Deploy the solution (plug a value for <span class="math notranslate nohighlight">\(m\)</span> in the model to obtain <span class="math notranslate nohighlight">\(r\)</span>).</p></li>
+</ol>
+<p>With this example in mind, we are in a good position to describe what we mean by the <strong>deployment-first</strong> perspective of machine learning. Using a deployment-first perspective, machine learning can be described as a <em>set of <strong>tools</strong> together with a <strong>methodology</strong> for solving scientific, engineering and business <strong>problems</strong> using <strong>data</strong></em>. Our starting point is a problem, not a dataset.</p>
+<p>A deployment-first view of machine learning can help us understand why we want to use machine learning, when we should consider using (or discarding) machine learning and how machine learning works:</p>
+<ol class="arabic simple">
+<li><p><strong>Why</strong>? We use machine learning to solve problems. The solutions are models that when deployed, deliver value.</p></li>
+<li><p><strong>When</strong>? We use datasets to build models because we do not know how the attributes relate to each other. If we knew it, we would not need machine learning. For instance, to build a model that predicts the distance driven given our speed and journey duration, we do not need machine learning.</p></li>
+<li><p><strong>How</strong>? Machine learning models are meant to be deployed. This means that the datasets that we secure need to be representative of the deployment scenario. Furthermore, we need to be able to evaluate or <em>test</em> the performance of our models before deployment. This test should be done in deployment conditions.</p></li>
+</ol>
+<p>This brings us to the concept of <strong>model lifecycle</strong>. Machine learning models go through two basic stages (<a class="reference internal" href="#mllife"><span class="std std-numref">Fig. 1.2</span></a>):</p>
+<ol class="arabic simple">
+<li><p><strong>Learning</strong> stage: The model is built and tested. Data and domain knowledge about the problem are used in this stage.</p></li>
+<li><p><strong>Deployment</strong> stage: The model is used, for instance to make a prediction, decide on an action or gain insight.</p></li>
+</ol>
+<p>To design a suitable testing strategy we need to understand how the model will be deployed, as we need to test a model in deployment conditions, i.e. <em>as if it had been deployed</em>. One of the limitations of dataset-first views is that the main focus is usually placed on the learning stage, whereas the deployment stage is, if discussed at all, presented as a secondary, applied aspect of machine learning. Without using the notion of deployment, it can be difficult to understand how to test a model correctly. By contrast using the deployment-first perspective, deploying a model is the ultimate goal of machine learning. Everything we do during the learning stage, including building and testing models, is designed with an eye on the future deployment of the model.</p>
+<!-- ```{figure} images/MLLifecycle.jpg
+---
+name: MLLife
+---
+The machine learning model lifecycle.
+``` -->
+<div class="figure align-default" id="mllife">
+<img alt="_images/MLLifecycle.svg" src="_images/MLLifecycle.svg" /><p class="caption"><span class="caption-number">Fig. 1.2 </span><span class="caption-text">The machine learning model lifecycle.</span><a class="headerlink" href="#mllife" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="the-machine-learning-taxonomy">
+<span id="intro3"></span><h2><span class="section-number">1.3. </span>The machine learning taxonomy<a class="headerlink" href="#the-machine-learning-taxonomy" title="Permalink to this heading">#</a></h2>
+<p>We have defined machine learning as a set of tools together with a methodology for solving problems using data. In machine learning we first formulate a problem, then secure a dataset, subsequently we build and test a model, and finaly we deploy it. In this section we discuss the types of problems that can be formulated in machine learning.</p>
+<p>Machine learning problems can be organised in a taxonomy (<a class="reference internal" href="#mltax"><span class="std std-numref">Fig. 1.3</span></a>). Understanding this taxonomy is important, as there are different machine learning teachniques for each family of problems. Let us look at each family of machine learning problems.</p>
+<!-- ```{figure} images/MLTaxonomy.jpg
+---
+name: MLTax
+---
+The machine learning taxonomy.
+``` -->
+<div class="figure align-default" id="mltax">
+<img alt="_images/MLTaxonomy.svg" src="_images/MLTaxonomy.svg" /><p class="caption"><span class="caption-number">Fig. 1.3 </span><span class="caption-text">The machine learning taxonomy.</span><a class="headerlink" href="#mltax" title="Permalink to this image">#</a></p>
+</div>
+<div class="section" id="supervised-learning">
+<h3><span class="section-number">1.3.1. </span>Supervised learning<a class="headerlink" href="#supervised-learning" title="Permalink to this heading">#</a></h3>
+<p>We have already discussed a supervised learning problem, namely that of obtaining the heart rate of an animal species whose body mass we know. Using machine learning lingo, the problem that we want to solve can be formulated as follows: given an <strong>item</strong> (e.g. a rabbit) such that the value of <strong>one its attributes is unknown</strong> to us (the heart rate), <strong>estimate</strong> (guess) the missing value using its <strong>known attributes</strong> (body mass).</p>
+<p>The unknown attribute that we want to predict is called the <strong>label</strong>, whereas the known attributes are called <strong>predictors</strong>. In supervised learning we build models that estimate the label of an item based on its predictors. To build such models, we use datasets consisting of items of which we know predictors and label. A dataset that is used in a supervised learning problem is sometimes called <strong>labelled dataset</strong>, as the label attribute of all the items is known. The term <strong>supervised</strong> is metaphorical, and it suggests there is a supervisor showing our model examples consisting of sets of predictors together with a target label, so that the model learns the correct mapping of predictors to label.</p>
+<p>There are two families of supervised learning problems, namely regression and classification. In a <strong>regression</strong> problem, the label that we want to predict is a <strong>continuous</strong> value. Examples of regression problems include the problem of predicting the heart rate of an animal species, the energy consumption of a household, the price of a company’s stock and tomorrow’s average temperature. By contrast, in a <strong>classification</strong> problem the label is a <strong>discrete</strong> value. Examples of classification problems include determining whether an email is spam or not, identifying the sentiment of a fragment of text or recognising a letter from an alphabet in a picture.</p>
+</div>
+<div class="section" id="unsupervised-learning">
+<h3><span class="section-number">1.3.2. </span>Unsupervised learning<a class="headerlink" href="#unsupervised-learning" title="Permalink to this heading">#</a></h3>
+<p>The term <em>unsupervised</em> might not be the most appropriate for the second family of machine learning problems. This term can be understood as learning without supervision or as learning that is not of the supervised type. Either way, it does not give away the essence of this second family of machine learning problems. Let us simply use the term <em>unsupervised</em> as a name for the second family of machine learning problems and avoid trying to justify why we have chosen it. It really does not matter.</p>
+<p>We will use the heart rate vs body mass dataset to illustrate the essence of unsupervised learning. For convenience, it is shown again in <a class="reference internal" href="#hrvsbmbis"><span class="std std-numref">Fig. 1.4</span></a>. Have a close look at the point cloud representing the body mass and heart rate of several animal species. Can you see anything odd about it? You migth have spotted a point that lies in an unusual location. That point corresponds to an animal species that weights 250g and has a heart rate of 70 bpm. This animal species is the Syrian bear. Its body mass is however not 250 <strong>g</strong>, but 250 <strong>kg</strong>. It turns out that we made a mistake when we typed the body mass of the Syrian bear into our dataset and this mistake went unnoticed until one of our students pointed out that there seemed to be something unusual about that animal. We decided to leave this mistake, as it is one of the best illustrations of unsupervised learning.</p>
+<div class="figure align-default" id="hrvsbmbis">
+<img alt="_images/HRvsBM_earth.svg" src="_images/HRvsBM_earth.svg" /><p class="caption"><span class="caption-number">Fig. 1.4 </span><span class="caption-text">The heart rate vs body mass dataset (again). Can you spot a misbehaving animal?</span><a class="headerlink" href="#hrvsbmbis" title="Permalink to this image">#</a></p>
+</div>
+<p>If we were told that there is an animal species with a body mass of 250 g and a heart rate of 70 bpm, we would probably shrug our shoulders. However, in relation to the body mass and heart rate of other animals, as shown in <a class="reference internal" href="#hrvsbmbis"><span class="std std-numref">Fig. 1.4</span></a>, it feels really odd. Why? Because it does not seem to <em>belong</em> with the other animal species. This is what we call an <strong>outlier</strong>. At this point it is worth stopping and reflecting on our thought process. To determine what we mean by a normal relationship between heart rate and body mass, we have identified in our dataset the region of the attribute space where our samples are mostly distributed. Anything outside this region looks odd. Understanding how samples are distributed in the attribute space is the main goal in unsupervised learning.</p>
+<p><strong>Unsupervised learning</strong> builds models that describe how our samples are <strong>distributed in the attribute space</strong>. Note that the notions of predictors and label do not exist in unsupervised learning: all the attributes are treated equally. In unsupervised learning we can distinguish between two different approaches for describing how our samples are distributed. The first one is finding the underlying structure of our dataset. We will call this approach <strong>structure analysis</strong>. Grouping the samples of our dataset into clusters of similar samples is one popular approach to describe the underlying structure. This method is known as <strong>clustering</strong>. We can also identify directions in the attribute space along wich samples are aligned. This method is known as <strong>basis discovery</strong>.</p>
+<p>The second family of unsupervised learning problems is <strong>density estimation</strong>. In density estimation we build models that we can use to obtain the probability of finding a future sample within a region of the attribute space. Equivalently we can obtain the fraction of future samples that will lie within that region of interest. For instance, looking at <a class="reference internal" href="#hrvsbmbis"><span class="std std-numref">Fig. 1.4</span></a>, what would you say is the probability of finding animal species whose body mass is between 10 kg and 100 kg and heart rate between 400 bpm and 500 bpm? Would you say it is a probability close to zero? Why? Questions like this one can be answered if we have a probability model. In density estimation, we use datasets to build probability models.</p>
+<p>There are many applications of unsupervised learning. For instance, customer segmentation is an application of unsupervised learning where we create groups of customers that have similar preferences. Community detection in social networks is another application, where groups of connected individuals are identified. Evolutionary analysis allows us to investigate how animal species have evolved by analysing similarities in their DNA. Interestingly, we will sometimes need to solve an unsupervised learning problem to create models that will then be embeddeded within a supervised learning model.</p>
+</div>
+</div>
+<div class="section" id="the-scope-of-machine-learning">
+<span id="intro4"></span><h2><span class="section-number">1.4. </span>The scope of machine learning<a class="headerlink" href="#the-scope-of-machine-learning" title="Permalink to this heading">#</a></h2>
+<p>The term <em>machine learning</em> can be both inspiring and misleading. If you are reading about machine learning for the first time, you will be wondering when we will start talking about the actual <em>machine that learns</em>. Or you might be asking yourself why we celebtrated having solved a machine learning problem, back when we offered a guess for the rabbit’s heart rate. After all it was <em>us</em> who did it, not a <em>machine</em>. As it turns out <a class="reference external" href="https://www.statlearning.com/">some authors</a> prefer to use the term <em>statistical learning</em> instead of <em>machine learning</em>, to emphasise that this is in fact a branch of statistics, which is a discipline concerned with the analysis of data. In this section, we present machine learning in the context of data science. Then, we discuss its connection with statistics, computer science, digital processing, artificial intelligence and big data.</p>
+<div class="section" id="data-and-science">
+<h3><span class="section-number">1.4.1. </span>Data and science<a class="headerlink" href="#data-and-science" title="Permalink to this heading">#</a></h3>
+<p>Whether we use a dataset-first view or a deployment-first view of machine learning, it should be clear that without datasets, there is no machine learning. Specifically, the deployment-first view emphasises that we use datasets to solve problems. The question arises, are there alternative ways for solving those problems that do not require data? If so, when should we use machine learning? And how can we use data correctly?</p>
+<p>To answer these questions, we need to briefly introduce the notion of <strong>population</strong> or <strong>data source</strong>. The goal of machine learning is to solve problems that are defined on an entity that we call the target population. For example when we are asking ourselves about the heart rate of an animal whose weight we know, we are considering as a target population the collection of all the animals on earth, past, present and future. We say that we have a perfect description of a population if we know accurately the relationship between the attributes that define the population. Using a perfect description of our population, we can answer any question about it. In most cases, however, we do not have such a perfect description. In these scenarios machine learning plays a crucial role. In machine learning we use datasets of items extracted from the population as <em>surrogates</em> for the perfect description of the population. In other words, we use datasets and machine learning <em>because</em> we lack a perfect description of our target population. If we had such description, there would be no need to use machine learning.</p>
+<p>A limitation of the dataset-first view of machine learning is that it seems to suggest that as long as we have datasets, we are good to go. By contrast, in the deployment-first view of machine learning we acknowledge that datasets are used to solve problems, and for each problem we need to acquire the <em>right dataset</em>. Specifically, datasets need to be <strong>representative</strong> of our population. Putting our emphasis on the datasets might also lead us to think that datasets and only datasets is what we need to solve our problem. We frequently read that <em>data is objective</em> or that <em>data demonstrates</em> some, usually controversial, statement. This is however not the case. Data is fundamentally dumb and certainly not immune to subjectivity. We, after all, are the ones who decide how to create our datasets and hence our datasets will carry our own personal biases. Therefore, the quality of our solutions depend rely on our ability to secure the right data. As we will see throughout this book machine learning needs data, but is much more than data.</p>
+<p>Machine learning can also be seen as a scientific endeavour. The essence of science lies in our ability to evaluate our knowledge. In machine learning, our ability to check that our models actually work is as important as being able to build them. In fact, there might be situations where we need to deploy a model created by others. In such situations we do not really care about how sophisticated the machine learning model is, or even whether the model has been built using machine learning at all, we just want to know if the model will actually work during deployment. In other words, we need to be able to <strong>test our models</strong>. In an <a class="reference external" href="https://www.youtube.com/watch?v=cqoYrSd94kA">experience</a> designed to expose dowsing, i.e. the idea that some humans have a supernatural sensitivity that allows them to detect underground water, the magician and professional skeptic James Randi summarised their goal using the following words: <em>my concern is not <strong>how</strong> they do it, but <strong>if</strong> they do it</em>. Many machine learning solutions are said to be too complex for those who have not designed them to understand. This should not deter us, as we can still use machine learning to test them and check if they actually do what they are intended to do or not.</p>
+<p>Finally, as we will see in this book machine learning operates by exploiting associations between the attributes of the samples in a dataset. It is sometimes tempting to interpret such associations using a causal lens. For instance, our ability to predict the heart rate of an animal species using its body mass could lead us to think that <em>the body mass of an animal causes the heart rate</em>. This is an illusion that can be uncovered as soon as we ask ourselves if we can predict the body mass of an animal species from its heart rate. We can, indeed, but would we now say that <em>the heart rate of an animal also causes its body mass</em>? The only logical conclusion is that the associations between attributes that machine learning creates, should never be interpreted as causal relationships. Causality is simply out of machine learning’s reach. To investigate causality, <a class="reference external" href="http://bayes.cs.ucla.edu/WHY/">other approaches</a> exist that also use data.</p>
+</div>
+<div class="section" id="related-fields">
+<h3><span class="section-number">1.4.2. </span>Related fields<a class="headerlink" href="#related-fields" title="Permalink to this heading">#</a></h3>
+<p>Machine learning is, first and foremost, a branch of <strong>statistics</strong>. This is why many researchers prefer using the term <em>statistical learning</em>, which they feel describes more accurately what this discipline is about. Why do we then talk about <em>machine</em> learning? The term machine refers to computers and in machine learning computers play a crucial role, for even though computers are not essential, models are nothing but computations and models are built performing computations on datasets. From a practical point of view, even the simplest machine learning problem can benefit from using a modest amount of computational power and in most cases we will not be able to realistically build and deploy models if we lack computational power. This is the reason why machine learning can also be seen as a branch of <strong>computer science</strong>.</p>
+<p><strong>Digital signal and image processing</strong> is a discipline that deals with temporal and spatial data, such as audio recordings or photographs, and can play a central role in many machine learning projects. First, when dealing with temporal or spacial data, we can create datasets consisting of attributes that are obtained by digitally processing such data. For instance, in an audio scenario, we can crete a dataset where one of the attributes is the pitch of a sound. Therefore, digital processing can be used as a preprocessing stage prior to machine learning modeling. Second, digital signal and image processing define operations on data. These operations can be hand crafted, but also learnt using machine learning approaches.</p>
+<p>Some of you might be surprised that we have not mentioned <strong>artificial intelligence</strong> yet. Machine learning is frequently introduced as a subset of artificial intelligence and, after all, the name seems to suggest that we are building <em>machines that learn</em>. The ultimate goal of artificial intelligence is to create machines that act or think like humans, and indeed, machine learning models can be incorporated <em>into</em> such intelligent machines. However artificial intelligence is one of the many application areas of machine learning, by no means the only one, and artificial intelligence can use approaches other than machine learning. The relationship between machine learning and artificial intelligence is the same as the relationship between an engine and a car. A subset of cars would be all the cars of a given colour, or of a given brand. Engines are not subsets of cars, but rather a component of a car. There are different types of engines that we can use in the car, and engines can be used in other systems that are not cars, for instance to extract water from a well. In the same vein, we do not see machine learning as a subset of artificial intelligence, but as a component that can be used in an artificial intelligence system.</p>
+<p>Finally, <strong>big data technologies</strong> can play a significant role in machine learning projects. Contrary to what it seems to connote, big data is not a term that refers to <em>the existence of very large datasets</em>, neither it should be used as implying that <em>the more data we have, the better models we will create</em>. Big data is a field in computer science concerned with creating data engineering systems that operate seamlessly where conventional computer systems, e.g. our laptop or PC, fall short due to insufficient computing resources. Examples of this include video streaming platforms, serving hundreds of million of hours of video every day. Big data is the collectiong of technologies that make possible this type of platforms. In machine learning, big data technologies can play a crucial role in those cases where the computing resources that we need for, say, building a model or deploying a model, exceed what our modest laptops can do. In other words, big data can be used to solve computational obstacles, but does not suggest we should use large datasets to solve machine learning problems.</p>
+</div>
+</div>
+<div class="section" id="structure-of-this-book">
+<span id="intro5"></span><h2><span class="section-number">1.5. </span>Structure of this book<a class="headerlink" href="#structure-of-this-book" title="Permalink to this heading">#</a></h2>
+<p>This book is organised around three main topics: supervised learning, unsupervised learning and the machine learning methodology. The first part of the book is devoted to supervised learning and the second to unsupervised learning. You will find three methodology chapters intercalated between supervised and unsupervised chapters. Each chapter is followed by a Python Jupyter notebook, which you can use to experiment and consolidate your understanding. There is also an appendix at the end of the book, covering background topics such as linear algebra, basic probability concepts and how to set up a data science computing environment.</p>
+<p>In the first part of the book, we will focus on supervised learning. We will learn to formulate regression and classification problems and will study some of the most popular supervised learning models. Our focus is not on exhaustively covering as many models as possible. We will focus on the principles so that in the future you can independently and confidently learn and successfully apply new machine learning models. In the second part of the book, we will focus on unsupervised learning. First, we will cover structure discovery, specifically clustering and basis discovery. Then, we will discuss density estimation problems and will present several applications, including building class densities for classification problems and outlier detection.</p>
+<p>The machine learning methodology is horizontal topic, relevant to both supervised and unsupervised problems. As our definition of machine learning implies, the machine learning methodology is a first-class citizen and therefore we will discuss it in separate chapters. The first methodology chapter follows the chapter on regression and will present the machine learning tasks of model testing, model training and model validation.  The second methodology chapter will introduce the notion of machine learning pipeline, which will allow us to extend the notion of model discussed up until then, to include pre-processing stages and ensemble approaches. Understanding pipelines will pave the ground to understanding more complex models, including deep neural networks. In the third methodology chapter we will look at machine learning from a professional perspective. We will discuss how end-to-end machine learning projects are managed using the notion of machine learning workflows and how to work professionally and within a solid ethical framework.</p>
+</div>
+<div class="section" id="summary-and-first-top-tip">
+<span id="intro6"></span><h2><span class="section-number">1.6. </span>Summary and first top tip<a class="headerlink" href="#summary-and-first-top-tip" title="Permalink to this heading">#</a></h2>
+<p>This chapter provided an introduction to machine learning. We have seen that machine learning lies in the intersection between statistics and computer science and can be found in many fields, from science and high-tech to applied areas such as retail and finance. In a nutsheel, machine learning provides a set of tools together with a methodology for solving scientific, engineering and business problems using data. These problems involve a target population, whose description is unknown to us and the machine learning approach consists of using datasets as surrogates for the perfect description of the population.</p>
+<p>We have also seen that the type of problems that machine learning can solve can be arranged into a taxonomy and belong to one of two main types: supervised learning, where we build models that predict the value of one of the attributes of a sample, and unsupervised learning, where we set out to describe relationships between the attributes of our samples. In a typical machine learning workflow we start by formulating a problem that involves a population. Then, we secure a dataset. Third, we build and test a model and finally, we deploy it.</p>
+<p>We conclude this chapter looking again at <a class="reference internal" href="#hrvsbm"><span class="std std-numref">Fig. 1.1</span></a>. By now, we should be confident that we can provide an educated guess for the heart rate of any animal species, provided that we know their body mass.</p>
+<!-- Let us consider the flatworm. The flatworm is a very small animal with a body mass of 10 g. Our dataset includes animal species that have a body mass between 22 g (wild mouse) to 30 t (humpback whale). Do you think we can produce an estimate for the heart rate of the flatworm?  -->
+<div class="question1 admonition">
+<p class="admonition-title">Question for you</p>
+<p>Let us consider the flatworm. The flatworm is a very small animal with a body mass of 10 g. Our dataset includes animal species that have a body mass between 22 g (wild mouse) to 30 t (humpback whale).</p>
+<p>Using <a class="reference internal" href="#hrvsbm"><span class="std std-numref">Fig. 1.1</span></a>, do you think we can produce an estimate for the heart rate of the flatworm?</p>
+<p>Submit your response here: <a href="https://forms.office.com/e/yKxE4LUpZF" target = "_blank">Your Response</a></p>
+</div>
+<p>Some of you might be concerned that the body mass of the flatworm lies outside the observed body mass range and hence might conclude that we cannot say anything about it. However, <a class="reference internal" href="#hrvsbm"><span class="std std-numref">Fig. 1.1</span></a> shows a clear upward trend as the body mass decreases, and there is no reason we could not extend it beyond the observed range. Doing so, we would be able to say that the heart rate of a flatworm is greater than 500 bpm. In fact, we could simply plug the value <span class="math notranslate nohighlight">\(m = 0.01\)</span> kg in <span class="math notranslate nohighlight">\(r = 235 \times m^{-1/4}\)</span>, and we would obtain an estimated value of around 700bpm. Was this a good guess?</p>
+<p>Machine learning models give us answers even in scenarios where our intuition hesitates. There is however, one catch in our previous guess for the heart rate of the flatworm. It turns out that flatworms do not have a heart like the one we have, and because of it they simply have no heart beat. Therefore, asking about the heart rate of a flatworm does not make any sense whatsoever. Machine learning is unaware of this: we could have given our machine learning model the body mass of a flower or a brick, and we would have got an answer. Machine learning abstracts away domain details, but that does not mean that domain details are irrelevant.</p>
+<!-- Our first top tip is
+
+**Know Your Domain**!
+
+```{tip}
+**Know Your Domain**!
+``` -->
+<div class="tip admonition">
+<p class="admonition-title">Our first top tip is</p>
+<!-- <p style="text-align: center;"><b>Know Your Domain!<b></p> -->
+<h3 style="text-align: center;"><b>Know Thy Domain!</b></h3>
+</div>
+<p>If you do not, you will risk ending up with an astonishing solution for a meaningless problem.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="welcome.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to our Principles of Machine Learning</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Ch_regression.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Regression</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-mouse-to-whale-through-rabbit">1.1. From mouse to whale, through rabbit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">1.2. What is machine learning?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-data">1.2.1. What is data?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-knowledge">1.2.2. What is knowledge?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-deployment-first-view">1.2.3. The deployment-first view</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-machine-learning-taxonomy">1.3. The machine learning taxonomy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">1.3.1. Supervised learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">1.3.2. Unsupervised learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-scope-of-machine-learning">1.4. The scope of machine learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-and-science">1.4.1. Data and science</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#related-fields">1.4.2. Related fields</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-this-book">1.5. Structure of this book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-first-top-tip">1.6. Summary and first top tip</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://www.linkedin.com/in/jesus-requena-carrion/" target="_blank">Jesús Requena Carrión</a> and <a href="http://nikeshbajaj.in" target="_blank">Nikesh Bajaj</a>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

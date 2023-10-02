@@ -1,0 +1,24 @@
+html {
+  /*****************************************************************************
+  * Icon
+  */
+
+  /* // Font size across all icons */
+
+  /* // Font Awesome default icons */
+  /* --pst-icon-exclamation-circle: "\f129c";
+  --pst-icon-admonition-attention: "\f128"; // fa-solid fa-question-circle */
+  /* --pst-icon-pencil: "\f303"; // fa-solid fa-pencil
+  --pst-icon-ques: "\f128"; // fa-solid fa-question
+  --pst-icon-q-circle: "\f059"; // fa-solid fa-question-circle
+  --pst-icon-q-circle-o: "\f29c"; // fa-solid fa-question-circle-o */
+}
+
+
+p {
+    text-align: justify;
+}
+
+div.figure p.caption {
+  text-align: center
+}
