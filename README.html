@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10. Ensemble methods &#8212; Principles of Machine Learning: A Deployment-First Perspective</title>
+    <title>PMLBook_beta &#8212; Principles of Machine Learning: A Deployment-First Perspective</title>
   
   
   
@@ -69,12 +69,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch_ensemble';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
     <link rel="shortcut icon" href="_static/pml_ico.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="11. Neural networks" href="Ch_neuralnets.html" />
-    <link rel="prev" title="9. Feature Engineering" href="Ch_feature.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Ch_introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_regression.html">2. Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_methodology1.html">3. Methodology I: Three basic tasks</a></li>
@@ -175,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Ch_classification2.html">7. Classification II: The probabilistic view</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_methodology2.html">8. Methodology II: Pipelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_feature.html">9. Feature Engineering</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Ensemble methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch_ensemble.html">10. Ensemble methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_neuralnets.html">11. Neural networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_optimisation.html">12. Optimisation methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_methodology3.html">13. Methodology III: Workflows</a></li>
@@ -252,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/PMLBook/PMLBook.github.io/issues/new?title=Issue%20on%20page%20%2FCh_ensemble.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/PMLBook/PMLBook.github.io/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +280,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Ch_ensemble.md" target="_blank"
+      <li><a href="_sources/README.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +360,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ensemble methods</h1>
+    <h1>PMLBook_beta</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,32 +374,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="ensemble-methods">
-<span id="ensemble"></span><h1><span class="section-number">10. </span>Ensemble methods<a class="headerlink" href="#ensemble-methods" title="Permalink to this heading">#</a></h1>
-<br>
-<hr>
-<div class="note admonition">
-<p class="admonition-title">Coming soon ..</p>
-<h3 style="text-align: center;"><b>In progress</b></h3>
-</div>
-<hr>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>  _____      _            _       _                    __                          
- |  __ \    (_)          (_)     | |                  / _|                         
- | |__) | __ _ _ __   ___ _ _ __ | | ___  ___    ___ | |_                          
- |  ___/ &#39;__| | &#39;_ \ / __| | &#39;_ \| |/ _ \/ __|  / _ \|  _|                         
- | |   | |  | | | | | (__| | |_) | |  __/\__ \ | (_) | |                           
- |_|   |_|  |_|_| |_|\___|_| .__/|_|\___||___/  \___/|_|                           
-  __  __            _     _| |           _                           _             
- |  \/  |          | |   (_)_|          | |                         (_)            
- | \  / | __ _  ___| |__  _ _ __   ___  | |     ___  __ _ _ __ _ __  _ _ __   __ _
- | |\/| |/ _` |/ __| &#39;_ \| | &#39;_ \ / _ \ | |    / _ \/ _` | &#39;__| &#39;_ \| | &#39;_ \ / _` |
- | |  | | (_| | (__| | | | | | | |  __/ | |___|  __/ (_| | |  | | | | | | | | (_| |
- |_|  |_|\__,_|\___|_| |_|_|_| |_|\___| |______\___|\__,_|_|  |_| |_|_|_| |_|\__, |
-                                                                              __/ |
-                                                                             |___/
-</pre></div>
-</div>
-<hr>
+  <div class="tex2jax_ignore mathjax_ignore section" id="pmlbook-beta">
+<h1>PMLBook_beta<a class="headerlink" href="#pmlbook-beta" title="Permalink to this heading">#</a></h1>
+<p>Beta version - testing before making it public</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -435,24 +410,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Ch_feature.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Feature Engineering</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Ch_neuralnets.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Neural networks</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
