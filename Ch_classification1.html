@@ -9,20 +9,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4. Classification I: The geometric view &#8212; Principles of Machine Learning: A Deployment-First Perspective</title>
-  
-  
-  
+
+
+
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-  
+
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 <link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-  
+
   <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/pml_admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
@@ -69,6 +69,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch_classification1';</script>
     <link rel="shortcut icon" href="_static/pml_ico.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -78,26 +80,26 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
-  
-  
+
+
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-  
-  
+
+
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
+
   <input type="checkbox"
           class="sidebar-toggle"
           name="__primary"
           id="__primary"/>
   <label class="overlay overlay-primary" for="__primary"></label>
-  
+
   <input type="checkbox"
           class="sidebar-toggle"
           name="__secondary"
           id="__secondary"/>
   <label class="overlay overlay-secondary" for="__secondary"></label>
-  
+
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
@@ -118,46 +120,46 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-  
+
     <nav class="bd-header navbar navbar-expand-lg bd-navbar">
     </nav>
-  
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
 
-  
+      <div class="bd-sidebar-primary bd-sidebar">
+
+
+
   <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
+
+
+
+
   </div>
-  
+
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-  
+
 
 <a class="navbar-brand logo" href="welcome.html">
-  
-  
-  
-  
-    
-    
-      
-    
-    
+
+
+
+
+
+
+
+
+
     <img src="_static/pml_logo.png" class="logo__image only-light" alt="Logo image"/>
     <script>document.write(`<img src="_static/pml_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
+
+
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
+
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="welcome.html">
@@ -182,6 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Ch_ethics.html">14. The machine learning professional</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_appendix.html">15. Appendix</a></li>
 </ul>
+
 <hr style="height:2px;border:none;color:#000000;background-color:#000000;width:50%;text-align:center;margin:10px auto auto auto;">
 </div>
 
@@ -194,37 +197,39 @@ const thebe_selector_output = ".output, .cell_output"
 <!-- <h1>Test 0</h1> -->
 </div>
 <hr>
+
+
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-  
+
   <div id="rtd-footer-container"></div>
 
 
       </div>
-      
+
       <main id="main-content" class="bd-main">
-        
-        
+
+
 
 <div class="sbt-scroll-pixel-helper"></div>
 
           <div class="bd-content">
             <div class="bd-article-container">
-              
+
               <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
-  
+
     <div class="header-article-items__start">
-      
+
         <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
 </label></div>
-      
+
     </div>
-  
-  
+
+
     <div class="header-article-items__end">
-      
+
         <div class="header-article-item">
 
 <div class="article-header-buttons">
@@ -238,15 +243,15 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fab fa-github"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
+
+
+
       <li><a href="https://github.com/PMLBook/PMLBook.github.io" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fab fa-github"></i>
@@ -254,16 +259,16 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">Repository</span>
 </a>
 </li>
-      
-      
-      
-      
+
+
+
+
       <li><a href="https://github.com/PMLBook/PMLBook.github.io/issues/new?title=Issue%20on%20page%20%2FCh_classification1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fas fa-lightbulb"></i>
@@ -271,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">Open issue</span>
 </a>
 </li>
-      
+
   </ul>
 </div>
 
@@ -285,15 +290,15 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
+
+
+
       <li><a href="_sources/Ch_classification1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
@@ -301,17 +306,17 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">.md</span>
 </a>
 </li>
-      
-      
-      
-      
+
+
+
+
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
   title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
@@ -319,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">.pdf</span>
 </button>
 </li>
-      
+
   </ul>
 </div>
 
@@ -331,7 +336,7 @@ const thebe_selector_output = ".output, .cell_output"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fas fa-expand"></i>
@@ -357,57 +362,578 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
-      
+
     </div>
-  
+
 </div>
 </div>
-              
-              
+
+
 
 <div id="jb-print-docs-body" class="onlyprint">
     <h1>Classification I: The geometric view</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
-            
+
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-demise-of-the-literary-digest">4.1. The demise of the Literary Digest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-classification-problems">4.2. Formulating classification problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-notation">4.2.1. Mathematical notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classifiers-in-the-predictor-space">4.2.2. Classifiers in the predictor space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-basic-quality-metric">4.2.3. A basic quality metric</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-classifiers">4.3. Basic classifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-classifiers">4.3.1. Linear classifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees">4.3.2. Decision trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nearest-neighbours">4.3.3. Nearest neighbours</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-classifiers">4.4. Training classifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression">4.4.1. Logistic regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branching-growing-and-prunning-in-decision-trees">4.4.2. Branching, growing and prunning in decision trees</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-discussion">4.5. Summary and discussion</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
 
-              
-                
+
+
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
-                  
+
   <div class="tex2jax_ignore mathjax_ignore section" id="classification-i-the-geometric-view">
 <span id="class1"></span><h1><span class="section-number">4. </span>Classification I: The geometric view<a class="headerlink" href="#classification-i-the-geometric-view" title="Permalink to this heading">#</a></h1>
-<br>
-<hr>
-<div class="note admonition">
-<p class="admonition-title">Coming soon ..</p>
-<h3 style="text-align: center;"><b>In progress</b></h3>
+<p>In machine learning we need to follow a rigorous methodology to ensure that our deployed solutions work as expected. In our <a class="reference internal" href="Ch_methodology1.html#meth1"><span class="std std-ref">Methodology I: Three basic tasks</span></a> chapter we discussed three key machine learning tasks, namely test, training and validation. Needless to say, the three tasks require datasets, which are used as surrogates of our target population. The essential role of datasets in machine learning can make us feel that as long as we have datasets, we are good to go. This is however not the case. To illustrate why just having datasets might not take us far, no matter how big our datasets are, we will start this chapter revisiting the famous 1936 <em>Literary Digest</em> poll blunder, from which we will extract our fourth top tip.</p>
+<p>This chapter is devoted to classification problems and their solutions, which are known as classifiers. As you will remember, classification belongs together with <a class="reference internal" href="Ch_regression.html#reg"><span class="std std-ref">Regression</span></a> to the family of supervised learning problems defined in <a class="reference internal" href="Ch_introduction.html#intro3"><span class="std std-ref">The machine learning taxonomy</span></a>. In this chapter we will follow a geometric approach to explore classification, whereas in the chapter <a class="reference internal" href="Ch_classification2.html#class2"><span class="std std-ref">Classification II: The probabilistic view</span></a> we will follow a complementary approach based on probability concepts. First, we will formulate classification problems and will learn to visualise classifiers. Then, we will present three families of classifiers, namely linear classifiers, decision trees and nearest neighbours. When discussing each family of classifiers we will investigate the mechanisms that they implement to operate on a set of predictors to produce a predicted label. Finally, we will learn how to use datasets to train each family of classifiers.</p>
+<p>Before we submerge ourselves in classification, what happened to the <em>Literary Digest</em>?</p>
+<div class="section" id="the-demise-of-the-literary-digest">
+<h2><span class="section-number">4.1. </span>The demise of the Literary Digest<a class="headerlink" href="#the-demise-of-the-literary-digest" title="Permalink to this heading">#</a></h2>
+<p>Bricked-up windows are one of those architectural oddities that we can spot in many 18th and 19th century buildings in Britain. If you find yourself visiting the Science Museum or the Natural History Museum in London, take a moment to walk around the neighbourhood, the London Borough of South Kensington, and look up. You will discover splendid residences that exhibit bricked-up windows next to conventional ones, as in <a class="reference internal" href="#windowtax"><span class="std std-numref">Fig. 4.1</span></a>. What moved the owners of these residences to boast assumed windows? Was there any aesthetical principle in their minds?</p>
+<div class="figure align-default" id="windowtax">
+<a class="reference internal image-reference" href="_images/WindowTax_1.jpg"><img alt="_images/WindowTax_1.jpg" src="_images/WindowTax_1.jpg" style="width: 632.8px; height: 316.4px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Bricked-up windows in the London Borough of South Kensington.</span><a class="headerlink" href="#windowtax" title="Permalink to this image">#</a></p>
 </div>
-<hr>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>  _____      _            _       _                    __                          
- |  __ \    (_)          (_)     | |                  / _|                         
- | |__) | __ _ _ __   ___ _ _ __ | | ___  ___    ___ | |_                          
- |  ___/ &#39;__| | &#39;_ \ / __| | &#39;_ \| |/ _ \/ __|  / _ \|  _|                         
- | |   | |  | | | | | (__| | |_) | |  __/\__ \ | (_) | |                           
- |_|   |_|  |_|_| |_|\___|_| .__/|_|\___||___/  \___/|_|                           
-  __  __            _     _| |           _                           _             
- |  \/  |          | |   (_)_|          | |                         (_)            
- | \  / | __ _  ___| |__  _ _ __   ___  | |     ___  __ _ _ __ _ __  _ _ __   __ _
- | |\/| |/ _` |/ __| &#39;_ \| | &#39;_ \ / _ \ | |    / _ \/ _` | &#39;__| &#39;_ \| | &#39;_ \ / _` |
- | |  | | (_| | (__| | | | | | | |  __/ | |___|  __/ (_| | |  | | | | | | | | (_| |
- |_|  |_|\__,_|\___|_| |_|_|_| |_|\___| |______\___|\__,_|_|  |_| |_|_|_| |_|\__, |
-                                                                              __/ |
-                                                                             |___/
-</pre></div>
+<p>To find an explanatation to the existence of bricked-up windows, we need to move away from aesthetics and look somewhere else. In particular we need to look deep inside the machinery of His Majesty’s Treasury, where at the end of the 17th century a new charge on wealth was devised. This new charge became known as the Window Tax. The rationale and workings of the Window Tax can be explained easily. Properties of wealthy individuals have many windows, many more the wealthier those individuals are. With this in mind, His Majesty’s Treasury realised that to tax wealth they could visit a property, count the number of windows, assign the correct charge based on the window count, and move to the next property. Simple - and effective. Unfortunately, for His Majesty’s Treasury at least, soon after the Window Tax was introduced, a corresponding tax-avoidance scheme would follow: the more windows you brick up, the less taxes you pay. Simple - and effective.</p>
+<p>The Window Tax sought to solve two problems with one stone - taxing individuals and assessing their wealth. Deciding how much each invidual should pay based on their wealth does not present great difficulties. Wealth assessment, however, is not as trivial a task as it might sound, both because of the difficulty of quantifying what we mean by wealth and because of the costs of conducting it on large populations of individuals, such as an entire country. Counting windows, although imperfect, was a practical way to solve both difficulties. Wealth is not the only information that governments and other agencies have been gathering from individuals for many years to understand the social, economical or political realities of human populations, or to gain insight into their opinions and preferences. The process of gathering information from a group of people to understand better the population that they belong to, is known as <em>polling</em> or <em>surveying</em>. Amongst the many applications of polling, election forecasting is one of the most exciting and widely known, with US elections undoubtedly attracting the most attention worldwide. Indeed it would be hard to imagine US elections devoid of polls, however not all of them have had the same historical prominence. If there is such a thing as a famous US elections poll, then the one conducted by the <em>Literary Digest</em> in 1936 will top the charts.</p>
+<p>The 1936 US elections saw the incumbent Democratic candidate Franklin D. Roosevelt facing the Republican challenger Alfred Landon in the middle of the Great Depression. Which of the two candidates were the bets on? To answer this question, the weekly magazine <em>Literary Digest</em> conducted one of the <strong>largest polls ever</strong> and based on 2.4 million responses, predicted that Landon would obtain 54% of the popular vote, while Roosevelt would get 41%. Backed by a good track record in election forecasting, the <em>Literary Digest</em> poll results sent a clear message: Americans were about to see a change in government. With the results of the <em>Literary Digest</em> poll still warm in their hands, the shock felt by many after election day could not have been greater: Roosevelt went on to receive 61% of the vote, while Landon got 39%. This constituted a huge 20% forecast error, despite the large number of respondents. What went so wrong with the <em>Literary Digest</em> poll? One interpretation was that the <em>Literary Digest</em>’s sampling strategy was ill conceived, as it realied heavily on telephone directories and registers of automobile owners to send ballots. i.e. higher income groups that <em>supposedly</em> leant towards the Republican party. A second view is that Republican voters were more willing to participate in the <em>Literary Digest</em> poll as they saw it as a protest channel against the government behind the New Deal. Both views, although different, find the reason for such catastrophically wrong prediction in the <strong>lack of representativity</strong> of the otherwise huge sample used by the <em>Literary Digest</em>.</p>
+<p>In machine learning we use datasets to build and assess solutions, in much the same way as the <em>Literary Digest</em> used response ballots to predict the outcome of the 1936 US elections. However as we have just seen, data, no matter how large, should never be taken for granted. So here is our fourth top tip:</p>
+<div class="tip admonition">
+<p class="admonition-title">Our fourth top tip is:</p>
+<h3 style="text-align: center;"><b>Know your data!</b></h3>
 </div>
-<hr>
+<p>By this we not only mean that we need to understand what our data samples represent or how they are formatted. In addition to this, it is essential to understand how our datasets have been extracted from our target population. Dataset-first views of machine learning can mislead us into thinking that as long as we have a dataset, we are good to go. Deployment-first views of machine learning encourage us to think about the relationship between our datasets and our populations. Ideally we should be the ones creating our datasets and if this is not possible, at least we should know how our datasets have been created, so that we can assess how far they can take us. Good practice dictates that we should understand our datasets before we start training models. Otherwise we will risk building solutions that appear to <strong>work well when tested</strong>, but actually <strong>perform poorly during deployment</strong>.</p>
+<p>Deployment is indeed the final test: if our solutions do not work when deployed, we are out of business. The <em>Literary Digest</em>’s reputation suffered heavily after the 1936 US election forecast fiasco. Two years later, they shut down.</p>
+</div>
+<div class="section" id="formulating-classification-problems">
+<h2><span class="section-number">4.2. </span>Formulating classification problems<a class="headerlink" href="#formulating-classification-problems" title="Permalink to this heading">#</a></h2>
+<p>Classification is a supervised learning family of problems where we seek to build a model, known as classifier, that predicts the value of a discrete label using a set of predictors. Each of the values that a label can take on is known as a <em>class</em>, hence classification can also be described as the process of assigning a sample whose predictors we know to a class. Note that classification problems are also known as <em>decision</em> or <em>detection</em> problems in some scientific fields. This will justify some of the terminology that we will come across later in the book.</p>
+<p>Examples of classification problems include predicting whether the salary of an individual will be higher or lower than a certain figure based on known demographic attributes, identifyind a hand-written digit in an image or recognising potitive or negative emotions in a fragment of text. Machine learning uses datasets to build such classifiers. Open datasets that can be used to solve classification problems include the <a class="reference external" href="http://archive.ics.uci.edu/ml/datasets/Adult">Adult Data Set</a> to predict the salary level of individuals based on demographic attributes, the <a class="reference external" href="http://yann.lecun.com/exdb/mnist/">MNIST database</a> for digit recognition and the <a class="reference external" href="http://ai.stanford.edu/~amaas/data/sentiment/">Large Movie Review Dataset</a> for emotion detection in fragments of texts.</p>
+<p>Consider the problem of predicting whether the salary of an individual of a known age is greater than, for instance, 50,000 units of a certain currency. In this problem, <em>age</em> is the continuous predictor and <em>salary&gt;50K</em> the discrete label that we intend to predict. Specifically, <em>salary&gt;50K</em> is a binary label whose values can be <em>Yes/No</em>, or <em>True/False</em>. <a class="reference internal" href="#agevssalarydiscrete"><span class="std std-numref">Table 4.1</span></a> shows a toy dataset consisting of samples described by two attributes, <em>age</em> and <em>salary&gt;50K</em> that we could use to build a solution for this problem.</p>
+<table class="table" id="agevssalarydiscrete">
+<caption><span class="caption-number">Table 4.1 </span><span class="caption-text">A toy dataset registering the age and salary level of a group of individuals</span><a class="headerlink" href="#agevssalarydiscrete" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Age</p></th>
+<th class="head"><p>Salary &gt; 50K</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_1\)</span></p></td>
+<td><p>37</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_2\)</span></p></td>
+<td><p>18</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_3\)</span></p></td>
+<td><p>66</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_4\)</span></p></td>
+<td><p>25</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_5\)</span></p></td>
+<td><p>26</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="mathematical-notation">
+<h3><span class="section-number">4.2.1. </span>Mathematical notation<a class="headerlink" href="#mathematical-notation" title="Permalink to this heading">#</a></h3>
+<p>Our mathematical notation for classification problems is very similar to the notation that we developed for <a class="reference internal" href="Ch_regression.html#reg"><span class="std std-ref">Regression</span></a>. Specifically, in a classification problem we have:</p>
+<ul class="simple">
+<li><p><strong>Set of predictors</strong>: <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span>.</p></li>
+<li><p><strong>Label</strong>: <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+<li><p><strong>Model</strong>: <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+<li><p><strong>Prediction</strong>: <span class="math notranslate nohighlight">\(\hat{y}=f(\boldsymbol{x})\)</span>.</p></li>
+<li><p><strong>Dataset</strong>: <span class="math notranslate nohighlight">\(\{(\boldsymbol{x}_i,y_i): 1\leq i \leq N \}\)</span>, where <span class="math notranslate nohighlight">\(N\)</span> is the number of samples and <span class="math notranslate nohighlight">\(i\)</span> is the sample identifier. The predicted label for item <span class="math notranslate nohighlight">\(i\)</span> is <span class="math notranslate nohighlight">\(\hat{y}_i\)</span>.</p></li>
+</ul>
+<p><a class="reference internal" href="#superviseddiagram"><span class="std std-numref">Fig. 4.2</span></a> illustrates a classifier <span class="math notranslate nohighlight">\(f\)</span> as a system that takes a predictor value <span class="math notranslate nohighlight">\(x_i\)</span> as an input and produces a prediction <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> as an output.</p>
+<div class="figure align-center" id="superviseddiagram">
+<a class="reference internal image-reference" href="_images/SupervisedDiagram.svg"><img alt="_images/SupervisedDiagram.svg" src="_images/SupervisedDiagram.svg" width="70%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Machine learning model <span class="math notranslate nohighlight">\(f\)</span> as a system that takes a predictor <span class="math notranslate nohighlight">\(x_i\)</span> as an input and produces a predicted label <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> as an output.</span><a class="headerlink" href="#superviseddiagram" title="Permalink to this image">#</a></p>
+</div>
+<p>The <strong>discrete nature</strong> of labels sets classification appart from regression in a fundamental way: label values are <strong>not ordered</strong>, in other words, we cannot say that one label value is higher or lower than another. We can say whether two discrete values are <strong>equal or not</strong>, but not define an error quantity like the one we used in regression.</p>
+</div>
+<div class="section" id="classifiers-in-the-predictor-space">
+<h3><span class="section-number">4.2.2. </span>Classifiers in the predictor space<a class="headerlink" href="#classifiers-in-the-predictor-space" title="Permalink to this heading">#</a></h3>
+<p>In our <a class="reference internal" href="Ch_regression.html#reg"><span class="std std-ref">Regression</span></a> chapter we visualised datasets and models in the <strong>attribute space</strong>, i.e. in a coordinate system where each axis corresponded to one of the attributes, including predictors and label. By convention, the vertical axis represents the chosen label attribute. Can we visualise datasets used for classification problems in a similar way? To do so, we need to map each one of the values of the discrete label to a numerical value, so that they can be represented on the vertical axis. Let us explore two toy datasets consisting of samples with a discrete attribute that plays the role of label in a classification problem.</p>
+<p>The dataset shown in <a class="reference internal" href="#binaryclass1"><span class="std std-numref">Fig. 4.3</span></a> consists of samples that are described by two attributes, namely <em>age</em> (continuous) and <em>salary&gt;50K</em> (discrete). The <em>salary&gt;50K</em> attribute is the label and can take on two values, <em>True</em> or <em>False</em>. For the purpose of visualisation, <em>True</em> has been mapped to the numerical value 1, whereas <em>False</em> has been mapped to 0.</p>
+<div class="figure align-center" id="binaryclass1">
+<a class="reference internal image-reference" href="_images/BinaryClass1.jpg"><img alt="_images/BinaryClass1.jpg" src="_images/BinaryClass1.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Visualisation of the <em>salary&gt;50K</em> vs <em>age</em> dataset in the attribute space, where <em>salary&gt;50K</em> is the label and is therefore represented in the vertical axis.</span><a class="headerlink" href="#binaryclass1" title="Permalink to this image">#</a></p>
+</div>
+<p><a class="reference internal" href="#multiclassclass1"><span class="std std-numref">Fig. 4.4</span></a> represents the second toy dataset, which consists of samples described by three attributes, <em>age</em> (predictor), <em>salary</em> (predictor) and <em>opinion</em> (label). Predictors <em>age</em> and <em>salary</em> are continuous, whereas <em>opinion</em> is discrete and can take on the three values <em>positive</em>, <em>indifferent</em> or <em>negative</em>. In this representation, <em>negative</em> is mapped to the numerical value 0, <em>indifferent</em> to the numerical value 1, and positive to the numerical value 2.</p>
+<div class="figure align-center" id="multiclassclass1">
+<a class="reference internal image-reference" href="_images/MulticlassClass1.jpg"><img alt="_images/MulticlassClass1.jpg" src="_images/MulticlassClass1.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Visualisation of the <em>opinion</em> vs <em>age</em> and <em>salary</em> dataset in the attribute space. The <em>opinion</em> atttribute is the label in this case.</span><a class="headerlink" href="#multiclassclass1" title="Permalink to this image">#</a></p>
+</div>
+<p>Representing datasets used for classification as we have done in <a class="reference internal" href="#binaryclass1"><span class="std std-numref">Fig. 4.3</span></a> and <a class="reference internal" href="#multiclassclass1"><span class="std std-numref">Fig. 4.4</span></a> can be misleading, as by mapping label values to numerical values we are imposing an irrelevant ordering that does not exist. For instance, <em>positive</em> is not greater than <em>indifferent</em> or <em>negative</em>, however 2 is greater than 1 and 0. An alternative and more convenient visualisation of datasets consists of representing each sample in the <strong>predictor space</strong> instead, using a <strong>different symbol for each label value</strong>. In <a class="reference internal" href="#binaryclass2"><span class="std std-numref">Fig. 4.5</span></a> the samples from the <em>salary &gt; 50K</em> vs <em>age</em> dataset are represented using two different symbols that indicate whether <em>salary &gt; 50K</em> is <em>True</em> or <em>False</em>, on a predictor space consisting of one axis representing the <em>age</em> predictor.</p>
+<div class="figure align-center" id="binaryclass2">
+<a class="reference internal image-reference" href="_images/BinaryClass2.jpg"><img alt="_images/BinaryClass2.jpg" src="_images/BinaryClass2.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Visualisation of the <em>salary&gt;50K</em> vs <em>age</em> dataset in the 1D predictor space. Label values are represented using different symbols.</span><a class="headerlink" href="#binaryclass2" title="Permalink to this image">#</a></p>
+</div>
+<p><a class="reference internal" href="#multiclassclass2"><span class="std std-numref">Fig. 4.6</span></a> corresponds to the <em>opinion</em> versus <em>age</em> and <em>salary</em> dataset. The predictor space is 2D, as we have two predictors (<em>age</em> and <em>salary</em>) and <em>opinion</em> values are represented using three symbols for the values <em>positive</em>, <em>indifferent</em> and <em>negative</em>.</p>
+<div class="figure align-center" id="multiclassclass2">
+<a class="reference internal image-reference" href="_images/MulticlassClass2.jpg"><img alt="_images/MulticlassClass2.jpg" src="_images/MulticlassClass2.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.6 </span><span class="caption-text">Visualisation of the <em>opinion</em> vs <em>age</em> and <em>salary</em> dataset in the 2D predictor space. The <em>opinion</em> atttribute is represented using three different symbols.</span><a class="headerlink" href="#multiclassclass2" title="Permalink to this image">#</a></p>
+</div>
+<p>Representing datasets in the predictor space will lead to our geometric definition of a classifier. Before providing this definition, try to answer the following question.</p>
+<div class="question1 admonition">
+<p class="admonition-title">Question for you</p>
+<p>Consider the problem of predicting the opinion of an individual whose <em>age</em> is 50 and <em>salary</em> is 60K. Using the dataset plotted in <a class="reference internal" href="#multiclassclass2"><span class="std std-numref">Fig. 4.6</span></a>, would yo say this individual’s opinion is <em>positive</em>, <em>indifferent</em> or <em>negative</em>?</p>
+<p>Submit your response here: <a href="https://forms.office.com/e/t3YwtKmssu" target = "_blank">Your Response</a></p>
+</div>
+<p>As usual, the important aspect of this toy question is not the actual answer, but <em>how you have arrived</em> to it. One possible answer is as follows. When we identify the location in the predictor space of this individual, we realise that this location is very close to the group of individuals with a <em>negative</em> opinion. Hence if we had to bet on our answer, we could say that the individual has a <em>negative</em> opinion too. We can follow this process for any new individual: as long as we know their age and salary, i.e. <strong>their location in the predictor space</strong>, we could guess what their opinion could be by looking at the distribution of dataset samples in the predictor space. There might also be <em>undecidable</em> locations where you will not be able to decide how to label a new sample, but anywhere else, we would be able to assign samples to one of the three classes with no hesitation.</p>
+<p>It is important to note that we have just come up with a <strong>mechanism to classify our samples using a dataset</strong>, in other words, we have just built a <em>machine learning</em> classifier. Our classifier is essentially assigning a label to each point in the predictor space. Therefore, if we colour the predictor space according to the label that will be assigned to each point, we could obtain a representation such as the one shown in <a class="reference internal" href="#boundariesex"><span class="std std-numref">Fig. 4.7</span></a>. This visualisation shows entire regions in the predictor space where all the samples will receive the same label. We could therefore classify a new individual by identifying the region where this new individual is. Incidentally, we have just <strong>visualised a classifier</strong>.</p>
+<div class="figure align-center" id="boundariesex">
+<a class="reference internal image-reference" href="_images/MulticlassClass2Boundaries.jpg"><img alt="_images/MulticlassClass2Boundaries.jpg" src="_images/MulticlassClass2Boundaries.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7 </span><span class="caption-text">Partition of the prediction space of the <em>opinion</em> vs <em>age</em> and <em>salary</em> into three decision regions. Samples in the same decision region are assigned the same label.</span><a class="headerlink" href="#boundariesex" title="Permalink to this image">#</a></p>
+</div>
+<p>So this is our geometric definition of a classifier. A classifier is a <strong>partition of the predictor</strong> space into <strong>decision regions</strong> separated by <strong>decision boundaries</strong>:</p>
+<ul class="simple">
+<li><p>Each decision region is made up of points that are assigned the same label.</p></li>
+<li><p>Decision boundaries separate decision regions and by definition, do not belong to any region.</p></li>
+</ul>
+<p>With this definition in mind we can see classification as a problem where we ask ourselves what the <strong>best partition of the predictor space</strong> is. In machine learning, we use datasets to obtain such partitions. The question is, what do we mean by the <em>best</em> partition? In order for an answer to this question to be meaningful, we need to provide a notion of quality.</p>
+</div>
+<div class="section" id="a-basic-quality-metric">
+<h3><span class="section-number">4.2.3. </span>A basic quality metric<a class="headerlink" href="#a-basic-quality-metric" title="Permalink to this heading">#</a></h3>
+<p>In contrast to regression, where we had different options available to define the quality of a single prediction <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> (e.g. the quadratic error <span class="math notranslate nohighlight">\(e_i^2\)</span> or the absolute error <span class="math notranslate nohighlight">\(|e_i|\)</span>), in classification all we can do is check whether a label <span class="math notranslate nohighlight">\(y_i\)</span> and its prediction <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> are equal or different:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(y_i=\hat{y}_i\)</span>, we call <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> a <strong>true prediction</strong>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(y_i\neq \hat{y}_i\)</span>, we call <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> a <strong>false prediction</strong>.</p></li>
+</ul>
+<p>Based on this notion of quality for a single prediction, we can define different quality metrics on an entire dataset. The simplest ones are the <strong>empirical accuracy</strong> <span class="math notranslate nohighlight">\(\hat{A}\)</span> and the <strong>empirical error</strong> (or misclassification) <strong>rate</strong> <span class="math notranslate nohighlight">\(\hat{E}\)</span>, that are defined as</p>
+<div class="math notranslate nohighlight" id="equation-eqempa">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-eqempa" title="Permalink to this equation">#</a></span>\[
+\hat{A} = \frac{\text{Number of true predictions}}{N}
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eqempe">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-eqempe" title="Permalink to this equation">#</a></span>\[
+\hat{E} = \frac{\text{Number of false predictions}}{N}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of samples. Empirical accuracy and error rates take on values between 0 and 1 and are equivalent, as we can obtain one from the other as <span class="math notranslate nohighlight">\(\hat{A}= 1 - \hat{E}\)</span>.</p>
+<p>As an example, <a class="reference internal" href="#agevssalarydiscrete2"><span class="std std-numref">Table 4.2</span></a> shows the prediction <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> of a classifier that assigns a sample of predictor <span class="math notranslate nohighlight">\(x_i\)</span> to one of the classes following this simple rule:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(x_i&gt;50\)</span>, <span class="math notranslate nohighlight">\(\hat{y}_i\)</span>= True</p></li>
+<li><p>Otherwise, <span class="math notranslate nohighlight">\(\hat{y}_i\)</span>= False</p></li>
+</ul>
+<p>The comparison between an actual label <span class="math notranslate nohighlight">\(y_i\)</span> and a predicted label <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> is also shown in <a class="reference internal" href="#agevssalarydiscrete2"><span class="std std-numref">Table 4.2</span></a>.</p>
+<table class="table" id="agevssalarydiscrete2">
+<caption><span class="caption-number">Table 4.2 </span><span class="caption-text">The <em>salary &gt; 50K</em> vs <em>age</em> dataset is represented using the sybols <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x\)</span>. Predictions from a simple model are added, and the comparison between actual and predicted labels are shown.</span><a class="headerlink" href="#agevssalarydiscrete2" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\hat{y}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y=\hat{y}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p>37</p></td>
+<td><p>True</p></td>
+<td><p>False</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td><p>18</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+<td><p>66</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(4\)</span></p></td>
+<td><p>25</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
+<td><p>26</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>True</p></td>
+</tr>
+</tbody>
+</table>
+<p>The empirical accuracty of this classifier is <span class="math notranslate nohighlight">\(\hat{A} = 4/5 = 0.8\)</span> and its empirical error <span class="math notranslate nohighlight">\(\hat{E} = 1/5 = 0.2\)</span>. As expected, <span class="math notranslate nohighlight">\(\hat{A} + \hat{E} = 0.8 + 0.2 = 1\)</span>.</p>
+<p>Note that we have used the <em>hat</em> notation to indicate that both empirical quantities <span class="math notranslate nohighlight">\(\hat{A}\)</span> and <span class="math notranslate nohighlight">\(\hat{E}\)</span> are estimations of quantities defined on the population. Both quantities are the <strong>true accuracy</strong> <span class="math notranslate nohighlight">\(A\)</span> and the <strong>true error rate</strong> <span class="math notranslate nohighlight">\(E\)</span>:</p>
+<ul class="simple">
+<li><p>The true accuracy <span class="math notranslate nohighlight">\(A\)</span> is the fraction of samples from the population that are classified correctly on average.</p></li>
+<li><p>The true error rate <span class="math notranslate nohighlight">\(E\)</span> is the fraction of samples from the population that are misclassified.</p></li>
+</ul>
+<p>True accuracy <span class="math notranslate nohighlight">\(A\)</span> and error rate <span class="math notranslate nohighlight">\(E\)</span> are also quantities that take on a value from 0 to 1 and are related by the simple expression <span class="math notranslate nohighlight">\(A= 1-E\)</span>.</p>
+</div>
+</div>
+<div class="section" id="basic-classifiers">
+<h2><span class="section-number">4.3. </span>Basic classifiers<a class="headerlink" href="#basic-classifiers" title="Permalink to this heading">#</a></h2>
+<p>In this section we are going to explore three basic classifiers, namely linear classifiers, decision trees and nearest neighbours. As we are about to see, linear classifiers and decision trees label samples by identifying the decision region where they lie. The nearest neighbours method is different in that it does not use the notion of decision region to classify new samples, although it still produces a partition of the predictor space into decision regions.</p>
+<p>Rather than looking at how to train each classifier, in this section our emphasis is on describing the mechanism that these classifiers implement to produce a label based on a set of input predictors. Nearest neighbours is a peculiar method as strickly speaking it is not trained, yet it uses the entire training dataset every time it predicts a label. In a later section, we will describe how to fit linear classifers and decision trees to a training dataset.</p>
+<div class="section" id="linear-classifiers">
+<h3><span class="section-number">4.3.1. </span>Linear classifiers<a class="headerlink" href="#linear-classifiers" title="Permalink to this heading">#</a></h3>
+<p>Consider a binary classification problem, where labels can take on two values. The simplest decision boundary that we can think of is the linear boundary. In a 1D predictor space a linear boundary is just a single point (<a class="reference internal" href="#linearboundaries1d"><span class="std std-numref">Fig. 4.8</span></a>), also known as a threshold, in a 2D predictor space a straight line (<a class="reference internal" href="#linearboundaries2d"><span class="std std-numref">Fig. 4.9</span></a>) and in a 3D predictor space a plane (<a class="reference internal" href="#linearboundaries3d"><span class="std std-numref">Fig. 4.10</span></a>). In higher dimensions, linear boundaries are called hyperplanes and needless to say, cannot be visualised.</p>
+<div class="figure align-center" id="linearboundaries1d">
+<a class="reference internal image-reference" href="_images/LinearClass1D.jpg"><img alt="_images/LinearClass1D.jpg" src="_images/LinearClass1D.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.8 </span><span class="caption-text">A linear decision boundaries in a 1D predictor space is one single point.</span><a class="headerlink" href="#linearboundaries1d" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-center" id="linearboundaries2d">
+<a class="reference internal image-reference" href="_images/LinearClass2D.jpg"><img alt="_images/LinearClass2D.jpg" src="_images/LinearClass2D.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.9 </span><span class="caption-text">In a 2D predictor space, a linear decision boundary is a straight line.</span><a class="headerlink" href="#linearboundaries2d" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-center" id="linearboundaries3d">
+<a class="reference internal image-reference" href="_images/LinearClass3D.jpg"><img alt="_images/LinearClass3D.jpg" src="_images/LinearClass3D.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.10 </span><span class="caption-text">In a 3D predictor space, a linear decision boundary is a plane.</span><a class="headerlink" href="#linearboundaries3d" title="Permalink to this image">#</a></p>
+</div>
+<p>Given a linear boundary defining two decision regions, a simple mechanism to classify a new sample is to <strong>identify the decision region where the sample lies</strong>. How can we do this?</p>
+<p>Let us first develop the mathematical notation that we need to describe linear decision boundaries. This notation can be used for any number of predictors <span class="math notranslate nohighlight">\(K\)</span>, i.e. for predictor spaces of any number of dimensions. A linear boundary in the predictor space is defined by the equation</p>
+<div class="math notranslate nohighlight" id="equation-eqlinearboundary">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-eqlinearboundary" title="Permalink to this equation">#</a></span>\[
+w_0 + w_1 x_{1} + w_2 x_{2} + \dots + w_K x_{K}=0
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(\dots\)</span>, <span class="math notranslate nohighlight">\(x_K\)</span> are the predictors and <span class="math notranslate nohighlight">\(w_0\)</span>, <span class="math notranslate nohighlight">\(w_1\)</span>, <span class="math notranslate nohighlight">\(w_2\)</span>, <span class="math notranslate nohighlight">\(\dots\)</span>, <span class="math notranslate nohighlight">\(w_K\)</span> are the parameters of the linear boundary. These parameters determine the exact location of the linear boundary. What this equation means is, if we are given a set of predictors <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(\dots\)</span>, <span class="math notranslate nohighlight">\(x_K\)</span> and their linear combination using <span class="math notranslate nohighlight">\(w_0\)</span>, <span class="math notranslate nohighlight">\(w_1\)</span>, <span class="math notranslate nohighlight">\(w_2\)</span>, <span class="math notranslate nohighlight">\(\dots\)</span>, <span class="math notranslate nohighlight">\(w_K\)</span> is zero, then this set of predictors corresponds to a sample that lies exactly on the linear boundary. Note that <span class="math notranslate nohighlight">\(x_1\)</span> refers, using this notation, to the first predictor, rather than the value of the predictor of the first sample. Using bold font notation for sets of predictors will allow us to avoid potential notation ambiguities like this one.</p>
+<p>For instance, consider a classification problem with just one predictor <span class="math notranslate nohighlight">\(x_1\)</span>. The predictor space is 1D in this case and a linear boundary is defined by the equation <span class="math notranslate nohighlight">\(w_0 + w_1 x_{1} = 0\)</span>. Solving for <span class="math notranslate nohighlight">\(x_1\)</span> reveals that when <span class="math notranslate nohighlight">\(x_1 = -w_0/w_1\)</span> the equality <span class="math notranslate nohighlight">\(w_0 + w_1 x_{1} = 0\)</span> holds. In other words, the single point <span class="math notranslate nohighlight">\(x_1 = -w_0/w_1\)</span> is the linear boundary or threshold in this 1D predictor space. Values of <span class="math notranslate nohighlight">\(x_1\)</span> greater than <span class="math notranslate nohighlight">\(-w_0/w_1\)</span> belong to one class, less than <span class="math notranslate nohighlight">\(-w_0/w_1\)</span> to the other class.</p>
+<p>In a 2D predictor space, a linear boundary is defined as</p>
+<div class="math notranslate nohighlight" id="equation-eqlinearboundary2d">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-eqlinearboundary2d" title="Permalink to this equation">#</a></span>\[
+w_0 + w_1 x_1 + w_2 x_2 = 0
+\]</div>
+<p>Solving for <span class="math notranslate nohighlight">\(x_2\)</span> we obtain the more familiar equation for the straight line</p>
+<div class="math notranslate nohighlight" id="equation-eqlinearboundary2dsol">
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-eqlinearboundary2dsol" title="Permalink to this equation">#</a></span>\[
+x_2 = -\frac{w_0}{w_1} - \frac{w_2}{w_1} x_1
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(-w_0/w_1\)</span> is the intercept and <span class="math notranslate nohighlight">\(-w_2/w_1\)</span> the gradient. Samples on one side of this straight line are assigned to one class, on the other side to another class. The question arises, given a sample with predictor values <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>, how do we know which side it belongs to without plotting it?</p>
+<p>Before answering this question, let us obtain an alternative and more compact way to define linear boundaries using basic matrix algebra. Let us start defining the by now familiar-looking parameter vector <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span> and the predictor vector <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eqvectors">
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-eqvectors" title="Permalink to this equation">#</a></span>\[\begin{split}
+\boldsymbol{w}= \begin{bmatrix}
+w_0\\
+w_{1}\\
+w_{2}\\
+\vdots \\
+w_{K}
+\end{bmatrix}, \quad
+\boldsymbol{x}= \begin{bmatrix}
+1\\
+x_{1}\\
+x_{2}\\
+\vdots \\
+x_{K}
+\end{bmatrix}
+\end{split}\]</div>
+<p>Using this vector notation, a linear boundary can be expressed as:</p>
+<div class="math notranslate nohighlight" id="equation-eqvectorsprod">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-eqvectorsprod" title="Permalink to this equation">#</a></span>\[
+\boldsymbol{x}^T\boldsymbol{w}=0
+\]</div>
+<p>Note that in addition to being simple, this expression is valid for any number of predictors and eliminates the effort of having to enumerate all of the predictors each time. Any sample described by the set of predictors <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> belongs to the linear boundary defined by the parameters <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span> if and only if <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}=0\)</span>. So what happens to points that are not along the boundary?</p>
+<p>By definition, if sample <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> is <em>not</em> on the boundary, <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}\neq 0\)</span>. Hence either <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}&gt; 0\)</span> or <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}&lt; 0\)</span>. Crucially, all the points on the same side of the linear boundary are such that when calculating <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}\)</span> we always obtain a number of the same sign. In other words:</p>
+<ul class="simple">
+<li><p>All the samples such that <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}&gt; 0\)</span> lie on one side of the boundary.</p></li>
+<li><p>All the samples such that <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}&lt; 0\)</span> lie on the other side of the boundary.</p></li>
+<li><p>All the samples such that <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w} = 0\)</span> lie on the boundary.</p></li>
+</ul>
+<p>This simple observation, which is illustrated in <a class="reference internal" href="#linearboundaries2dxtw"><span class="std std-numref">Fig. 4.11</span></a>, will allow us to implement a linear classifier defined by a set of parameters <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span>.</p>
+<div class="figure align-center" id="linearboundaries2dxtw">
+<a class="reference internal image-reference" href="_images/LinearClass2DxTw.jpg"><img alt="_images/LinearClass2DxTw.jpg" src="_images/LinearClass2DxTw.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.11 </span><span class="caption-text">A linear boundary defined by the parameters <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span> separates the predictor space into two regions, such that <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}&gt; 0\)</span> on one region, <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}&lt; 0\)</span> on the other region and <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}= 0\)</span> on the boundary.</span><a class="headerlink" href="#linearboundaries2dxtw" title="Permalink to this image">#</a></p>
+</div>
+<p>Our implementation of a linear classifier defined by a set of parameters <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span> is illustrated in <a class="reference internal" href="#linearclassifier"><span class="std std-numref">Fig. 4.12</span></a> and consists of the following steps. Given a predictor vector <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span>:</p>
+<ul class="simple">
+<li><p>We first compute <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}\)</span>.</p></li>
+<li><p>Then compare this quantity against 0. This comparison is denoted by <span class="math notranslate nohighlight">\(\lessgtr 0\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}&gt;0\)</span>, the prediction <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> is the label value associated with the positive decision region, if <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}&lt;0\)</span>, then <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> takes on the value associated to the negative decision region. If <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}=0\)</span>, the sample lies on the decision boundary.</p></li>
+</ul>
+<p>Note that we have just described how a linear classifier assigns labels to new samples using the boundary parameters <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span>. What we have not discussed is how the values of these parameters are determined, in other words, how to use a training dataset to tune <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span>. A method for traning linear classifiers will be discussed in the <a class="reference internal" href="#train-class"><span class="std std-ref">Training classifiers</span></a> section.</p>
+<div class="figure align-center" id="linearclassifier">
+<a class="reference internal image-reference" href="_images/LinearClassifier.svg"><img alt="_images/LinearClassifier.svg" src="_images/LinearClassifier.svg" width="70%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.12 </span><span class="caption-text">Linear classifier</span><a class="headerlink" href="#linearclassifier" title="Permalink to this image">#</a></p>
+</div>
+<p>Depending on the ability of linear boundaries to <em>separate</em> samples from different classes, it is common to describe datasets as <strong>linearly separable</strong> and <strong>non-separable</strong>. <a class="reference internal" href="#separabledataset"><span class="std std-numref">Fig. 4.13</span></a> shows an example of a dataset that is linearly separable, as we can find multiple linear boundaries that separate samples from one class from samples from the other class. By definition, linear classifiers can achieve the empirical accuracy <span class="math notranslate nohighlight">\(\hat{A}=1\)</span> when applied to a linearly separable dataset.</p>
+<div class="figure align-center" id="separabledataset">
+<a class="reference internal image-reference" href="_images/LinearlySeparableRegions.jpg"><img alt="_images/LinearlySeparableRegions.jpg" src="_images/LinearlySeparableRegions.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.13 </span><span class="caption-text">Linearly separable dataset.</span><a class="headerlink" href="#separabledataset" title="Permalink to this image">#</a></p>
+</div>
+<p>By contrast, <a class="reference internal" href="#nonseparabledataset1"><span class="std std-numref">Fig. 4.14</span></a> and <a class="reference internal" href="#nonseparabledataset2"><span class="std std-numref">Fig. 4.15</span></a> are linearly non-separable datasets. No matter how hard we try, we will never be able to find a straight line that will separate both classes. Consequenyly, we will never find a linear model that will achive the maximum empirical accuracy, and therefore <span class="math notranslate nohighlight">\(\hat{A}&lt;1\)</span> or equivalently <span class="math notranslate nohighlight">\(\hat{E}&gt;0\)</span>. In general, samples from a population will be non-separable if samples overlap in the predictor space (as in <a class="reference internal" href="#nonseparabledataset1"><span class="std std-numref">Fig. 4.14</span></a>) or when the distribution of samples is complex (as in <a class="reference internal" href="#nonseparabledataset2"><span class="std std-numref">Fig. 4.15</span></a>). In either case, we need to accept that we will not always achieve perfect results. Remember to <strong>embrace de error!</strong></p>
+<div class="figure align-center" id="nonseparabledataset1">
+<a class="reference internal image-reference" href="_images/NonLinearlySeparable1Regions.jpg"><img alt="_images/NonLinearlySeparable1Regions.jpg" src="_images/NonLinearlySeparable1Regions.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.14 </span><span class="caption-text">Linearly non-separable dataset, where samples from different classes overlap in the perdictor space.</span><a class="headerlink" href="#nonseparabledataset1" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-center" id="nonseparabledataset2">
+<a class="reference internal image-reference" href="_images/NonLinearlySeparable2Regions.jpg"><img alt="_images/NonLinearlySeparable2Regions.jpg" src="_images/NonLinearlySeparable2Regions.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.15 </span><span class="caption-text">Linearly non-separable dataset due to a complex distribution of samples in the predictor space.</span><a class="headerlink" href="#nonseparabledataset2" title="Permalink to this image">#</a></p>
+</div>
+<p>In summary, linear classifiers identify the decision region that a sample <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> belongs to by finding out which side of the boundary the sample lies, and this is determined by looking at the sign of the result of the operation <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T\boldsymbol{w}\)</span>. What if instead of a binary classification problem we have a multiclass classification problem, what could we do? One option would be to express a multiclass classification problem as multiple binary problems operating in parallel. The decision regions will be more complex than the two semi-planes of a binary classifier, but they will still be separated by straight segments.</p>
+</div>
+<div class="section" id="decision-trees">
+<h3><span class="section-number">4.3.2. </span>Decision trees<a class="headerlink" href="#decision-trees" title="Permalink to this heading">#</a></h3>
+<p>Similarly to linear classifiers, decision trees label samples by identifying the decision regions where they lie. Decision regions in trees are however defined differently. To illustrate decision trees, let us look at the decision regions that we created for the <em>opinion</em> vs <em>salary</em> and <em>age</em> problem (<a class="reference internal" href="#boundariesex"><span class="std std-numref">Fig. 4.7</span></a>). A simple mechanism to label an individual of known <em>age</em> and <em>salary</em> using the already defined decision regions would be:</p>
+<ul class="simple">
+<li><p>If the <em>salary</em> is greater than 50K, the <em>opinion</em> is <span class="math notranslate nohighlight">\(\hat{y}_i=\text{negative}\)</span>.</p></li>
+<li><p>If the <em>salary</em> is not greater than 50K we look at the <em>age</em>:</p>
+<ul>
+<li><p>If the <em>age</em> is greater than 40, then <span class="math notranslate nohighlight">\(\hat{y}_i=\text{indifferent}\)</span>.</p></li>
+<li><p>Otherwise <span class="math notranslate nohighlight">\(\hat{y}_i=\text{positive}\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p>A useful representation for this simple mechanism is the tree-like structure shown in <a class="reference internal" href="#treeex"><span class="std std-numref">Fig. 4.16</span></a>. This structure consists of two types of nodes, namely <strong>branching nodes</strong> and <strong>leaves</strong>:</p>
+<ul class="simple">
+<li><p>In a branching node, the value of <strong>one of the predictors is compared</strong> against a threshold. The result from this comparison determines which node to visit next.</p></li>
+<li><p>A leaf node represents a <strong>decision region</strong>. When a leaf node is visited, a label is assigned to the sample, in other words, it produces a prediction.</p></li>
+</ul>
+<div class="figure align-default" id="treeex">
+<img alt="_images/TreeEx.jpg" src="_images/TreeEx.jpg" />
+<p class="caption"><span class="caption-number">Fig. 4.16 </span><span class="caption-text">Tree structure for the classifier consisting of the decision regions shown in <a class="reference internal" href="#boundariesex"><span class="std std-numref">Fig. 4.7</span></a>.</span><a class="headerlink" href="#treeex" title="Permalink to this image">#</a></p>
+</div>
+<p>In the tree shown in <a class="reference internal" href="#treeex"><span class="std std-numref">Fig. 4.16</span></a> there are two branching nodes, one for the <em>salary</em> with threshold <span class="math notranslate nohighlight">\(50K\)</span> and another one for the <em>age</em>, with threshold 40. There are also three leaves, each one representing one of the decision regiones in <a class="reference internal" href="#boundariesex"><span class="std std-numref">Fig. 4.7</span></a>.</p>
+<p>To parse a decision tree, we start from the top branching node (the root), and sequentially navigate the nodes as indicated by the intermediate branching nodes until we reach a leaf. Note that in this navigation we use the value of the input predictors. One peculiarity of decision trees is that their <strong>decision boundaries are axis-parallel</strong>, since branching nodes use one predictor only. In <a class="reference internal" href="#boundariesex"><span class="std std-numref">Fig. 4.7</span></a>, this can be seen as a horizontal decision boundary and a vertical one. As a consequence of this, the decision regions created by a tree are rectangular-shaped in 2D predictor spaces, cuboids in 3D predictor spaces or, in general, hypercuboids.</p>
+<p>The simplest decision tree that we can create is one consisting of one branching node and two leaves. This would produce a partition of the predictor space into two decision regions. Replacing one of the leaves by a branching node followed by two leaves, results in two new decision regions where previously there was only one. As we add more branching nodes, the <strong>complexity of the decision tree increases</strong> and so does the complexity of the partiotioning of the predictor space. The deeper the structure of a tree, the more decision regions we can create in the predictor space. For instance, a tree consisting of one branching level results in 2 decision regions, two levels in up to 4 decision regions, three levels in up to 8, and so on. In other words, deep trees are more flexible than shallow trees.</p>
+<p><a class="reference internal" href="#treeex2"><span class="std std-numref">Fig. 4.17</span></a> shows a decision tree consisting of two levels and four leaf nodes defined on a 2D predictor space. The four decision regions defined by this tree are visualised in <a class="reference internal" href="#treeex2regions"><span class="std std-numref">Fig. 4.18</span></a>.</p>
+<div class="figure align-default" id="treeex2">
+<img alt="_images/TreeEx2.jpg" src="_images/TreeEx2.jpg" />
+<p class="caption"><span class="caption-number">Fig. 4.17 </span><span class="caption-text">Two level decision tree consisting of three branching nodes and four leaf nodes.</span><a class="headerlink" href="#treeex2" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-center" id="treeex2regions">
+<a class="reference internal image-reference" href="_images/TreeEx2Regions.jpg"><img alt="_images/TreeEx2Regions.jpg" src="_images/TreeEx2Regions.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.18 </span><span class="caption-text">Decision regions defined by the tree in <a class="reference internal" href="#treeex2"><span class="std std-numref">Fig. 4.17</span></a>.</span><a class="headerlink" href="#treeex2regions" title="Permalink to this image">#</a></p>
+</div>
+<p>In <a class="reference internal" href="#treeex3"><span class="std std-numref">Fig. 4.19</span></a> a three level decision tree resulting from replacing two of the lead nodes of <a class="reference internal" href="#treeex2"><span class="std std-numref">Fig. 4.17</span></a> with two branching nodes is shown. The decision regions defined by this tree are visualised in <a class="reference internal" href="#treeex2"><span class="std std-numref">Fig. 4.17</span></a>.</p>
+<div class="figure align-default" id="treeex3">
+<img alt="_images/TreeEx3.jpg" src="_images/TreeEx3.jpg" />
+<p class="caption"><span class="caption-number">Fig. 4.19 </span><span class="caption-text">Three level decision tree resulting from replacing two leaf nodes in <a class="reference internal" href="#treeex2regions"><span class="std std-numref">Fig. 4.18</span></a> with two branching nodes.</span><a class="headerlink" href="#treeex3" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-center" id="treeex3regions">
+<a class="reference internal image-reference" href="_images/TreeEx3Regions.jpg"><img alt="_images/TreeEx3Regions.jpg" src="_images/TreeEx3Regions.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.20 </span><span class="caption-text">Decision regions defined by the tree in <a class="reference internal" href="#treeex3"><span class="std std-numref">Fig. 4.19</span></a>.</span><a class="headerlink" href="#treeex3regions" title="Permalink to this image">#</a></p>
+</div>
+<p>Once again, it is important to highlight that so far we have discussed how trees define decision regions and can be used to classify samples. What we have not discussed is how we can train decision trees, i.e. how we can build decision trees using a training dataset. <a class="reference internal" href="#treeexnonsep"><span class="std std-numref">Fig. 4.21</span></a> shows the decision boundaries defined by a tree that has been fitted to a linearly non-separable dataset. As we can see, a decision tree that is not much more complex than a linear classifier, can separate well training samples from two classes in an example where a linear classifier would perform poorly. In the <a class="reference internal" href="#train-class"><span class="std std-ref">Training classifiers</span></a> section we will discuss how to train decision trees and explore trees of different degrees of flexibility.</p>
+<div class="figure align-center" id="treeexnonsep">
+<a class="reference internal image-reference" href="_images/NonLinearlySeparableTree.jpg"><img alt="_images/NonLinearlySeparableTree.jpg" src="_images/NonLinearlySeparableTree.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.21 </span><span class="caption-text">Decision trees can be used to create complex decision boundaries suitable for complex distributions of samples.</span><a class="headerlink" href="#treeexnonsep" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<div class="section" id="nearest-neighbours">
+<h3><span class="section-number">4.3.3. </span>Nearest neighbours<a class="headerlink" href="#nearest-neighbours" title="Permalink to this heading">#</a></h3>
+<p>Linear classifiers and decision trees are <em>parametric</em> models, i.e. they are defined by a set of parameters. The decision regions generated by parameteric models can adopt a predefined range of shapes and by setting the value of their parameters, we materialise one of the predefined shapes. For instance, linear classifiers produce two decision regions separated by linear boundaries and decision trees can only produce rectangular decision regions.</p>
+<p>The nearest neighbours family of models, also known as kNN (<span class="math notranslate nohighlight">\(k\)</span> nearest neighbours) is by contrast <em>non-parametric</em> and because of this, it does not impose on decision regions of any predefined shape. Furthermore, even though like any other classifier kNN models partition the prediction space into decision regions, the mechanism by which samples are classified does not involve identifying the decision regions where samples lie. How do kNN models work?</p>
+<p>The mechanism that kNN implements is very simple and in fact, we already suggested it when we considered the problem of guessing the <em>opinion</em> of an individual of <em>age</em> 50 and <em>salary</em> 60K, using the dataset shown in <a class="reference internal" href="#multiclassclass2"><span class="std std-numref">Fig. 4.6</span></a>. Back then, we decided to classify a new sample based on its proximity to training samples from each class. This is precisely the strategy that kNN implements.</p>
+<p>In kNN, <span class="math notranslate nohighlight">\(k\)</span> refers to the number of closest training samples that we will use to classify a new sample. kNN proceeds as follows:</p>
+<ul class="simple">
+<li><p>Given a new sample, we calculate its distance to all the samples in the training dataset.</p></li>
+<li><p>Then, we identify the closest <span class="math notranslate nohighlight">\(k\)</span> training samples (i.e. its <span class="math notranslate nohighlight">\(k\)</span> nearest neighbours).</p></li>
+<li><p>Finally, we assign the label of the most popular class among its <span class="math notranslate nohighlight">\(k\)</span> nearest neighbours.</p></li>
+</ul>
+<p>kNN is a so-called <em>instance-based</em> method, as in order for it to be implemented it needs all the instances (or samples) in the training dataset. Consequently, kNN models need to memorise the entire training dataset. By contrast, linear classifiers and decision trees only need the training dataset during training;  once the model has been built the training dataset can be discarded, as all we need to classify a new sample is the set of tuned parameters.</p>
+<p>One obvious question is, what is the role of <span class="math notranslate nohighlight">\(k\)</span>? For a start, the value of <span class="math notranslate nohighlight">\(k\)</span> should be chosen to avoid ties, i.e. situations where there is not a majority class. For instance, in a binary classification problem, we would prefer <span class="math notranslate nohighlight">\(k\)</span> to be odd, otherwise we would encounter many cases where half of the nearest neighbours of a sample belong to one class and the other half to the other class. The complexity of the decision regions produced by kNN is also related to the value of <span class="math notranslate nohighlight">\(k\)</span>. Specifically, low values of <span class="math notranslate nohighlight">\(k\)</span> result in complex decision boundaries, whereas increasing the value of <span class="math notranslate nohighlight">\(k\)</span> results in increasing the rigidity of the boundaries (see <a class="reference internal" href="#knn1"><span class="std std-numref">Fig. 4.22</span></a>, <a class="reference internal" href="#knn3"><span class="std std-numref">Fig. 4.23</span></a> and <a class="reference internal" href="#knn15"><span class="std std-numref">Fig. 4.24</span></a>). Consequently, the risk of overfitting increases for low values of <span class="math notranslate nohighlight">\(k\)</span>, whereas the risk of underfitting increases for large values of <span class="math notranslate nohighlight">\(k\)</span>. As you will have concluded, <span class="math notranslate nohighlight">\(k\)</span> is a hyperparameter in kNN: changing <span class="math notranslate nohighlight">\(k\)</span> leads to solutions of different degrees of complexity. To choose <span class="math notranslate nohighlight">\(k\)</span>, we can run a validation task, where we compare the validation quality of kNN models for different values of <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<div class="figure align-center" id="knn1">
+<a class="reference internal image-reference" href="_images/kNN1.jpg"><img alt="_images/kNN1.jpg" src="_images/kNN1.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.22 </span><span class="caption-text">Decision boundaries defined by a kNN model, using <span class="math notranslate nohighlight">\(k=1\)</span>.</span><a class="headerlink" href="#knn1" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-center" id="knn3">
+<a class="reference internal image-reference" href="_images/kNN3.jpg"><img alt="_images/kNN3.jpg" src="_images/kNN3.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.23 </span><span class="caption-text">Decision boundaries defined by a kNN model, using <span class="math notranslate nohighlight">\(k=3\)</span>.</span><a class="headerlink" href="#knn3" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-center" id="knn15">
+<a class="reference internal image-reference" href="_images/kNN15.jpg"><img alt="_images/kNN15.jpg" src="_images/kNN15.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.24 </span><span class="caption-text">Decision boundaries defined by a kNN model, using where <span class="math notranslate nohighlight">\(k=15\)</span>.</span><a class="headerlink" href="#knn15" title="Permalink to this image">#</a></p>
+</div>
+<p>kNN implements a simple and intuitive mechanism to classify samples. However, compared to decision trees and linear classifiers, kNN models are computationally expensive and require to store the entire training dataset to make predictions during deployment.</p>
+</div>
+</div>
+<div class="section" id="training-classifiers">
+<span id="train-class"></span><h2><span class="section-number">4.4. </span>Training classifiers<a class="headerlink" href="#training-classifiers" title="Permalink to this heading">#</a></h2>
+<p>In <a class="reference internal" href="Ch_methodology1.html#meth1-train"><span class="std std-ref">The training task</span></a> section we saw that in machine learning, the parameters of a tunable model are set using a training dataset together with a cost function. We also disscussed how in general, the cost function might be different from our <em>target quality</em> during deployment. Our hope is that defining the right cost function will lead us to a model whose target quality during deployment is high.</p>
+<p>Linear models and decision trees are tunable models defined by a set of parameters. The parameters that need to be tuned are respectively the parameters that define a linear boundary, and the thresholds defining each branching node in a decision tree. Accuracy <span class="math notranslate nohighlight">\(A\)</span> and error rate <span class="math notranslate nohighlight">\(E\)</span> can be used as target quality metrics during deployment. The question is, which cost functions could we use during training?</p>
+<p>In this section, we first consider a method to train linear classifiers known as logistic regression. Reading the term <em>regression</em> in a classification context might feel confusing. As we will see, this method involves building a model for a continuous quantity, hence the term regression. Second, we present a method to train decision trees with a predefined structure and then discuss how to explore tree structures of different complexity.</p>
+<div class="section" id="logistic-regression">
+<h3><span class="section-number">4.4.1. </span>Logistic regression<a class="headerlink" href="#logistic-regression" title="Permalink to this heading">#</a></h3>
+<p>Let us go back to the linearly separable dataset shown in <a class="reference internal" href="#separabledataset"><span class="std std-numref">Fig. 4.13</span></a>. We have already discussed that we can obtain many, in fact an infinite number of linear classifiers that will achive the highest empirical accuracty <span class="math notranslate nohighlight">\(\hat{A}=1\)</span> on this dataset.</p>
+<div class="question1 admonition">
+<p class="admonition-title">Question for you</p>
+<p>Have a look at the three linear boundaries that we have plotted in <a class="reference internal" href="#separabledatasetlines"><span class="std std-numref">Fig. 4.25</span></a>. If you had to, which linear boundary would you choose?</p>
+<p>Boundary with</p>
+<ol class="arabic simple">
+<li><p>solid-line</p></li>
+<li><p>dashed-line</p></li>
+<li><p>dotted-line</p></li>
+</ol>
+<p>Submit your response here: <a href="https://forms.office.com/e/euB1HB1Aeq" target = "_blank">Your Response</a></p>
+</div>
+<div class="figure align-center" id="separabledatasetlines">
+<a class="reference internal image-reference" href="_images/LinearlySeparableBoundaries.jpg"><img alt="_images/LinearlySeparableBoundaries.jpg" src="_images/LinearlySeparableBoundaries.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.25 </span><span class="caption-text">Linearly separable dataset and three solutions</span><a class="headerlink" href="#separabledatasetlines" title="Permalink to this image">#</a></p>
+</div>
+<p>Using the empirical accuracy <span class="math notranslate nohighlight">\(\hat{A}\)</span> as our quality metric we should conclude that all of them are equally good, hence we would not have a preference. This is not a desirable situation, as at the end of the day we need to choose one of them. Without any additional criterion, we might just pick one of the solutions at random. You might have felt, however, that one of them looks somehow superior. If this is the case, what made you lean towards one over the other two?</p>
+<p>If you felt that one of the solutions was better than the other two, regardless of the fact that they all achieve the highest empirical accuracy, you might have looked at them from a <em>generalisation</em> point of view. Specifically, you might have imagined new samples that could be generated during deployment. Two of the solutions are very close to training samples from each class and because of this, both feel a bit risky, as we could imagine that in the future one sample from the class that is close to the boundary could <em>jump</em> to the other side just by chance. One of the solutions seems to be half way between both classes and therefore the risk of having samples jumping accidentally to the ‘wrong’ side seems to be lower.</p>
+<p>There is an equivalent way to look at this. Given a classifier, the closer a new sample is to the decision boundary, the less certain we are that the sample belongs to the decision region where it lies, as we would be worried it might have accidentaly jumped over. In contrast, if the sample is very far away from the boundary, our certainty that the sample is in the right decision region increases. From this angle, a linear classifier whose boundary is as far as possible from the training samples should be preferred over another one that is very close to the traning samples. We call this strategy the <strong>keep that boundary away from me!</strong> principle. The question arises, how do we encode this principle in a cost function that we can use to train a linear classifier?</p>
+<p>To come up with our new cost function, let us first summarise the main points we have presented:</p>
+<ul class="simple">
+<li><p>A linear classifier is a partition of the predictor space into two decision regions separated by a linear boundary.</p></li>
+<li><p>To classify a new sample, we need to identify the side of the boundary where the samples lies.</p></li>
+<li><p>The farther away a sample is from the decision boundary, the more certain we are that the sample belongs to the decision region where it lies.</p></li>
+<li><p>The closer a sample is to the boundary, the less certain we are that the sample is on the right decision region.</p></li>
+</ul>
+<p>As we can see, our approach is built around two concepts, namely the <strong>distance</strong> between a sample and the linear boundary, and the <strong>certainty</strong> that a sample has been correctly classified.</p>
+<p>Let us start computing the distance <span class="math notranslate nohighlight">\(d_i\)</span> between a sample <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> and a linear boundary defined by the parameters vector <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span>. You might be surprised to learn that this distance we can be computed as</p>
+<div class="math notranslate nohighlight" id="equation-eqlineardis">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-eqlineardis" title="Permalink to this equation">#</a></span>\[
+d_i = \boldsymbol{x}_i^T \boldsymbol{w}
+\]</div>
+<p>You could prove this result using a bit of maths, but there is no need to do it here. The notion of distance encapsulated in <a class="reference internal" href="#equation-eqlineardis">(4.8)</a> is illustrated in <a class="reference internal" href="#linearboundaries2dxtwdistances"><span class="std std-numref">Fig. 4.26</span></a>. As we already know, <span class="math notranslate nohighlight">\(d_i\)</span> is positive if <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> is on one side of the boundary and negative if <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> is on the other side of the boundary. It is obviously zero if <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> is on the boundary. This is indeed the fact that we used to design the linear classifier shown in <a class="reference internal" href="#linearclassifier"><span class="std std-numref">Fig. 4.12</span></a>. From now on, we will call the decision region where <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T \boldsymbol{w} &gt; 0\)</span> the <strong>positive semi-plane</strong>, and the decision region where <span class="math notranslate nohighlight">\(\boldsymbol{x}_i^T \boldsymbol{w} &lt; 0\)</span> the <strong>negative semi-plane</strong>. We will also use the label values <span class="math notranslate nohighlight">\(+1\)</span> and <span class="math notranslate nohighlight">\(-1\)</span> to denote the classes corresponding respectively to the positive and negative semi-planes.</p>
+<div class="figure align-center" id="linearboundaries2dxtwdistances">
+<a class="reference internal image-reference" href="_images/LinearClass2DxTwDistances.jpg"><img alt="_images/LinearClass2DxTwDistances.jpg" src="_images/LinearClass2DxTwDistances.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.26 </span><span class="caption-text">A notion of distance between a sample <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> and a linear boundary defined by the parameters <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span> can be defined as <span class="math notranslate nohighlight">\(d_i =\boldsymbol{x}_i^T \boldsymbol{w}\)</span>.</span><a class="headerlink" href="#linearboundaries2dxtwdistances" title="Permalink to this image">#</a></p>
+</div>
+<p>Let us now move on to the notion of certainty. A convenient way to quantify this notion is using a quantity in the range 0 to 1, where:</p>
+<ul class="simple">
+<li><p>1 means we are certain that the sample has been <strong>correctly classified</strong>.</p></li>
+<li><p>0 means we are certain that the sample has <strong>not</strong> been <strong>correctly classified</strong>; in other words, we are certain that the sample belongs to the <em>other class</em>.</p></li>
+<li><p>0.5 means we are <strong>uncertain</strong> about the identify of the sample.</p></li>
+</ul>
+<p>Now that we know how to quantify our notion of certainty, our job is to map the distance <span class="math notranslate nohighlight">\(d_i\)</span> to this notion of certainty. A convenient choice is the so-called <strong>logistic function</strong>, which is defined as</p>
+<div class="math notranslate nohighlight" id="equation-eqlogistic">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-eqlogistic" title="Permalink to this equation">#</a></span>\[
+s(d_i)=\frac{e^{d_i}}{1+e^{d_i}} = \frac{1}{1+e^{-d_i}}
+\]</div>
+<p>The logistic function has a so-called sigmoid shape and is shown in <a class="reference internal" href="#logistic1"><span class="std std-numref">Fig. 4.27</span></a>. As you can see:</p>
+<ul class="simple">
+<li><p>As the move away from the decision boundary on the positive semi-plane (<span class="math notranslate nohighlight">\(d_i \rightarrow \infty\)</span>), the value of the logistic function <span class="math notranslate nohighlight">\(s(d_i)\)</span> gets closer to 1.</p></li>
+<li><p>When we are exactly on the decision voundary (<span class="math notranslate nohighlight">\(d_i=0\)</span>), <span class="math notranslate nohighlight">\(s(d_i)=0.5\)</span>.</p></li>
+<li><p>As the move away from the decision boundary on the negative semi-plane (<span class="math notranslate nohighlight">\(d_i \rightarrow -\infty\)</span>), the value of the logistic function <span class="math notranslate nohighlight">\(s(d_i)\)</span> gets closer to 0.</p></li>
+</ul>
+<div class="figure align-center" id="logistic1">
+<a class="reference internal image-reference" href="_images/Logistic.jpg"><img alt="_images/Logistic.jpg" src="_images/Logistic.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.27 </span><span class="caption-text">Logistic function</span><a class="headerlink" href="#logistic1" title="Permalink to this image">#</a></p>
+</div>
+<p>Using the logistic function, we can define two certainties:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s(d_i)\)</span> is the certainty that a sample belongs to the <span class="math notranslate nohighlight">\(+1\)</span> class.</p></li>
+<li><p><span class="math notranslate nohighlight">\(1-s(d_i)\)</span> is the certainty that a sample belongs to the <span class="math notranslate nohighlight">\(-1\)</span> class.</p></li>
+</ul>
+<p>For instance, imagine a sample <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> such that <span class="math notranslate nohighlight">\(s(d_i)=0.85\)</span>. Then:</p>
+<ul class="simple">
+<li><p>Our certainty that <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> belongs to the <span class="math notranslate nohighlight">\(+1\)</span> class is 0.85.</p></li>
+<li><p>Our certainty that <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> belongs to the <span class="math notranslate nohighlight">\(-1\)</span> class is 0.15.</p></li>
+</ul>
+<p>Note that by definition, <span class="math notranslate nohighlight">\(s(d_i) + [1-s(d_i)] = 0.85+0.15=1\)</span>. Obviously, if <span class="math notranslate nohighlight">\(s(d_i) = 0.5\)</span>, our certainty is 0.5 for both classes.</p>
+<p>We are finally ready to come up with a cost function that we can use to train linear classifiers. Given a training dataset consisting of a collection of samples with labels <span class="math notranslate nohighlight">\(+1\)</span> and <span class="math notranslate nohighlight">\(-1\)</span>, we know how to quantify how certain a linear classifier is about the actual label of each training sample. We can use the individual certainties to define an overall certainty for the entire training dataset. We call this overall certainty <strong>likelihood</strong> <span class="math notranslate nohighlight">\(L\)</span>. Since the training dataset consists of <strong>independent samples</strong>, we can compute the likelihood by multiplying the individual certainties for each training sample:</p>
+<div class="math notranslate nohighlight" id="equation-eqlikelihood">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-eqlikelihood" title="Permalink to this equation">#</a></span>\[
+L=\prod_{y_i=-1}\left(1-s(d_i)\right) \prod_{y_i=+1}s(d_i)
+\]</div>
+<p>In this mathematical expression, the symbol <span class="math notranslate nohighlight">\(\prod_{y_i=-1}\)</span> means we are multiplying only those factors <span class="math notranslate nohighlight">\(1-s(d_i)\)</span> corresponding to samples whose label is <span class="math notranslate nohighlight">\(y_i=-1\)</span> and similarly, <span class="math notranslate nohighlight">\(\prod_{y_i=+1}\)</span> means we are multiplying factors <span class="math notranslate nohighlight">\(s(d_i)\)</span> where <span class="math notranslate nohighlight">\(y_i=+1\)</span>. Crucially, the likelihood <span class="math notranslate nohighlight">\(L\)</span> will be high if</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s(d_i)\)</span> is high for <span class="math notranslate nohighlight">\(+1\)</span> samples, i.e. <strong><span class="math notranslate nohighlight">\(+1\)</span> samples are in the positive semi-plane and away from the boundary</strong>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(1-s(d_i)\)</span> is high for <span class="math notranslate nohighlight">\(-1\)</span> samples, i.e. <strong><span class="math notranslate nohighlight">\(-1\)</span> samples are in the negative semi-plane and away from the boundary</strong>.</p></li>
+</ul>
+<p>Therefore, the linear classifier that presents the highest likelihood <span class="math notranslate nohighlight">\(L\)</span> is the one that separates training samples in a way that they are kept overall the <strong>furthest away from the boundary</strong>. We can use the <strong>likelihood <span class="math notranslate nohighlight">\(L\)</span> as our cost function</strong> and define the optimal model as the one that produces the highest <span class="math notranslate nohighlight">\(L\)</span> value on our training dataset.</p>
+<p>In contrast to the empirical accuracy <span class="math notranslate nohighlight">\(\hat{A}\)</span>, there is only one model for which the likelihood <span class="math notranslate nohighlight">\(L\)</span> is maximum. Therefore, the likelihood <span class="math notranslate nohighlight">\(L\)</span> leads to a unique solution. From a computational angle, <span class="math notranslate nohighlight">\(L\)</span> can be problematic. Since <span class="math notranslate nohighlight">\(L\)</span> is defined as the product of many quantities between 0 and 1, <span class="math notranslate nohighlight">\(L\)</span> is in general a very small number and can lead to underflow in computing environments, i.e. to our computers not being able to represent such small numbers. This can make <span class="math notranslate nohighlight">\(L\)</span> unusuable from a practical point of view. Because of this, it is common to use the <strong>log-likelihood</strong> function <span class="math notranslate nohighlight">\(l\)</span>, which is the result of computing the logarithm of <span class="math notranslate nohighlight">\(L\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eqloglike">
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-eqloglike" title="Permalink to this equation">#</a></span>\[
+l = \log(L)=\sum_{y_i=-1}\log\left[1-s(d_i)\right] + \sum_{y_i=+1}\log\left[ s(d_i)\right]
+\]</div>
+<p>The solution that presents the highest log-likelihood <span class="math notranslate nohighlight">\(l\)</span> turns to be the same as the one that has the highest likelihood <span class="math notranslate nohighlight">\(L\)</span> and therefore, instead of using <span class="math notranslate nohighlight">\(L\)</span> as our cost function, we can use <span class="math notranslate nohighlight">\(l\)</span> without changing our notion of <span class="math notranslate nohighlight">\(best\)</span> classifier. Another common choice is the <strong>negative log-likelihood</strong>, <span class="math notranslate nohighlight">\(-l\)</span>. In this case, the optimal model is the one with the minimum negative log-likelihood.</p>
+</div>
+<div class="section" id="branching-growing-and-prunning-in-decision-trees">
+<h3><span class="section-number">4.4.2. </span>Branching, growing and prunning in decision trees<a class="headerlink" href="#branching-growing-and-prunning-in-decision-trees" title="Permalink to this heading">#</a></h3>
+<p>The decision tree family provides models of arbitrary degrees of flexibility. Shallow trees, consisting of a few branching levels, are simple and partition the predictor space into a low number of decision regions. In contrast, deep trees have many branching levels and can partition the prediction space into many decision regions. Deep trees are therefore more flexible than shallow trees and can produce more complex partitions of the predictor space. On the flip side, the risk of overfitting to training datasets is higher in deep trees compared to shallow ones, precisely because of their greater flexibility.</p>
+<p>Strictly speaking, training a decision tree involves defining the branching and leaf nodes of a tree whose structure, and thefore flexibility, has been established beforehand. We can also devise algorithms that build a decision tree by exploring tree structures of different complexity. This can be done by adding branching nodes to a current tree, which is known as <strong>growing</strong>, or by collapsing branching nodes into a single leaf node, which is known as <strong>prunning</strong>. Exploring different tree structures is a form of <strong>model selection</strong> and therefore requires validation tasks to identify the best tree structure. In this section, we use the term <em>tree training</em> in a loose sense, to refer to both training (in a strict sense) and tree selection. The following notation will be useful to describe approaches to training decision trees:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(M\)</span> is the <strong>number of decision regions</strong> (leaf nodes). For instance, in a tree consisting of one single branching nodes, <span class="math notranslate nohighlight">\(M=2\)</span>.</p></li>
+<li><p><strong>Decision regions</strong> are denoted by <span class="math notranslate nohighlight">\(R_1\)</span>, <span class="math notranslate nohighlight">\(R_2\)</span>, …, <span class="math notranslate nohighlight">\(R_M\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(N_m\)</span> is the <strong>number of training samples</strong> in decision region <span class="math notranslate nohighlight">\(R_m\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(c_m\)</span> is the <strong>proportion</strong> of training samples belonging to the <strong>majority class</strong> in region <span class="math notranslate nohighlight">\(R_m\)</span>.</p></li>
+</ul>
+<p>Before discussing how to train a decision tree, let us first turn our attention to the leaves of a tree that has already been fitted to a training dataset. We already know that each leaf represents one individual decision region. The question is, which label value should we assign to this particular decision region? An obvious choice would be, the label value of the majority class among the training samples on this decision region.</p>
+<p>If <span class="math notranslate nohighlight">\(c_m\)</span> is very closse to 1, the majority of the traning samples in <span class="math notranslate nohighlight">\(R_m\)</span> belong to the majority class. In other words, <span class="math notranslate nohighlight">\(R_m\)</span> is very pure. Since the label value assigned to <span class="math notranslate nohighlight">\(R_m\)</span> is determined by the majority class, a value of <span class="math notranslate nohighlight">\(c_m\)</span> close to 1 could be used as an indication that a new sample on <span class="math notranslate nohighlight">\(R_m\)</span> indeed belongs to the majority class. Combining all the proportions <span class="math notranslate nohighlight">\(c_m\)</span> from all the decision regions, we can obtain a metric that quantifies the quality of the entire tree on the training dataset:</p>
+<div class="math notranslate nohighlight">
+\[
+C(R_1, R_2, ..., R_M) = N_1 c_1 + N_2 c_2 + ... + N_M c_M
+\]</div>
+<p>If the cost <span class="math notranslate nohighlight">\(C\)</span> is high, the decision regions defined by this tree are pure. Therefore, we could define the best decision tree as the one with the highest <span class="math notranslate nohighlight">\(C\)</span>. Now that we have a notion of cost, we need to devise an optimisation procedure to train a decision tree of a given structure.</p>
+<p>Let us consider a tree consisting of one single branching node for a binary classification problem on a <span class="math notranslate nohighlight">\(K\)</span> dimensional predictor space, where <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(\dots\)</span>, <span class="math notranslate nohighlight">\(x_K\)</span> denote the predictors. Training the single branching node involves deciding which predictor <span class="math notranslate nohighlight">\(x_k\)</span> is used to partition the space and the value of the threshold <span class="math notranslate nohighlight">\(t_k\)</span>. In other words, we need to determine the values of <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(t_k\)</span>. For each value of <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(t_k\)</span> we will obtain a different partitioning of the predictor space into two regions <span class="math notranslate nohighlight">\(R_1\)</span> and <span class="math notranslate nohighlight">\(R_2\)</span> with a quality</p>
+<div class="math notranslate nohighlight">
+\[
+C(R_1, R_2) = N_1 c_1 + N_2 c_2
+\]</div>
+<p>The best partition will be then the one that achieves the highest purity <span class="math notranslate nohighlight">\(C(R_1, R_2)\)</span>. Training this single branching node would involve first finding the best threshold <span class="math notranslate nohighlight">\(t_k\)</span> along each predictor <span class="math notranslate nohighlight">\(x_k\)</span>. After this, we would have <span class="math notranslate nohighlight">\(K\)</span> potential partitions, one for each predictor, with a different cost. Comparing the cost of each partition would allow us to select the best partition among the <span class="math notranslate nohighlight">\(K\)</span> available choices.</p>
+<p>Training a tree structure that has multiple branching levels can be computationally challenging, as it would require exploring all the partitions defined by every possible branching choice across all levels. <strong>Greedy approaches</strong> are optimisation strategies that can considerably reduce the number of choices that are explored, at the expense of producing solutions that might not be globally optimal. In the context of decision tree training, greedy approaches proceed by training each level step by step, starting from the root branching node and progressively training subsequent levels as we navigate the decision tree. When a leaf node is reached, the label value corresponding to the majotiry class is assigned to it. This approach is greedy in the sense that we train each branching node focusing exclusively on the quality of its own local partition, without considering the quality of the global partitioning of the space. This is why this process can end up producing solutions that are globally suboptimal.</p>
+<p>There are a few extreme situations where a greedy approach might not find an otherwise trivial-looking solution. The so-called XOR problem, which is illustrated in <a class="reference internal" href="#xorclass"><span class="std std-numref">Fig. 4.28</span></a>, is one of them. In the XOR problem, even though a decision tree exists that creates pure decision regions (such as the two level tree shown in <a class="reference internal" href="#xorclasstree"><span class="std std-numref">Fig. 4.29</span></a>), a greedy approach will in general not be able to find it. The reason is simple: every axis-parallel partition at the root level, will produce two regions that contain approximately 50% of the training samples from each class, i.e. all of them achieve the lowest quality possible. Therefore, the threshold <span class="math notranslate nohighlight">\(t_1=5\)</span> defining the root node in <a class="reference internal" href="#xorclasstree"><span class="std std-numref">Fig. 4.29</span></a> will be as bad as any other threshold value, and our greedy approach will be unable to discover this simple tree.</p>
+<div class="figure align-center" id="xorclass">
+<a class="reference internal image-reference" href="_images/XORTree.jpg"><img alt="_images/XORTree.jpg" src="_images/XORTree.jpg" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.28 </span><span class="caption-text">XOR problem</span><a class="headerlink" href="#xorclass" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-default" id="xorclasstree">
+<img alt="_images/XORTreeSol.jpg" src="_images/XORTreeSol.jpg" />
+<p class="caption"><span class="caption-number">Fig. 4.29 </span><span class="caption-text">XOR problem: tree solution</span><a class="headerlink" href="#xorclasstree" title="Permalink to this image">#</a></p>
+</div>
+<p>Greedy optimisation can be interpreted as progressive refinements of an already existing tree and naturally lead to tree growing strategies. Starting with a tree that can be as simple as one single branching node and two leaf nodes, we can recursively replace any leaf node with a branching node followed by two leaf nodes, which results in partitioning an existing decision region into two new decision regions. This process produces smaller decision regions of increased purity, eventually covering one training sample only. Growing trees increases therefore the risk of overfitting: the final decision regions are pure in the sense that they contain <em>training samples</em> that belong to the same class, however this does not imply that this purity will also be seen during deployment. We can also prune a decision tree by collapsing a branching node into a leaf. This action results in all the leaves hanging from this branching node merging into one leaf. Therefore, after prunning, many small decision regions merge to form one single large decision region. Severe prunning can lead to underfitting, i.e. to tree structures too rigid to model the underlying sample distribution. Tree growing and prunning can be controlled by using validation approaches, which allow us to assess whether an increase (respectively decrease) of complexity resulting from growing (respectively prunning) of a tree leads to improved generalisation.</p>
+</div>
+</div>
+<div class="section" id="summary-and-discussion">
+<h2><span class="section-number">4.5. </span>Summary and discussion<a class="headerlink" href="#summary-and-discussion" title="Permalink to this heading">#</a></h2>
+<p>In a classification problem we seek to build a model, known as a classifier, that predicts the value of a discrete label using a set of predictors as its input. Classifiers can be geometrically described as partitions of the predictor space into decision regions, each of which is associated to one unique label value. Accordingly, samples that lie on the same decision region are always assigned the same label. In machine learning we use datasets to build classifiers. As in any other machine learning problem, we can use training, validation and test tasks in a classification context. Training allows us to define a classifier using a dataset, validation to compare different classifiers and testing to assess the deployment performance of a given classifier. In this chapter, we have presented the accuracy and error rate as target quality metrics, which quantify the proportion of samples that are correctly or incorrectly classified.</p>
+<p>Each family of machine learning classifiers can be characterised by the types of decision region that it can produce together with the optimisation problem that it solves during training. Logistic regression produces decision regions separated by linear boundaries and uses a likelihood or equivalently log-likelihood cost function during training to tune the parameters of the linear boundary. Logistic regression is not the only approach to train linear boundaries. Linear support vector machines also produce decision regions separated by linear boundaries, however they solve a different optimisation problem to tune the parameters of the linear boundary. Decision trees produce rectangular-shaped partitions of the predictor space. During training, we set out to produce decision regions that are as pure as possible. In this chapter we have quantified the notion of purity using the proportion of training samples from the majority class in a decision region, but there are other popular options, such as the Gini index or the cross-entropy. Greedy optimisation strategies are commonly used to train decision regions as they can alleviate the computational burden during training. However, greedy approaches will in general produce suboptimal solutions, as they restrict the range of candidate solutions that are explored.</p>
+<p>Linear classifiers and decision trees are parametric families of models. The range of shapes that linear classifiers and decision trees can produced are limited to, respectively, semi-planes and rectangles and setting their parameters fixes the  shapes of their decision regions. In contrast, nearest neighbours is a non-parametric family and consequently it is not defined by a set of parameters nor produces decision regions of specific shapes. In addition to this, even though nearest neighbours define implicitely decision regions, they do not classify new samples by identifying the decision regions where they lie. You might be asking yourself, is there a common framework to analyse classifier models as different as nearest neighbours and decision trees? The answer is yes, but we will need to wait until a second chapter on classification (<a class="reference internal" href="Ch_classification2.html#class2"><span class="std std-ref">Classification II: The probabilistic view</span></a>), where we will use probability concepts to put classifiers on solid ground. This probability view will also allow us to establish a connection between target quality metrics, such as accuracy and error rate, and cost functions used during training.</p>
+<p>Finally, the notions of flexibility, complexity, generalisation, overfitting and underfitting are as important in classification problems as they were in regression scenarios. Flexible classifiers are capable of producing complex decision boundaries that are required whenever the underlying structure of the population is also complex. However, an excessive flexibility can lead to our models learning irrelevant details of a training dataset, especially when the number of training samples is reduced. Models that are too rigid or too flexible for a given classification problem cannot generalise well, in other words, their performance will be limited during deployment. The former models underfit to the training dataset and are uncapable of capture the underlying structure of the population. The latter models overfit to the training dataset and interpret as true structure details of the training dataset that are irrelevant. Linear models constitute an example of rigid models. In contrast, decision trees and nearest neighbours offer models of different degrees of flexibility. As in regression, we can assess the required flexibility for a given classification problem using validation tasks.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -431,14 +957,14 @@ document.write(`
     <script>kernelName = 'python3'</script>
 
                 </article>
-              
 
-              
-              
+
+
+
                 <footer class="bd-footer-article">
-                  
+
 <div class="footer-article-items footer-article__inner">
-  
+
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
@@ -460,57 +986,89 @@ document.write(`
       <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
-  
+
 </div>
 
                 </footer>
-              
+
             </div>
-            
-            
-              
-            
+
+
+
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-demise-of-the-literary-digest">4.1. The demise of the Literary Digest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-classification-problems">4.2. Formulating classification problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-notation">4.2.1. Mathematical notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classifiers-in-the-predictor-space">4.2.2. Classifiers in the predictor space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-basic-quality-metric">4.2.3. A basic quality metric</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-classifiers">4.3. Basic classifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-classifiers">4.3.1. Linear classifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees">4.3.2. Decision trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nearest-neighbours">4.3.3. Nearest neighbours</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-classifiers">4.4. Training classifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression">4.4.1. Logistic regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branching-growing-and-prunning-in-decision-trees">4.4.2. Branching, growing and prunning in decision trees</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-discussion">4.5. Summary and discussion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+
+
           </div>
           <footer class="bd-footer-content">
-            
+
 <div class="bd-footer-content__inner container">
-  
+
   <div class="footer-item">
-    
+
 <p class="component-author">
 By <a href="https://www.linkedin.com/in/jesus-requena-carrion/" target="_blank">Jesús Requena Carrión</a> and <a href="http://nikeshbajaj.in" target="_blank">Nikesh Bajaj</a>
 
 </p>
 
   </div>
-  
+
   <div class="footer-item">
-    
+
   <p class="copyright">
-    
+
       © Copyright 2023.
       <br/>
-    
+
   </p>
 
   </div>
-  
+
   <div class="footer-item">
-    
+
   </div>
-  
+
   <div class="footer-item">
-    
+
   </div>
-  
+
 </div>
           </footer>
-        
+
 
       </main>
     </div>
   </div>
-  
+
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
   <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
 <script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>

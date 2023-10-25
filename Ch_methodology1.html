@@ -9,20 +9,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3. Methodology I: Three basic tasks &#8212; Principles of Machine Learning: A Deployment-First Perspective</title>
-  
-  
-  
+
+
+
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-  
+
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 <link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-  
+
   <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/pml_admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
@@ -80,26 +80,26 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
-  
-  
+
+
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-  
-  
+
+
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
+
   <input type="checkbox"
           class="sidebar-toggle"
           name="__primary"
           id="__primary"/>
   <label class="overlay overlay-primary" for="__primary"></label>
-  
+
   <input type="checkbox"
           class="sidebar-toggle"
           name="__secondary"
           id="__secondary"/>
   <label class="overlay overlay-secondary" for="__secondary"></label>
-  
+
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
@@ -120,46 +120,46 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-  
+
     <nav class="bd-header navbar navbar-expand-lg bd-navbar">
     </nav>
-  
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
 
-  
+      <div class="bd-sidebar-primary bd-sidebar">
+
+
+
   <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
+
+
+
+
   </div>
-  
+
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-  
+
 
 <a class="navbar-brand logo" href="welcome.html">
-  
-  
-  
-  
-    
-    
-      
-    
-    
+
+
+
+
+
+
+
+
+
     <img src="_static/pml_logo.png" class="logo__image only-light" alt="Logo image"/>
     <script>document.write(`<img src="_static/pml_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
+
+
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
+
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="welcome.html">
@@ -184,6 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Ch_ethics.html">14. The machine learning professional</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_appendix.html">15. Appendix</a></li>
 </ul>
+
 <hr style="height:2px;border:none;color:#000000;background-color:#000000;width:50%;text-align:center;margin:10px auto auto auto;">
 </div>
 
@@ -196,37 +197,39 @@ const thebe_selector_output = ".output, .cell_output"
 <!-- <h1>Test 0</h1> -->
 </div>
 <hr>
+
+
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-  
+
   <div id="rtd-footer-container"></div>
 
 
       </div>
-      
+
       <main id="main-content" class="bd-main">
-        
-        
+
+
 
 <div class="sbt-scroll-pixel-helper"></div>
 
           <div class="bd-content">
             <div class="bd-article-container">
-              
+
               <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
-  
+
     <div class="header-article-items__start">
-      
+
         <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
 </label></div>
-      
+
     </div>
-  
-  
+
+
     <div class="header-article-items__end">
-      
+
         <div class="header-article-item">
 
 <div class="article-header-buttons">
@@ -240,15 +243,15 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fab fa-github"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
+
+
+
       <li><a href="https://github.com/PMLBook/PMLBook.github.io" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fab fa-github"></i>
@@ -256,16 +259,16 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">Repository</span>
 </a>
 </li>
-      
-      
-      
-      
+
+
+
+
       <li><a href="https://github.com/PMLBook/PMLBook.github.io/issues/new?title=Issue%20on%20page%20%2FCh_methodology1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fas fa-lightbulb"></i>
@@ -273,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">Open issue</span>
 </a>
 </li>
-      
+
   </ul>
 </div>
 
@@ -287,15 +290,15 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
+
+
+
       <li><a href="_sources/Ch_methodology1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
@@ -303,17 +306,17 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">.md</span>
 </a>
 </li>
-      
-      
-      
-      
+
+
+
+
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
   title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
@@ -321,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__text-container">.pdf</span>
 </button>
 </li>
-      
+
   </ul>
 </div>
 
@@ -333,7 +336,7 @@ const thebe_selector_output = ".output, .cell_output"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
-  
+
 
 <span class="btn__icon-container">
   <i class="fas fa-expand"></i>
@@ -363,20 +366,20 @@ document.write(`
     <span class="fa-solid fa-list"></span>
 </label>
 </div></div>
-      
+
     </div>
-  
+
 </div>
 </div>
-              
-              
+
+
 
 <div id="jb-print-docs-body" class="onlyprint">
     <h1>Methodology I: Three basic tasks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
-            
+
             <div>
                 <h2> Contents </h2>
             </div>
@@ -399,7 +402,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#true-and-empirical-error-surfaces">3.4.3. True and empirical error surfaces</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-on-the-empirical-error-surface">3.4.4. Optimisation on the empirical error surface</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-and-regularisation">3.4.5. Overfitting and regularisation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-quality-and-target-quality">3.4.6. Optimisation quality and target quality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-cost-and-target-quality">3.4.6. Optimisation cost and target quality</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-validation-task">3.5. The validation task</a></li>
@@ -410,11 +413,11 @@ document.write(`
     </div>
 </div>
 
-              
-                
+
+
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
-                  
+
   <div class="tex2jax_ignore mathjax_ignore section" id="methodology-i-three-basic-tasks">
 <span id="meth1"></span><h1><span class="section-number">3. </span>Methodology I: Three basic tasks<a class="headerlink" href="#methodology-i-three-basic-tasks" title="Permalink to this heading">#</a></h1>
 <p>In the <a class="reference internal" href="Ch_regression.html#reg"><span class="std std-ref">Regression</span></a> chapter we explored our first family of machine learning problems. We defined regression as a problem where we seek to predict the value of a continuous label based on a set of predictors. Crucially, we highlighted that what makes regression a machine learning problem is the use of datasets to build our solutions. However, while analysing several cases we discovered a disturbing reality: solution models that appear to work well on a training dataset, might actually perform poorly when deployed. The main take-home message was that we cannot tell how well a model will work when deployed by simply looking at its performance on the training dataset. This is very concerning, as we would like to deploy only those models that we know will work well.</p>
@@ -436,7 +439,7 @@ document.write(`
 <p class="admonition-title">Our third top tip follows on from Ventris’ advice:</p>
 <h3 style="text-align: center;"><b>Don't fool thyself!</b></h3>
 </div>
-<p>Ventris’ reflections should by now sound familiar to you. In machine learning, as in decipherment, we solve problems using some recorded material, in our case, datasets. Machine learning also shares with decipherment the risk of building solutions that work well on the recorded material, but are actually wrong. In machine learning lingo, decipherers that fool themselves build solutions that <em>overfit</em> to their material and are unaware of it. In machine learning, as in decipherment, being able to check rigorously our solutions is as essential as being able to build them.</p>
+<p>Ventris’ reflections should by now sound familiar to you. In machine learning, as in decipherment, we solve problems using some recorded material, in our case, datasets. Machine learning also shares with decipherment the risk of building solutions that work well on the recorded material, but are actually wrong. In machine learning lingo, decipherers that fool themselves build solutions that <em>overfit</em> to their material. What is worse: they are unaware of it. In machine learning, as in decipherment, being able to check rigorously our solutions is as essential as being able to build them.</p>
 <p>In this chapter we will develop a rigurous machine learning methodology that will help us reduce the risk of fooling ourselves. We will call our final, decisive check, the <strong>test task</strong>. On a final note, Ventris announced his solution in July 1952, but its confirmation had to wait until May 1953, when an american archaeologist, Carl Blegen, who was excavating a site in Pylos, Greece, found a new clay tablet written in Linear B and using Ventris’ solution was able to read it. This was Ventris’ decisive check to the letter.</p>
 </div>
 <div class="section" id="populations-and-datasets">
@@ -445,7 +448,7 @@ document.write(`
 <div class="section" id="the-notion-of-population">
 <h3><span class="section-number">3.2.1. </span>The notion of population<a class="headerlink" href="#the-notion-of-population" title="Permalink to this heading">#</a></h3>
 <p>In its original meaning, a population is a collection of individuals who inhabit a particular place, such as a town, a region or a country. Statistics as a discipline originated out of the need to understand such -human- populations, but as time went by the field of statistics grew to encompass a wider range of problems. This resulted in the term <em>population</em> abandoning its first, concrete sense and being used to refer to any entity that can be studied using the same methods developed to study human populations.</p>
-<p>Given a machine learning problem, a population is the abstract entity that consists of all the possible samples that the problem can refer to. A population in machine learning can produce samples, which is the reason why we sometimes use the term <em>data source</em> instead. Machine learning problems always define a target population and any machine learning solution is meant to work on samples extracted from the target population. Let us reflect on the notion of population using two machine learning examples. First, consider the regression problem of guessing the salary of an individual of whom we know their age. When we formulate this problem, we need to specify which group of individuals we are targetting, as it would be reasonable to expect the relationship between salary and age to be dependent on the time when and place where the individuals live. For instance, we would expect the relationship between age and salary in today’s city of Heraklion, in the island of Crete, to be different from that in 19th century Paris. If we chose Heraklion, our target population would consist of the salary and age of every Heraklian. One sample from this population would therefore be the age and the salary of one single Heraklian.</p>
+<p>Given a machine learning problem, a population is the abstract entity that consists of all the possible samples that the problem can refer to. A population in machine learning can produce samples, which is the reason why we sometimes use the term <em>data source</em> instead. Machine learning problems always have a target population and any machine learning solution is meant to work on samples extracted from that same target population. Let us reflect on the notion of population using two machine learning examples. First, consider the regression problem of guessing the salary of an individual of whom we know their age. When we formulate this problem, we need to specify which group of individuals we are targetting, as it would be reasonable to expect the relationship between salary and age to be dependent on the time when and place where the individuals live. For instance, we would expect the relationship between age and salary in today’s city of Heraklion, in the island of Crete, to be different from that in 19th century Paris. If we chose Heraklion, our target population would consist of the salary and age of every Heraklian. One sample from this population would therefore be the age and the salary of one single Heraklian.</p>
 <p>In our first example it is relatively easy to imagine a population as a group of concrete, physical items, i.e. humans. However, most of the time such means to imagine populations will not be available. For our second example, consider the problem of translating into English a fragment of text written in Linear B. What would be our population? The answer would be, every possible fragment of Linear B text, together with its English translation, whether they physically exist or not. In fact, most of the samples in this population do not exist physically. We could pretend that they all exist buried somewhere in the Mediterranean coast and have not been yet discovered, but we do not need to, as we can abstract away their physical existence. The same could be said about the target population in the machine learning problem of translating a fragment of text written in Hindi into Spanish. This population should include every possible fragment of Hindi text and its Spanish translation, whether they have already been written or not.</p>
 <div class="question1 admonition">
 <p class="admonition-title">Question for you</p>
@@ -489,12 +492,12 @@ Datasets are created by sampling a population, in other words, by extracting a c
 <div class="section" id="testing-as-quality-estimation">
 <h3><span class="section-number">3.3.2. </span>Testing as quality estimation<a class="headerlink" href="#testing-as-quality-estimation" title="Permalink to this heading">#</a></h3>
 <p>The test task in machine learning is the process by which we <strong>assess the true quality</strong> of a given model using datasets. Note that during testing we are not interested in knowing how the model was built or how it works internally, we are only interested in assessing how well it will perform when deployed. In fact, we can test models that have been built using non machine learning approaches. For testing purposes, models can be treated as <strong>black boxes</strong>.</p>
-<p>A dataset used for testing purposes is known as a <strong>test dataset</strong> and the empirical quality of the model being tested is known as the <strong>test quality</strong> (see <a class="reference internal" href="#populationsamplingtest"><span class="std std-numref">Fig. 3.3</span></a>). Test datasets need to be <strong>IID</strong> and crucially <strong>independent from datasets used for model training</strong> (remember Ventris’ decisive check?). As an empirical quantity, the test quality of a model is different from the true quality that we actually want to estimate. But how different?</p>
+<p>A dataset used for testing purposes is known as a <strong>test dataset</strong> and the empirical quality of the model being tested is known as the <strong>test quality</strong> (see <a class="reference internal" href="#populationsamplingtest"><span class="std std-numref">Fig. 3.3</span></a>). Test datasets need to be <strong>representative</strong> and crucially <strong>independent from datasets used for model training</strong> (remember Ventris’ decisive check?). As an empirical quantity, the test quality of a model is different from the true quality that we actually want to estimate. But how different?</p>
 <div class="figure align-default" id="populationsamplingtest">
 <img alt="_images/PopulationSamplingTest.svg" src="_images/PopulationSamplingTest.svg" /><p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">A test task uses a dataset extracted from the target population (a <em>test dataset</em>) to assess the true quality of a model. The estimation that a test task produces is known as the <em>test quality</em>. The true quality can only be obtained if we have a perfect description of the population.</span><a class="headerlink" href="#populationsamplingtest" title="Permalink to this image">#</a></p>
 </div>
-<p>To correctly interpret the value of a test quality, we need to understand its <strong>random nature</strong>. Test and in general empirical metrics are random as the datasets from which they are obtained consist of samples extracted randomly from the population. It is important to emphasise that the term <em>random</em> should not be interpreted in a colloquial sense, but strictly in a statistical one. In other words, the numerical value of a test quality will not be just <em>any</em> value (colloquial sense), but we can expect it to lie within a range of values with some probability (statistical sense).</p>
-<p><a class="reference internal" href="#populationsamplingtest3"><span class="std std-numref">Fig. 3.4</span></a> illustrates the idea that a test quality is a random value. Consider a regression problem where we use the MSE as our notion of quality. Imagine we are given an already built model whose true quality is <span class="math notranslate nohighlight">\(MSE = 10\)</span>. The true quality is what we would like to know, however in machine learning we do not have direct access to it, so let us pretend we do not know this. If we extracted three separate IID datasets from the population, we would obtain three different test qualities, for instance, <span class="math notranslate nohighlight">\(\widehat{MSE}_1=9.5\)</span>, <span class="math notranslate nohighlight">\(\widehat{MSE}_2=11\)</span> and <span class="math notranslate nohighlight">\(\widehat{MSE}_3=10.9\)</span>. We would never expect the different test qualities to be identical to one another nor equal to the true quality, but we would expect their values to be related to the true quality. How close a test quality is to the underlying true quality depends on how representative our dataset is of the target population.</p>
+<p>To correctly interpret the value of a test quality, we need to understand its <strong>random nature</strong>. We have already discussed that machine learning datasets consist of samples that are extracted randomly from the population. Because of this, any value computed on a machine learning dataset will be itself random. It is important to emphasise that the term <em>random</em> should not be interpreted in a colloquial sense, but strictly in a statistical one. By <em>random value</em> we do not mean just <em>any</em> value (colloquial sense). Instead, a random value should be seen as a range of values that can be obtained with some probability (statistical sense). A test quality is always computed on machine learning datasets and is therefore a random value. The specific value of the test quality that we obtain will be different from one dataset to another and in general, it will be different from the true quality. How close a test quality is to the underlying true quality will depend on how representative our dataset is.</p>
+<p><a class="reference internal" href="#populationsamplingtest3"><span class="std std-numref">Fig. 3.4</span></a> illustrates the idea that a test quality is a random value. Consider a regression problem where we use the MSE as our notion of quality. Imagine we are given an already built model whose true quality is <span class="math notranslate nohighlight">\(MSE = 10\)</span>. The true quality is what we would like to know, however in machine learning we do not have direct access to it, so let us pretend we do not know this. If we extracted three separate IID datasets from the population, we would obtain three different test qualities, for instance, <span class="math notranslate nohighlight">\(\widehat{MSE}_1=9.5\)</span>, <span class="math notranslate nohighlight">\(\widehat{MSE}_2=11\)</span> and <span class="math notranslate nohighlight">\(\widehat{MSE}_3=10.9\)</span>. These values illustrate the idea that we should never expect the different test qualities to be identical to one another nor equal to the true quality, although we should expect their values to be related to the true quality.</p>
 <div class="figure align-default" id="populationsamplingtest3">
 <img alt="_images/PopulationSamplingTest3.svg" src="_images/PopulationSamplingTest3.svg" /><p class="caption"><span class="caption-number">Fig. 3.4 </span><span class="caption-text">Datasets are extracted randomly from the target population. Consequently, a test quality is also a random quantity. If we test the same model on three different datasets, the test quality will be different for each dataset.</span><a class="headerlink" href="#populationsamplingtest3" title="Permalink to this image">#</a></p>
 </div>
@@ -507,7 +510,7 @@ Datasets are created by sampling a population, in other words, by extracting a c
 <div class="figure align-default" id="populationsamplingtest3model">
 <img alt="_images/PopulationSamplingTest3model_ABC.svg" src="_images/PopulationSamplingTest3model_ABC.svg" /><p class="caption"><span class="caption-number">Fig. 3.5 </span><span class="caption-text">Models can be compared by estimating their deployment qualities using a test task. When comparing their test qualities, we need to remember they are random quantities.</span><a class="headerlink" href="#populationsamplingtest3model" title="Permalink to this image">#</a></p>
 </div>
-<p>According to the test quality, model <span class="math notranslate nohighlight">\(B\)</span> appears to be the best, as it has the lowest test MSE. Is it however, the best? By now, we know that the test MSE is different from the true MSE and also that the test MSE, as an empirical quantity, is random. Could it be that model <span class="math notranslate nohighlight">\(B\)</span> appears to be better than <span class="math notranslate nohighlight">\(A\)</span> just by chance? In other words, when is a difference between two random values <em>significant</em>? Machine learning practitioners need to always be aware that random effects can mislead them. One of the best illustration of this is the so-called <strong>Infinite Monkey Theorem</strong>. According to this tongue-in-cheek theorem, if you have an unlimited number of monkeys typing in a room for long enough, at some point one of them will type the entire works of William Shakespeare. Would you say that a monkey that types a poem is in fact a poet? Would you not say that the poem has been entirely produced by chance? In machine learning, as in the Infinite Monkey Theorem room, randomness is always running against you.</p>
+<p>According to the test quality, model <span class="math notranslate nohighlight">\(B\)</span> appears to be the best, as it has the lowest test MSE. Is it however, the best? By now, we know that the test MSE is different from the true MSE and also that the test MSE, as an empirical quantity, is random. Could it be that model <span class="math notranslate nohighlight">\(B\)</span> appears to be better than <span class="math notranslate nohighlight">\(A\)</span> just by chance? In other words, when is a difference between two random values <em>significant</em>? Machine learning practitioners need to always be aware that random effects can mislead them. One of the best illustration of this is the so-called <strong>Infinite Monkey Theorem</strong>. According to this tongue-in-cheek theorem, if you have an unlimited number of monkeys typing in a room for long enough, at some point one of them will type the entire works of William Shakespeare. Would you say that a monkey that types a poem is in fact a poet? Would you not say that the poem has been entirely produced by chance? In machine learning, as in the Infinite Monkey Theorem room, randomness is always trying to trick you.</p>
 </div>
 </div>
 <div class="section" id="the-training-task">
@@ -564,7 +567,7 @@ Datasets are created by sampling a population, in other words, by extracting a c
 <div class="figure align-default" id="errorsurface2">
 <img alt="_images/TrueSurfaceComplex.svg" src="_images/TrueSurfaceComplex.svg" /><p class="caption"><span class="caption-number">Fig. 3.11 </span><span class="caption-text">Complex error surface that has two local optima and one global optimum. Local and global optima all have zero gradient.</span><a class="headerlink" href="#errorsurface2" title="Permalink to this image">#</a></p>
 </div>
-<p>If we use gradient descent on a complex surface such as the one shown in <a class="reference internal" href="#errorsurface2"><span class="std std-numref">Fig. 3.11</span></a>, we will progressively get closer to an optimum model, but there is no guarantee that this will be the global one. When gradient descent can get stuck in a local optimum. Because of this it is common to run gradient descent multiple times from several randomly selected initial models, as shown in <a class="reference internal" href="#errorsurface2grad"><span class="std std-numref">Fig. 3.12</span></a>. After visiting multiple optima, we can select the best among them. This does not guarantees that we might have reached the global optimum, but at least it reduces the risk of getting stuck in a bad local optimum.</p>
+<p>If we use gradient descent on a complex surface such as the one shown in <a class="reference internal" href="#errorsurface2"><span class="std std-numref">Fig. 3.11</span></a>, we will progressively get closer to an optimum model, but there is no guarantee that this will be the global one. We describe this scenario saying that gradient descent can get stuck in a local optimum. Because of this it is common to run gradient descent multiple times from several randomly selected initial models, as shown in <a class="reference internal" href="#errorsurface2grad"><span class="std std-numref">Fig. 3.12</span></a>. After visiting multiple optima, we can select the best among them. This does not guarantees that we might have reached the global optimum, but at least it reduces the risk of getting stuck in a bad local optimum.</p>
 <div class="figure align-default" id="errorsurface2grad">
 <img alt="_images/TrueErrorGradComplexOpt.svg" src="_images/TrueErrorGradComplexOpt.svg" /><p class="caption"><span class="caption-number">Fig. 3.12 </span><span class="caption-text">Running multiple times gradient descent on a complex surface increases the chances of finding a good local optimum.</span><a class="headerlink" href="#errorsurface2grad" title="Permalink to this image">#</a></p>
 </div>
@@ -583,18 +586,18 @@ Datasets are created by sampling a population, in other words, by extracting a c
 </div>
 <div class="section" id="optimisation-on-the-empirical-error-surface">
 <h3><span class="section-number">3.4.4. </span>Optimisation on the empirical error surface<a class="headerlink" href="#optimisation-on-the-empirical-error-surface" title="Permalink to this heading">#</a></h3>
-<p>Given a training dataset and family of models defined by a parameter vector <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span>, to identify the optimal model defined by the empirical error surface the simplest method that we could think of consists of directly evaluating as many models as possible and selecting the one with the lowest error. This method is called <strong>exhaustive</strong> or <strong>brute-force</strong> and is illustrated in <a class="reference internal" href="#errorbrute"><span class="std std-numref">Fig. 3.15</span></a>.</p>
+<p>A training dataset together with a family of models characterised by a parameter vector <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span>, define an empirical error surface <span class="math notranslate nohighlight">\(E\{\boldsymbol{w}\}\)</span>. The simplest method that we could think of to identify the optimal model defined by the empirical error surface, consists in directly evaluating as many choices of <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span> as possible and selecting the one with the lowest error. This method is called <strong>exhaustive</strong> or <strong>brute-force</strong> and is illustrated in <a class="reference internal" href="#errorbrute"><span class="std std-numref">Fig. 3.15</span></a>.</p>
 <div class="figure align-default" id="errorbrute">
 <img alt="_images/TrueErrorBrute.svg" src="_images/TrueErrorBrute.svg" /><p class="caption"><span class="caption-number">Fig. 3.15 </span><span class="caption-text">By evaluating the empirical error of many models, brute-force methods hope to find one that provides a good solution. Evaluated models are identified in the parameter space using the symbol <span class="math notranslate nohighlight">\(\times\)</span>.</span><a class="headerlink" href="#errorbrute" title="Permalink to this image">#</a></p>
 </div>
 <p>Brute-force methods are simple, but in most cases impractical, especially when the error surface is very complex and the number of parameters is large.</p>
-<p>A second avenue to identify the optimal model on the empirical error surface is to directly solve the zero-gradient equation <a class="reference internal" href="#equation-gradzero">(3.2)</a>. This approach can be succesfully applied in some cases, for instance to find the optimal model according to the MSE empirical error function of a family of linear models with parameters <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span>. Let <span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span> be the design matrix and label vector of the training dataset. As we know, the predicted label vector can be calculated from <span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span> as</p>
+<p>A second avenue to identify the optimal model on the empirical error surface is to directly solve the zero-gradient equation <a class="reference internal" href="#equation-gradzero">(3.2)</a>. This approach can be succesfully applied in some cases, for instance to find the optimal linear model using the MSE as the empirical error function. Let <span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span> be the design matrix and the label vector of the training dataset. As we know, the predicted label vector can be calculated from <span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span> and the parameter vector <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span> as</p>
 <div class="math notranslate nohighlight" id="equation-eqpredlabels">
 <span class="eqno">(3.4)<a class="headerlink" href="#equation-eqpredlabels" title="Permalink to this equation">#</a></span>\[
 \hat{\boldsymbol{y}} =
 \boldsymbol{X}\boldsymbol{w}
 \]</div>
-<p>Using <a class="reference internal" href="#equation-eqpredlabels">(3.4)</a>, the prediction error vector can be obtained as</p>
+<p>Using <a class="reference internal" href="#equation-eqpredlabels">(3.4)</a>, the prediction error <span class="math notranslate nohighlight">\(\boldsymbol{e}\)</span> can be obtained as</p>
 <div class="math notranslate nohighlight" id="equation-eqprederr">
 <span class="eqno">(3.5)<a class="headerlink" href="#equation-eqprederr" title="Permalink to this equation">#</a></span>\[
 \boldsymbol{e} =
@@ -605,14 +608,14 @@ Datasets are created by sampling a population, in other words, by extracting a c
 <span class="eqno">(3.6)<a class="headerlink" href="#equation-eqmseemp" title="Permalink to this equation">#</a></span>\[\begin{split}
 E_{\widehat{MSE}}\{\boldsymbol{w}\} &amp;= \frac{1}{N}\boldsymbol{e}^T\boldsymbol{e}\\
 &amp;= \frac{1}{N}(\boldsymbol{y}-\hat{\boldsymbol{y}})^T(\boldsymbol{y}-\hat{\boldsymbol{y}}) \\
-&amp;= \frac{1}{N}(\boldsymbol{y}-\boldsymbol{X}\boldsymbol{w})^T(\boldsymbol{y}-\boldsymbol{X}\boldsymbol{w})  
+&amp;= \frac{1}{N}(\boldsymbol{y}-\boldsymbol{X}\boldsymbol{w})^T(\boldsymbol{y}-\boldsymbol{X}\boldsymbol{w})
 \end{split}\]</div>
-<p>Note that <a class="reference internal" href="#equation-eqmseemp">(3.6)</a> defines a computation such that, given a parameter vector <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span> defining a model and a dataset defined by a design matrix <span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span> and a label vector <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span>, one MSE value is returned. Using <a class="reference internal" href="#equation-eqmseemp">(3.6)</a> we can derive the following mathematical expression for the gradient of the empirical error surface:</p>
+<p>Note that <a class="reference internal" href="#equation-eqmseemp">(3.6)</a> defines a computation such that, given a parameter vector <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span> defining a model together with a dataset defined by a design matrix <span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span> and a label vector <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span>, one MSE value is returned. Using <a class="reference internal" href="#equation-eqmseemp">(3.6)</a> we can derive the following mathematical expression for the gradient of the empirical error surface:</p>
 <div class="math notranslate nohighlight" id="equation-eqmseempgradient">
 <span class="eqno">(3.7)<a class="headerlink" href="#equation-eqmseempgradient" title="Permalink to this equation">#</a></span>\[
 \nabla E_{\widehat{MSE}}\{\boldsymbol{w}\} = \frac{-2}{N}\boldsymbol{X}^T(\boldsymbol{y}-\boldsymbol{X}\boldsymbol{w})
 \]</div>
-<p>As we know, the gradient at the optimal model is zero. Fortunately, we can solve the equation <span class="math notranslate nohighlight">\(\nabla E_{\widehat{MSE}}\{\boldsymbol{w}_{opt}\}=0\)</span>, and obtain the parameters of the optimal model defined by the empirical error surface:</p>
+<p>As we know, the gradient at the optimal model is zero. Fortunately, we can solve the equation <span class="math notranslate nohighlight">\(\nabla E_{\widehat{MSE}}\{\boldsymbol{w}_{opt}\}=0\)</span>, and use this solution to calculate the parameters <span class="math notranslate nohighlight">\(\boldsymbol{w}_{opt}\)</span> of the optimal model defined by the empirical error surface. The following derivations will take us, step by step, from the zero gradient equation to the computation of <span class="math notranslate nohighlight">\(\boldsymbol{w}_{opt}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eqleastsqder">
 <span class="eqno">(3.8)<a class="headerlink" href="#equation-eqleastsqder" title="Permalink to this equation">#</a></span>\[\begin{split}
 \nabla E_{\widehat{MSE}}\{\boldsymbol{\boldsymbol{w}_{opt}}\} &amp;= 0\\
@@ -622,53 +625,53 @@ E_{\widehat{MSE}}\{\boldsymbol{w}\} &amp;= \frac{1}{N}\boldsymbol{e}^T\boldsymbo
 (\boldsymbol{X}^T\boldsymbol{X})^{-1}\boldsymbol{X}^T\boldsymbol{X}\boldsymbol{\boldsymbol{w}_{opt}} &amp;= (\boldsymbol{X}^T\boldsymbol{X})^{-1}\boldsymbol{X}^T\boldsymbol{y} \\
 \boldsymbol{\boldsymbol{w}_{opt}} &amp;= (\boldsymbol{X}^T\boldsymbol{X})^{-1}\boldsymbol{X}^T\boldsymbol{y}
 \end{split}\]</div>
-<p>The solution <a class="reference internal" href="#equation-eqleastsqder">(3.8)</a> is precisely the <strong>least squares</strong> solution that was presented in the <a class="reference internal" href="Ch_regression.html#reg"><span class="std std-ref">Regression</span></a> chapter. We have obtained the least squares solution by solving the equation <span class="math notranslate nohighlight">\(\nabla E_{\widehat{MSE}}\{\boldsymbol{w}_{opt}\}=0\)</span> exactly. Unfortunately, solving the zero-gradient equation <a class="reference internal" href="#equation-gradzero">(3.2)</a> exactly is only possible in a limited number of cases. In the majority of the scenarios we will need to use other optimisation methods, such as gradient descent.</p>
+<p>The solution <a class="reference internal" href="#equation-eqleastsqder">(3.8)</a> is precisely the <strong>least squares</strong> solution that was presented in the <a class="reference internal" href="Ch_regression.html#reg"><span class="std std-ref">Regression</span></a> chapter. Note that we have obtained the least squares solution by solving the equation <span class="math notranslate nohighlight">\(\nabla E_{\widehat{MSE}}\{\boldsymbol{w}_{opt}\}=0\)</span> <strong>exactly</strong>. Unfortunately, solving the zero-gradient equation <a class="reference internal" href="#equation-gradzero">(3.2)</a> exactly is only possible in a limited number of cases. In the majority of the scenarios we will need to use other optimisation methods, such as gradient descent.</p>
 <p>To run gradient descent to train a model, it is necessary to calculate the gradient of the empirical error surface in every iteration. Unfortunately, calculating the gradient of the empirical error surface can be very costly when the training dataset is very large. One simple approach to reduce the computational time is to calculate the gradient using a random subset of the training dataset, known as a <strong>batch</strong>. The resulting gradient is in fact an <em>estimation</em> of the actual gradient of the empirical error surface. If the batch that we use is close to the entire training dataset, the estimated gradient will be close to the actual gradient; if it is very small, it will deviate from the it. In other words, using batches to estimate the gradient produce <strong>noisy gradients</strong>. For this reason, this is known as <strong>stochastic gradient descent</strong>.</p>
 </div>
 <div class="section" id="overfitting-and-regularisation">
 <h3><span class="section-number">3.4.5. </span>Overfitting and regularisation<a class="headerlink" href="#overfitting-and-regularisation" title="Permalink to this heading">#</a></h3>
-<p>We can design approaches that reduce the risk of overfitting by exploiting our understanding of the error surface. <strong>Regularisation</strong> is one such approach and consists of modifying the error surface by adding a new term that effectively restricts the flexibility of our model. For instance the MSE empirical error surface can be modified as follows</p>
+<p>We can design approaches that reduce the risk of overfitting by exploiting our understanding of the error surface. <strong>Regularisation</strong> is one such approach and consists in modifying the error surface by adding a new term that effectively restricts the flexibility of our model. For instance the MSE empirical error surface can be modified as follows</p>
 <div class="math notranslate nohighlight" id="equation-eqmsereg">
 <span class="eqno">(3.9)<a class="headerlink" href="#equation-eqmsereg" title="Permalink to this equation">#</a></span>\[
 E_{\widehat{MSE}-R}\{\boldsymbol{w}\} = \frac{1}{N}\boldsymbol{e}^T\boldsymbol{e} + \lambda \boldsymbol{w}^T\boldsymbol{w}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\boldsymbol{w}^T\boldsymbol{w}\)</span> is the sum of the squares of the model’s parameters and the value of <span class="math notranslate nohighlight">\(\lambda\)</span> controls the relative importance of the error term compared to the parameters term. Overfitting models tend to have large parameters <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span>. Since the term <span class="math notranslate nohighlight">\(\lambda \boldsymbol{w}^T\boldsymbol{w}\)</span> in <a class="reference internal" href="#equation-eqmsereg">(3.9)</a> effectively penalises models that have large parameters, regularising the MSE empirical error surface models that overfit are penalised.</p>
-<p>The optimal solution for the regularised error surface <span class="math notranslate nohighlight">\(E_{\widehat{MSE}-R}\)</span> will strike a balance between reducing the prediction error on the training dataset and preventing the coefficients from taking on large values, which adds rigidity to our solutions. We can show that <a class="reference internal" href="#equation-gradzero">(3.2)</a> can be solved for the regularised MSE empirical error surface, obtaining</p>
+<p>where <span class="math notranslate nohighlight">\(\boldsymbol{w}^T\boldsymbol{w}\)</span> is the sum of the squares of the model’s parameters and the value of <span class="math notranslate nohighlight">\(\lambda\)</span> controls the relative importance of the error term compared to the parameters term. Overfitting models tend to have large parameters <span class="math notranslate nohighlight">\(\boldsymbol{w}\)</span>. Since the term <span class="math notranslate nohighlight">\(\lambda \boldsymbol{w}^T\boldsymbol{w}\)</span> in <a class="reference internal" href="#equation-eqmsereg">(3.9)</a> effectively penalises models that have large parameters, by regularising the MSE empirical error surface models that overfit are penalised.</p>
+<p>The optimal solution for the regularised error surface <span class="math notranslate nohighlight">\(E_{\widehat{MSE}-R}\)</span> will strike a balance between reducing the prediction error on the training dataset and preventing the coefficients from taking on large values, which adds rigidity to our solutions. We can show that <a class="reference internal" href="#equation-gradzero">(3.2)</a> can be solved exactly when we use the regularised MSE as the empirical error surface, obtaining</p>
 <div class="math notranslate nohighlight">
 \[
 \boldsymbol{w}_{opt} = (\boldsymbol{X}^T\boldsymbol{X}+N\lambda\boldsymbol{I})^{-1}\boldsymbol{X}^T\boldsymbol{y}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of samples in the dataset and <span class="math notranslate nohighlight">\(\boldsymbol{I}\)</span> is the identity matrix. Note that when <span class="math notranslate nohighlight">\(\lambda=0\)</span> we obtain the least squares solution without regularisation.</p>
 </div>
-<div class="section" id="optimisation-quality-and-target-quality">
-<h3><span class="section-number">3.4.6. </span>Optimisation quality and target quality<a class="headerlink" href="#optimisation-quality-and-target-quality" title="Permalink to this heading">#</a></h3>
+<div class="section" id="optimisation-cost-and-target-quality">
+<h3><span class="section-number">3.4.6. </span>Optimisation cost and target quality<a class="headerlink" href="#optimisation-cost-and-target-quality" title="Permalink to this heading">#</a></h3>
 <p>Regularised error surfaces are used for training purposes only, i.e. to find the values of the parameters of a model. The regularised error does not represent, however, our notion of quality, as it includes a second term whose purpose is to control the complexity of the final solution. When we use the regularised MSE empirical error surface <a class="reference internal" href="#equation-eqmsereg">(3.9)</a> to train a model, we are asking ourselves, <em>find the model that has the lowest MSE on this dataset, but make sure its coefficients are not too large</em>. In other words, we are adding constraints to our problem. After <strong>training a regression model using a regularised MSE</strong>, if we want to assess its future deployment performance we need to <strong>test it using the conventional definition of MSE</strong>. This should sound strange, as we are using a notion of quality during training that is different from our notion of deployment quality.</p>
-<p>In future chapters we will come across other examples where the quantity that we are optimising does not directly correspond to our notion of quality during deployment. This could due to including other constraints in our problem formulation, as in regularisations, or because it migth be difficult to formulate mathematically an optimisation problem using the notion of quality during deployment. To illustrate the latter scenario, imagine a company that plans to increase their sales volume using a machine learning model that segments their customers into different groups. Formulating a machine learning problem using the sales volume as the quality metric that needs to be optimised would be very difficult, if not impossible. Instead, they would formulate a different problem using a quality metric that they would hope is related to the sales volume.</p>
+<p>In future chapters we will come across other examples where the quantity that we are optimising does not directly correspond to our notion of quality during deployment. This could be due to including other constraints in our problem formulation, as in regularisations, or because it migth be difficult to formulate mathematically an optimisation problem using the notion of quality during deployment. To illustrate the latter scenario, imagine a company that plans to increase their sales volume using a machine learning model that segments their customers into different groups. Formulating a machine learning problem using the sales volume as the quality metric that needs to be optimised would be very difficult, if not impossible. Instead, they would formulate a different problem using a quality metric that they would hope is related to the sales volume.</p>
 <p>To distinguish between the notions of quality during training and deployment, we will reserve the term <strong>quality to describe our target quality during deployment</strong>, and we will use the terms <strong>cost, loss or error to refer to the quantity that we want to optimise during training</strong>. Sometimes both quantities will be the same, but in general, this will not be the case. Our hope will be that the solution obtained during optimisation will also be the one that has the highest quality during deployment.</p>
 </div>
 </div>
 <div class="section" id="the-validation-task">
 <h2><span class="section-number">3.5. </span>The validation task<a class="headerlink" href="#the-validation-task" title="Permalink to this heading">#</a></h2>
-<p>In machine learning there are many families of models available to us to solve any given problem. Each family of models can produce solutions of different shapes and degrees of complexity and ideally, we should be selecting the right one for each problem at hand. Unfortunately, in machine learning we usually lack any previous insight that would guide us in choosing the right family of models. For instance, consider a simple polynomial regression problem. Changing the value of the degree of the polynomial <span class="math notranslate nohighlight">\(D\)</span> leads to subfamilies of models of different complexity. A linear model is a polynomial model where <span class="math notranslate nohighlight">\(D=1\)</span> and is very rigid, quadratic models are polynomial models where <span class="math notranslate nohighlight">\(D=2\)</span> and are more flexible, and so on. The question would be, how do we identify the right value of <span class="math notranslate nohighlight">\(D\)</span>, in other words, what is the complexity of our problem? Validation tasks allow us to precisely do this by producing an estimation of the deployment quality of several family of models, so that we can choose to train, test and deploy the right one. As usual, to conduct validation we need a dataset extracted from our population (see <a class="reference internal" href="#populationsamplingvalidation"><span class="std std-numref">Fig. 3.16</span></a>).</p>
+<p>In machine learning there are many families of models available to us to solve any given problem. Each family of models can produce solutions of different shapes and degrees of complexity and ideally, we should be selecting the right one for each problem at hand. Unfortunately, in machine learning we usually lack any previous insight that would guide us in choosing the right family of models. For instance, consider a simple polynomial regression problem. Changing the value of the degree of the polynomial <span class="math notranslate nohighlight">\(D\)</span> leads to subfamilies of models of different complexity. A linear model is a polynomial model where <span class="math notranslate nohighlight">\(D=1\)</span> and is very rigid, quadratic models are polynomial models where <span class="math notranslate nohighlight">\(D=2\)</span> and are more flexible, and so on. The question would be, how do we identify the right value of <span class="math notranslate nohighlight">\(D\)</span>, in other words, what is the complexity of our problem? Validation tasks allow us to identify the  complexity of the problem and select the right family of models. By producing an estimation of the deployment quality of several family of models, validation tasks allow us to choose the family that we will train, test and hopefully deploy. As usual, to conduct validation we need a dataset extracted from our population (see <a class="reference internal" href="#populationsamplingvalidation"><span class="std std-numref">Fig. 3.16</span></a>).</p>
 <div class="figure align-default" id="populationsamplingvalidation">
 <img alt="_images/PopulationSamplingValidation.svg" src="_images/PopulationSamplingValidation.svg" /><p class="caption"><span class="caption-number">Fig. 3.16 </span><span class="caption-text">Validation tasks use datasets extracted from the population to assess the potential of a family of models to solve a problem.</span><a class="headerlink" href="#populationsamplingvalidation" title="Permalink to this image">#</a></p>
 </div>
-<p>Validation involves training each of the families of models that we are considering. It is important to emphasise that models that are trainined during a validation task are not meant to be deployed. Training a family of models is a prerequisite for us to be able to estimate their deployment quality. Once we have estimated the deployment quality of each family of models, we can select the best one and train it ready for test and deployment. There are three main validation methods: validation set, leave-one-out cross-validation (LOOCV), and <span class="math notranslate nohighlight">\(k\)</span>-fold cross-validation.</p>
+<p>Validation involves training each of the families of models that we are considering. It is important to emphasise that <strong>models that are trainined during a validation task are not meant to be deployed</strong>. Training a family of models is a prerequisite for us to be able to <strong>estimate their deployment quality</strong>. Once we have estimated the deployment quality of each family of models, we can select the best one and train it ready for test and deployment. There are three main validation methods: validation set, leave-one-out cross-validation (LOOCV), and <span class="math notranslate nohighlight">\(k\)</span>-fold cross-validation.</p>
 <p>The <strong>validation set</strong> approach is the simplest one and consists of one single round of training followed by deployment quality estimation. Before validation, the available dataset is split into a training dataset and a validation (or hold-out) dataset (<a class="reference internal" href="#validationset"><span class="std std-numref">Fig. 3.17</span></a>).</p>
 <div class="figure align-default" id="validationset">
 <img alt="_images/ValidationSet_1.svg" src="_images/ValidationSet_1.svg" /><p class="caption"><span class="caption-number">Fig. 3.17 </span><span class="caption-text">In the validation set approach, the available dataset is split into two sets, one of them is used for training each family of models, the other to estimate their deployment quality.</span><a class="headerlink" href="#validationset" title="Permalink to this image">#</a></p>
 </div>
 <p>To split the available dataset, we need to specify what fraction of samples will be assigned to each split and the assignment should be done randomly. Unfortunately, there is no general rule to decide which fraction of samples should be assigned to each split. Hence, we might ask ourselves, how good is our estimation of the future deployment quality of each family of models? If the validation set is small, the estimation itself will be poor. If it is large, the estimation will be better, however the number of samples used for training will be low and therefore, we will have a poorly trained model. Consequently, we will have a good estimation of the deployment quality of a model that has been poorly trained. In both extreme cases, the estimation of the deployment quality of each family of models will not be very reliable. In other words, it might not reflect the potential of each family of models to solve the machine learning problem.</p>
-<p>In <strong>LOOCV</strong> we conduct multiple rounds of training and deployment quality estimation. During each round, we use one sample for performance estimation and the remaining samples for training - hence the name <em>leave-one-out</em>. During the first round we leave the first sample out, during the second round the second sample and so on until the last round, where we leave the last sample out (<a class="reference internal" href="#loocv"><span class="std std-numref">Fig. 3.18</span></a>). Therefore, there are as many training and deployment quality estimation rounds as there are samples.</p>
+<p>In <strong>LOOCV</strong> we conduct multiple rounds of training and deployment quality estimation. During each round, we use one sample for deployment quality estimation and the remaining samples for training - hence the name <em>leave-one-out</em>. During the first round we leave the first sample out, during the second round the second sample and so on until the last round, where we leave the last sample out (<a class="reference internal" href="#loocv"><span class="std std-numref">Fig. 3.18</span></a>). Therefore, there are as many training and deployment quality estimation rounds as there are samples.</p>
 <div class="figure align-default" id="loocv">
 <img alt="_images/LOOCV.svg" src="_images/LOOCV.svg" /><p class="caption"><span class="caption-number">Fig. 3.18 </span><span class="caption-text">In leave-one-out cross-validation <span class="math notranslate nohighlight">\(N\)</span> rounds of training and deployment quality estimation are conducted, where <span class="math notranslate nohighlight">\(N\)</span> is the size of the available dataset. In each round, only one sample is used to assess the deployment quality and at the end, an average is computed.</span><a class="headerlink" href="#loocv" title="Permalink to this image">#</a></p>
 </div>
-<p>After completing all the rounds, we collect the individual estimations of the deployment quality produced by each round and compute an average. The resulting figure is the final estimation of the performance of the family of models. Compared to the validation set approach, LOOCV is computationally intensive, as it requires one round of training and performance estimation per sample in the dataset, whereas the validation set approach consisted of one single round. On the other hand, models are trained using most of the available samples and hence, are better trained.</p>
+<p>After completing all the rounds, we collect the individual estimations of the deployment quality produced by each round and compute an average. The resulting figure is the final estimation of the deployment quality of the family of models under investigation. Compared to the validation set approach, LOOCV is computationally intensive, as it requires one round of training and performance estimation per sample in the dataset, whereas the validation set approach consisted of one single round. On the other hand, models are trained using most of the available samples and hence, are better trained.</p>
 <p>The third validation approach is <strong><span class="math notranslate nohighlight">\(k\)</span>-fold</strong> cross validation. This validation approach randomly splits the available dataset into <span class="math notranslate nohighlight">\(k\)</span> subsets, also known as <em>folds</em>. Then it runs <span class="math notranslate nohighlight">\(k\)</span> training and deployment quality estimation rounds. During each round, one of the folds is used for deployment quality estimation and the remaining folds for training (<a class="reference internal" href="#kfoldcv"><span class="std std-numref">Fig. 3.19</span></a>).</p>
 <div class="figure align-default" id="kfoldcv">
 <img alt="_images/kfoldCV.svg" src="_images/kfoldCV.svg" /><p class="caption"><span class="caption-number">Fig. 3.19 </span><span class="caption-text"><span class="math notranslate nohighlight">\(k\)</span>-fold cross validation condicts <span class="math notranslate nohighlight">\(k\)</span> rounds of training and deployment quality estimation, by splitting the dataset into <span class="math notranslate nohighlight">\(k\)</span> subsets or folds.</span><a class="headerlink" href="#kfoldcv" title="Permalink to this image">#</a></p>
 </div>
-<p>We have already seen that although simple and computationally inexpensive, the validation set approach produces deployment quality estimations whose accuracy is unknown. Furthermore, since the validation set approach uses a fraction of the available samples, the trained models will be worse than models trained using all the available samples. Therefore, the deployment quality estimation tends to be too pessimistic. LOOCV uses most of the samples for training, and therefore suffers less from overpessimistic estimations, at the expense of increased computational cost. <span class="math notranslate nohighlight">\(k\)</span>-fold cross validation offers a trade-off that reduces the computational cost by reducing the number of rounds.</p>
+<p>We have already seen that although simple and computationally inexpensive, the validation set approach produces poor deployment quality estimations. Since the validation set approach uses a fraction of the available samples, the trained models will be worse than models trained using all the available samples. Therefore, the deployment quality estimation tends to be too pessimistic. LOOCV uses most of the samples for training, and therefore suffers less from overpessimistic estimations, at the expense of increased computational cost. <span class="math notranslate nohighlight">\(k\)</span>-fold cross validation offers a trade-off that reduces the computational cost by reducing the number of rounds.</p>
 </div>
 <div class="section" id="summary-and-discussion">
 <h2><span class="section-number">3.6. </span>Summary and discussion<a class="headerlink" href="#summary-and-discussion" title="Permalink to this heading">#</a></h2>
@@ -702,14 +705,14 @@ E_{\widehat{MSE}-R}\{\boldsymbol{w}\} = \frac{1}{N}\boldsymbol{e}^T\boldsymbol{e
     <script>kernelName = 'python3'</script>
 
                 </article>
-              
 
-              
-              
+
+
+
                 <footer class="bd-footer-article">
-                  
+
 <div class="footer-article-items footer-article__inner">
-  
+
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
@@ -731,15 +734,15 @@ E_{\widehat{MSE}-R}\{\boldsymbol{w}\} = \frac{1}{N}\boldsymbol{e}^T\boldsymbol{e
       <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
-  
+
 </div>
 
                 </footer>
-              
+
             </div>
-            
-            
-              
+
+
+
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
@@ -765,7 +768,7 @@ E_{\widehat{MSE}-R}\{\boldsymbol{w}\} = \frac{1}{N}\boldsymbol{e}^T\boldsymbol{e
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#true-and-empirical-error-surfaces">3.4.3. True and empirical error surfaces</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-on-the-empirical-error-surface">3.4.4. Optimisation on the empirical error surface</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-and-regularisation">3.4.5. Overfitting and regularisation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-quality-and-target-quality">3.4.6. Optimisation quality and target quality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-cost-and-target-quality">3.4.6. Optimisation cost and target quality</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-validation-task">3.5. The validation task</a></li>
@@ -774,49 +777,49 @@ E_{\widehat{MSE}-R}\{\boldsymbol{w}\} = \frac{1}{N}\boldsymbol{e}^T\boldsymbol{e
   </nav></div>
 
 </div></div>
-              
-            
+
+
           </div>
           <footer class="bd-footer-content">
-            
+
 <div class="bd-footer-content__inner container">
-  
+
   <div class="footer-item">
-    
+
 <p class="component-author">
 By <a href="https://www.linkedin.com/in/jesus-requena-carrion/" target="_blank">Jesús Requena Carrión</a> and <a href="http://nikeshbajaj.in" target="_blank">Nikesh Bajaj</a>
 
 </p>
 
   </div>
-  
+
   <div class="footer-item">
-    
+
   <p class="copyright">
-    
+
       © Copyright 2023.
       <br/>
-    
+
   </p>
 
   </div>
-  
+
   <div class="footer-item">
-    
+
   </div>
-  
+
   <div class="footer-item">
-    
+
   </div>
-  
+
 </div>
           </footer>
-        
+
 
       </main>
     </div>
   </div>
-  
+
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
   <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
 <script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
