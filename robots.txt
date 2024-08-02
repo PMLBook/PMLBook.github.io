@@ -1,0 +1,87 @@
+# This is the robots.txt file for PMLBook.github.io
+
+User-agent: *
+Disallow: /*
+Disallow: /Users/
+Disallow: /users/
+Disallow: /*/print$
+Disallow: /email/
+Disallow: /contactus/
+Disallow: /share/
+Disallow: /websearch
+Disallow: /*?commentpage=
+Disallow: /whsmiths/
+Disallow: /external/overture/
+Disallow: /discussion/*
+Disallow: /search
+Disallow: /music/artist/*
+Disallow: /music/album/*
+Disallow: /books/data/*
+Disallow: /settings/
+Disallow: /embed/
+Disallow: /*styles/js-on.css$
+Disallow: /f/healthcheck
+Disallow: /sections
+Disallow: /top-stories
+Disallow: /most-read/sport
+Disallow: /articles
+Disallow: /global$
+Disallow: /*/feedarticle/*
+Disallow: /preference/*
+Disallow: /print/
+Disallow: /info/tech-feedback
+Disallow: *.emailjson
+Disallow: *.emailtxt
+Disallow: /headline.txt
+Disallow: *?*dcr=apps*
+
+User-agent: Mediapartners-Google
+Disallow:
+
+User-agent: NewsNow
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: TurnitinBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: MoodleBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: https://hada.news
+Disallow: /
+
+User-agent: https://www.imediaethics.org
+Disallow: /
+
+User-agent: Mojeek
+Disallow: /
+
+User-agent: JenkersBot
+Disallow: /
+
+User-agent: Seekr
+Disallow: /
+
+User-agent: Turnitin
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
