@@ -1,61 +1,60 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. Structure analysis &#8212; Principles of Machine Learning: A Deployment-First Perspective</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5. Structure discovery &#8212; Principles of Machine Learning: A Deployment-First Perspective</title>
 
 
 
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
 
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
 
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/pml_admonitions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pml_admonitions.css?v=8ec5b669" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e5dcbee9" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-0HQMPESCSN"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -63,14 +62,20 @@
                 gtag('js', new Date());
                 gtag('config', 'G-0HQMPESCSN');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-0HQMPESCSN');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch_discovery';</script>
-    <link rel="shortcut icon" href="_static/pml_ico.ico"/>
+    <link rel="icon" href="_static/pml_ico.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="6. Density estimation" href="Ch_density.html" />
@@ -84,19 +89,23 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  <div id="pst-scroll-pixel-helper"></div>
+
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
 
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
 
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
 
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,11 +128,19 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
 
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+
+
 
       <div class="bd-sidebar-primary bd-sidebar">
 
@@ -140,6 +157,9 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
 
+
+
+
 <a class="navbar-brand logo" href="welcome.html">
 
 
@@ -150,12 +170,24 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-    <img src="_static/pml_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/pml_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+
+    <img src="_static/pml_logo.png" class="logo__image only-light" alt="Principles of Machine Learning: A Deployment-First Perspective - Home"/>
+    <script>document.write(`<img src="_static/pml_logo.png" class="logo__image only-dark" alt="Principles of Machine Learning: A Deployment-First Perspective - Home"/>`);</script>
 
 
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
 
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -170,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Ch_regression.html">2. Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_methodology1.html">3. Methodology I: Three basic tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_classification1.html">4. Classification I: The geometric view</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Structure analysis</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Structure discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_density.html">6. Density estimation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_classification2.html">7. Classification II: The probabilistic view</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ch_methodology2.html">8. Methodology II: Pipelines</a></li>
@@ -183,18 +215,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Ch_appendix.html">15. Appendix</a></li>
 </ul>
 
-<hr style="height:2px;border:none;color:#000000;background-color:#000000;width:50%;text-align:center;margin:10px auto auto auto;">
-</div>
-
-</nav>
-</div></div>
-
-<a><b>Readers:</b></a>
-<div style="height:80%;width:80%;">
-<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=06DuCmf206QlXB0PwXp_5bEXHN0MJWuVeBiYDLQ4Ovc"></script>
-<!-- <h1>Test 0</h1> -->
-</div>
-<hr>
+    </div>
+</nav></div>
+    </div>
 
 
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -205,7 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
 
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
 
 
 
@@ -214,14 +237,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
 
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
 
     <div class="header-article-items__start">
 
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
 
     </div>
 
@@ -343,24 +366,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
 
     </div>
@@ -371,11 +398,49 @@ document.write(`
 
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Structure analysis</h1>
+    <h1>Structure discovery</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
 
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-english-we-speaking">5.1. Is English we speaking?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedded-deployment">5.2. Embedded deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-structure-discovery-problems">5.3. Formulating structure discovery problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-notation">5.3.1. Mathematical notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-and-quality">5.3.2. Cost and quality</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">5.4. Clustering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means">5.4.1. K-means</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-as-proximity">5.4.1.1. Similarity as proximity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-as-an-optimisation-method">5.4.1.2. K-means as an optimisation method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#local-minima-in-k-means">5.4.1.3. Local minima in K-means</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-k">5.4.1.4. Selecting <span class="math notranslate nohighlight">\(K\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connectivity-based-methods">5.4.2. Connectivity-based methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-as-connectivity-dbscan">5.4.2.1. Similarity as connectivity: DBSCAN</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dbscan-hyperparameters">5.4.2.2. DBSCAN hyperparameters</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-clustering">5.4.3. Hierarchical clustering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis-discovery">5.5. Basis discovery</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-sample-spread">5.5.1. Measuring sample spread</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-directional-sample-variance">5.5.2. The directional sample variance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spread-along-perpendicular-directions">5.5.3. Spread along perpendicular directions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principal-component-analysis">5.5.4. Principal Component Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-discussion">5.6. Summary and discussion</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -383,35 +448,728 @@ document.write(`
 
 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
 
-  <div class="tex2jax_ignore mathjax_ignore section" id="structure-analysis">
-<span id="struct"></span><h1><span class="section-number">5. </span>Structure analysis<a class="headerlink" href="#structure-analysis" title="Permalink to this heading">#</a></h1>
-<br>
-<hr>
-<div class="note admonition">
-<p class="admonition-title">Coming soon ..</p>
-<h3 style="text-align: center;"><b>In progress</b></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="structure-discovery">
+<span id="struct"></span><h1><span class="section-number">5. </span>Structure discovery<a class="headerlink" href="#structure-discovery" title="Link to this heading">#</a></h1>
+<p>The concept of <strong>attribute space</strong> is key in machine learning.</p>
+<p>We have learned that the attribute space allows us to visualise datasets. Although visualising datasets is indeed very important, there is much more to the attribute space than just plotting samples. The attribute space provides us with a framework to <strong>think about populations</strong> and <strong>how machine learning works</strong>. Using the notion of attribute space we can make the obvious but crucial observation that machine learning works because <strong>the attribute space is mostly empty</strong>. What we mean by this is that samples from a population do not just lie anywhere in the attribute space. The way that samples from a population are spread across the attribute space is what we call the <strong>structure of the population</strong>. Whether implicitely or explicitely, machine learning methods operate on the basis that there exists an underlying structure whose understanding we can benefit from.</p>
+<p>The goal of unsupervised learning is to provide answers to the important question, <strong>what is the structure of my population?</strong> Or in simpler words, <strong>where in the attribute space will I find samples from my population?</strong> As you would expect, unsupervised learning methods use datasets to build models that describe how samples from a population are spread across the attribute space.</p>
+<p>This chapter will focus on our first family of unsupervised learning problems: structure discovery. We will start by taking a linguistic detour which will invite us to ask ourselves, <em>is English we speaking</em>? This linguistic journey will culminate in our fifth top tip. Then we will introduce the notion of embedded deployment, which is the most common deployment modality in unsupervised learning. Afterwards, we will formulate structure discovery problems and then will introduce two subfamilies of approaches, namely clustering and basis discovery. The final two sections will cover each subfamily in more detail.</p>
+<section id="is-english-we-speaking">
+<h2><span class="section-number">5.1. </span>Is English we speaking?<a class="headerlink" href="#is-english-we-speaking" title="Link to this heading">#</a></h2>
+<p>If you are a Muggle like us, reading the words <em>wingardium leviosa</em> will leave you indifferent. It might have an esoteric feel to it but still, it will sound like a meaningless utterance. However if you happen to study at Hogwarts School of Witchcraft and Wizardry, you will most certainly know that there are <em>wingardium leviosas</em> and <em>wingardium leviosaaas</em>, and your ability to distinguish them will make all the difference between being able to levitate an object and failing to do so. Harry Potter’s best friend and Hogwarts School’s low-ability student Ron Weasley knows this well: language precision can make or break a charm.</p>
+<p>Fantasy fiction, like the Harry Potter series, draws heavily from belief systems in which rituals involving precise vocalisations allow the initiated to connect with the supernatural world. Language precision being essential in many such rituals, it is not surprising to learn that one of the most important contributions to linguistics <em>ever</em>, known as the Astadhyayi, was born out of the need to transmit faithfully a corpus of sacred texts. These texts are known as the Vedas and were composed in the Sanskrit language around 1500 BCE, northwest of the Indian subcontinent. The Astadhyayi is a sophisticated description of the Sanskrit language and was written with a clear goal in mind: to freeze Sanskrit so that future generations would be able to recite the Vedas exactly as they were originally composed. Thanks to the Astadhyayi, Sanskrit remains <em>the</em> best understood ancient language.</p>
+<p>The desire to <em>freeze</em> the Sanskrit language can only make sense if we acknowledge that natural languages change over time. We have all witnessed language changes in our own lifetimes and whether we welcome these changes or deeply mistrust them, they are the reason behind the existing diversity of languages. Early Western scholars found the origins of the world languages in a divine punishment - Babel’s <em>confusio linguarium</em>. Nowadays we ascribe the diversity of languages to a historical process where communities that once lived together broke up and diverged, following different geographical and linguistic paths. This historical process is frequently illustrated as a tree whose branches represent the different linguistic paths traversed by multiple generations of peoples and culminated in today’s living languages, symbolised by the tree’s leaves (see <a class="reference internal" href="#language-tree"><span class="std std-numref">Fig. 5.1</span></a>). Language trees also serve as taxonomy systems, allowing us to represent the relationship between languages in pretty much the same way as we use life trees to represent the evolution of living organisms and their relationships. Sanskrit, for instance, belongs to the Indo-European language branch, together with other ancient languages such as Latin, and many living ones, including Punjabi, Persian, Kurdish, Albanian, Latvian, German and Portuguese. So here is a simple question for you: how many leaves do you think the full language tree has? Tens, hundreds, thousands?</p>
+<figure class="align-default" id="language-tree">
+<img alt="_images/ChestnutTree1.jpg" src="_images/ChestnutTree1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Branches of a horse chestnut tree in Clissold Park, London. The origins of and relationship between human languages are frequently represented as tree branches. Branching can be interpreted as the historical process by which a single language splits into separate languages. Therefore, a branch can also be used to represent a family of related languages. For instance, the Indo-European language branch has several sub-branches, including the Indo-Iranian, Anatolian, Armenian, Hellenic, Balto-Slavic, Italic and Germanic. These sub-branches, in turn, keep branching further.</span><a class="headerlink" href="#language-tree" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Linguists have asked themselves this same question many times before, and answers range from several thousand languages to a few dozen. Given the lack of consensus the obvious follow-up question is, what is so difficult about counting languages? Do linguists suspect that there might be languages spoken by peoples they have not met yet? Are there previously recorded languages that might have now ceased to exist? As it turns out, the reason is much deeper than this: we simply find it difficult to agree on what a language is. Gone are the days when <em>true</em> languages were superior forms of human communication, equipped with a formalised grammar, a rich literary tradition and a powerful army. Back in those days we would have said that two people understand each other, provided they speak the same <em>prescribed</em> language - or something close to it. Today we say instead that two people speak the same language, if they understand each other. Where we used to see immutable languages surrounded by corrupted versions, such as provincial dialects or creoles, we now see a linguistic continuum where every point can be at the same time a language, a dialect and a creole. Languages are no longer seen as pure and isolated entities, but as ever changing pluralities influencing one another. Rather than as a branching tree, a more accurate illustration of the evolution of natural languages would be that of a leaf whose veins diverge and reconnect, evolve independently over time and then mix back again, each vein in the leaf as valuable as any other (see <a class="reference internal" href="#language-leaf"><span class="std std-numref">Fig. 5.2</span></a>).</p>
+<figure class="align-default" id="language-leaf">
+<img alt="_images/ChestnutLeaf2.jpg" src="_images/ChestnutLeaf2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.2 </span><span class="caption-text">Detailed view of a horse chestnut leaf. Its veins do not grow and diverge independently from one another, but remain connected. Analogously, languages do not develop independently from one another. There is no such thing as a pure language.</span><a class="headerlink" href="#language-leaf" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Let us move to the safe realm of machine learning and consider the problem of transcribing English speech to text. To build a machine learning solution for this problem, we would need to build a dataset consisting of multiple English speech recordings together with their transcriptions. This might seem uncontroversial at first, however upon reflection we will ask ourselves, what do we mean by <em>English</em>? One of the so-called <em>standard</em> Englishes, for instance standard British, American or Australian? Or a group of related English variants? Whether we think English should be spoken in a certain, <em>correct</em> way is completely irrelevant to solve our problem. The relevant consideration is how the speakers in our target population actually speak. We know by now that our datasets have to be representative of our target population. Therefore, if we want to create the right dataset to build an English speech-to-text transcription model, we need to know in advance which population we will use this model against so that we can collect the right speech recordings. Collecting speech recordings that reflect how we <em>feel</em> our population <em>should</em> speak will not work, as we will risk rendering our datasets non-representative and hence unsuitable to build our solution.</p>
+<div class="tip admonition">
+<p class="admonition-title">Our fifth top tip is:</p>
+<h3 style="text-align: center;"><b>Know your populations!</b></h3>
 </div>
-<hr>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>  _____      _            _       _                    __
- |  __ \    (_)          (_)     | |                  / _|
- | |__) | __ _ _ __   ___ _ _ __ | | ___  ___    ___ | |_
- |  ___/ &#39;__| | &#39;_ \ / __| | &#39;_ \| |/ _ \/ __|  / _ \|  _|
- | |   | |  | | | | | (__| | |_) | |  __/\__ \ | (_) | |
- |_|   |_|  |_|_| |_|\___|_| .__/|_|\___||___/  \___/|_|
-  __  __            _     _| |           _                           _
- |  \/  |          | |   (_)_|          | |                         (_)
- | \  / | __ _  ___| |__  _ _ __   ___  | |     ___  __ _ _ __ _ __  _ _ __   __ _
- | |\/| |/ _` |/ __| &#39;_ \| | &#39;_ \ / _ \ | |    / _ \/ _` | &#39;__| &#39;_ \| | &#39;_ \ / _` |
- | |  | | (_| | (__| | | | | | | |  __/ | |___|  __/ (_| | |  | | | | | | | | (_| |
- |_|  |_|\__,_|\___|_| |_|_|_| |_|\___| |______\___|\__,_|_|  |_| |_|_|_| |_|\__, |
-                                                                              __/ |
-                                                                             |___/
-</pre></div>
+<p>When we describe our populations we sometimes use concepts that behind an appearance of familiarity, are only vaguely understood. In some cases those concepts can even be nonsensical. Language is one of those deceivingly simple concepts but there are many others, for instance emotion, intelligence, opinion, taste or ethnicity. Taking the concepts that define our populations for granted will at best lead to meaningless problems, at worst to harmful solutions. In every case, dissapointment will follow as we will have spent efforts building solutions that when deployed do not work as intended. Taking the time to understand our populations and the concepts that define them is crucial to formulate problems that make sense and to create the right datasets to solve them.</p>
+<p><strong>A note of warning</strong>: The <em>Cruciatus Curse</em> always hits sloppy machine learning practitioners who do not take the time to understand their populations.</p>
+<div class="question1 admonition">
+<p class="admonition-title">Question for you</p>
+<p>Is English we speaking?</p>
+<p>Submit your response here: <a href="" target = "_blank">Your Response</a></p>
 </div>
-<hr>
+</section>
+<section id="embedded-deployment">
+<span id="embedded"></span><h2><span class="section-number">5.2. </span>Embedded deployment<a class="headerlink" href="#embedded-deployment" title="Link to this heading">#</a></h2>
+<p>Machine learning is concerned with problems involving populations. In some cases these problems can be <strong>fully formulated in terms of the attributes</strong> that describe the target population. For instance, in a prediction problem our goal is to estimate the value of the label of a future sample. The label is, of course, one of the attributes of our samples. Using supervised learning, we can build a model that predicts the value of a label. This model is the solution to the prediction problem and can therefore be directly deployed. <strong>Direct deployment</strong> is the deployment modality where the model that we have built is the solution to the problem at hand.</p>
+<p>There are other problems that are <strong>not fully formulated in terms of the attributes</strong> of the target population, yet we can benefit from learning something about the population. In such cases it is useful to distinguish between the <strong>main problem</strong> that we want to solve, and the <strong>nested problem</strong> of gaining knowledge about the population. Unsupervised learning can be used to build models that constitute solutions to a nested problem. Once built, unsupervised learning models can be embedded within the solution to the main problem and be deployed as one of its components. We call this second deployment modality <strong>embedded deployment</strong>.</p>
+<p>Let us discuss one example that illustrates the notion of embedded deployment. Consider a recommendation system for a movie streaming plaform, whose purpose is to offer a personalised catalog of movies to the platform’s customers. Building a recommendation system is our <em>main problem</em>, where the platform’s customers form our target population. To build this recommendation system it is important to understand our population. One option to describe our population is to define different categories of customers. This task is known as <em>customer segmentation</em>. Customer categories can be hand-crafted based on previous knowledge about the customers or be discovered using datasets that record details about the customers. Customer segmentation constitutes the <em>nested problem</em> that we need to solve prior to solving the main problem of building a recommendation system. Once we have defined a set of customer categories, the recommendation system can create a catalog for each category of customers. At the end of this process we will deploy a recommendation system and embedded within it, a customer segmentation solution.</p>
+<p>Unsupervised learning offers a variety of approaches to create customer categories using datasets. Even though we have not covered any unsupervised learning approach yet, we would agree that different unsupervised learning approaches might lead to different categories of customers. So the question is, how can we identify the most suitable segmentation of customers? To answer this question, we need to note that we are not asking how well a customer segmentation model describes our population of customers, but rather <em>how useful it is in the context of the recommendation system that we want to build</em>. In other words, <strong>to assess the quality of the solution to the nested problem, we need to assess the deployment quality of the solution to the main problem</strong>. Understanding this point is key to developing test strategies in unsupervised learning. We will come back to this point when we discuss the notions of <a class="reference internal" href="#costanddepl"><span class="std std-ref">Cost and quality</span></a> in structure discovery.</p>
+</section>
+<section id="formulating-structure-discovery-problems">
+<h2><span class="section-number">5.3. </span>Formulating structure discovery problems<a class="headerlink" href="#formulating-structure-discovery-problems" title="Link to this heading">#</a></h2>
+<p>Unsupervised learning builds models that describe how samples from a population are distributed across the attribute space. Depending on the type of description that they provide, unsupervised learning methods can be categorised into two subfamilies. These two subfamilies were introduced in <a class="reference internal" href="Ch_introduction.html#intro3"><span class="std std-ref">The machine learning taxonomy</span></a> and are <strong>density estimation</strong>, which will be covered in a <a class="reference internal" href="Ch_density.html#density"><span class="std std-ref">later chapter</span></a>, and <strong>structure discovery</strong>, which is the focus of this chapter.</p>
+<p>A structure discovery model describes its target population as a <strong>discrete set of constituents</strong>. There are different approaches in structure discovery, and we will group them into two categories: clustering and basis discovery. <strong>Clustering</strong> approaches create constituents that are defined as collections of similar samples. Constituents in <strong>basis discovery</strong> are directions of interest in the attribute space. Let us develop the mathematical notation needed to formulate structure discotery problems.</p>
+<section id="mathematical-notation">
+<h3><span class="section-number">5.3.1. </span>Mathematical notation<a class="headerlink" href="#mathematical-notation" title="Link to this heading">#</a></h3>
+<p>In contrast with supervised learning, in unsupervised learning <strong>the notions of label and predictor do not exist</strong>. Thus, the mathematical notation that we will present in structure discovery will not include either of them.</p>
+<p>The basic mathematical notation that we need to discuss structure discovery problems and methods consists of the following concepts:</p>
+<ul class="simple">
+<li><p><strong>Population sample</strong>: <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span>.</p></li>
+<li><p><strong>Number of attributes</strong>: <span class="math notranslate nohighlight">\(D\)</span>. This is also the number of dimensions of the attribute space.</p></li>
+<li><p><strong>Dataset</strong>: <span class="math notranslate nohighlight">\(\{\boldsymbol{x}_i: 1\leq i \leq N \}\)</span>, where <span class="math notranslate nohighlight">\(N\)</span> is the number of samples and <span class="math notranslate nohighlight">\(i\)</span> is the sample identifier. The attributes of a dataset sample <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> will be denoted by <span class="math notranslate nohighlight">\(x_{i,1}, ..., x_{i,D}\)</span>. When all the attributes are numerical, we will define sample <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> as the vector <span class="math notranslate nohighlight">\(\boldsymbol{x}_i=\left[x_{i,1}, ..., x_{i,D} \right]^T\)</span>. <strong>Note that we have not appended the value 1 to this vector, as we did in supervised learning</strong>.</p></li>
+<li><p><strong>Model</strong>: discrete set of <span class="math notranslate nohighlight">\(K\)</span> constituents <span class="math notranslate nohighlight">\(\{C_k: 1\leq k \leq K\}\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is the constituent identifier.</p></li>
+</ul>
+<p><a class="reference internal" href="#agevsdevicevsos"><span class="std std-numref">Table 5.1</span></a> shows a toy dataset consisting of samples described by three attributes, namely <em>Age</em>, <em>Device type</em> and <em>OS version</em>. For instance, the third sample in this dataset has the attributes <span class="math notranslate nohighlight">\(x_{3,1} = 66\)</span>,  <span class="math notranslate nohighlight">\(x_{3,2} =\text{ 'Smart TV'}\)</span> and <span class="math notranslate nohighlight">\(x_{3,3} = \text{ 'Tizen 6.5'}\)</span>, where we have used <span class="math notranslate nohighlight">\(Age\)</span> as the first attribute, <span class="math notranslate nohighlight">\(Device \ type\)</span> as the second and <span class="math notranslate nohighlight">\(OS \ version\)</span> as the third. This toy dataset could be used to build a solution for a customer segmentation problem like the one suggested in the section on <a class="reference internal" href="#embedded"><span class="std std-ref">Embedded deployment</span></a>. Note that there is nothing about <a class="reference internal" href="#agevsdevicevsos"><span class="std std-numref">Table 5.1</span></a> that makes this dataset an <em>unsupervised learning dataset</em>. It is simply a dataset. Some authors make a distinction between <em>labelled datasets</em> and <em>unlabelled datasets</em> to emphasise that they are used to solve, respectively, a supervised or an unsupervised learning problem. Any dataset can however be used in both supervised and unsupervised learning problems and therefore we will not make such distinction. From a deployment-first perspective it makes sense to distinguish between supervised and unsupervised learning problems and models, not datasets.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="agevsdevicevsos">
+<caption><span class="caption-number">Table 5.1 </span><span class="caption-text">A toy dataset registering three attributes (customer age, device type and OS version) describing a group of customers of a video streaming platform.</span><a class="headerlink" href="#agevsdevicevsos" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Age</p></th>
+<th class="head"><p>Device type</p></th>
+<th class="head"><p>OS version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_1\)</span></p></td>
+<td><p>18</p></td>
+<td><p>Mobile</p></td>
+<td><p>Android 11</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_2\)</span></p></td>
+<td><p>37</p></td>
+<td><p>Tablet</p></td>
+<td><p>iOS 13</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_3\)</span></p></td>
+<td><p>66</p></td>
+<td><p>Smart TV</p></td>
+<td><p>Tizen 6.5</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_4\)</span></p></td>
+<td><p>25</p></td>
+<td><p>Laptop</p></td>
+<td><p>Windows 10</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_5\)</span></p></td>
+<td><p>26</p></td>
+<td><p>Mobile</p></td>
+<td><p>iOS 14</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<p>Models in structure discovery describe a population as a collection of <span class="math notranslate nohighlight">\(K\)</span> constituents <span class="math notranslate nohighlight">\(C_k\)</span>. Take as an example a customer segmentation scenario where we define four categories of customers, for instance the categories:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(C_1: \{\text{Customers where } Age \leq 20\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_2: \{\text{Customers where } 20 &lt; Age \leq 45\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_3: \{\text{Customers where }  45 &lt; Age \leq 60\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_4: \{\text{Customers where } 60 \leq Age\}\)</span></p></li>
+</ul>
+<p>These four categories constitute a summarised description of our customer base and they allow us to think about our population as if it consisted of four customers. Using our mathematical notation, we would say that this model consists of <span class="math notranslate nohighlight">\(K = 4\)</span> constituents. The first constituent <span class="math notranslate nohighlight">\(C_1\)</span> corresponds to the category of all the customers in our population who are 20 years old or younger. The remaining constituents, <span class="math notranslate nohighlight">\(C_2\)</span>, <span class="math notranslate nohighlight">\(C_3\)</span> and <span class="math notranslate nohighlight">\(C_4\)</span>, can be interpreted in a similar way. In this example we have used the customers’ age to define each category, but we could have used the other attributes too. For instance, we could have defined one constituent as the group of customers who are 45 years old or younger, and use a mobile device. The question is, how can we come up with such constituents?</p>
+<p>In structure discovery we use datasets of samples from our target population to define a set of constituents. In some cases these constituents can have a straightforward interpretation like <em><span class="math notranslate nohighlight">\(C_1\)</span> corresponds to all the customers who are 20 years old or younger</em>, but in general such simple interpretation might not be available. As we shall see, each structure discovery approach will implement a different strategy and in general, different approaches will produce a different set of constituents. To make sense of each strategy, we need to discuss first the notion of cost in unsupervised learning.</p>
+</section>
+<section id="cost-and-quality">
+<span id="costanddepl"></span><h3><span class="section-number">5.3.2. </span>Cost and quality<a class="headerlink" href="#cost-and-quality" title="Link to this heading">#</a></h3>
+<p>In chapter <a class="reference internal" href="Ch_methodology1.html#meth1"><span class="std std-ref">Methodology I: Three basic tasks</span></a> we learned that during training, machine learning models are built using a dataset together with a notion of cost. We also learned that the final quality of a model has to be assessed in deployment conditions, either live, once the model has been deployed, or during an offline test task using a separate dataset.</p>
+<p>Before discussing how the notions of cost and quality are applied in structure discovery -and unsupervised learning in general- let us pause for a moment and reflect on how we approach quality assessment in supervised learning. As mentioned in the <a class="reference internal" href="#embedded"><span class="std std-ref">Embedded deployment</span></a> section, supervised learning models can be directly deployed against the target population. Furthremore, in direct deployment <strong>the quality of a solution is defined in terms of the attributes of the population</strong>. Specifically, the quality of a supervised learning model is defined as its ability to predict one of the attributes of the population, namely the label. Since quality assessement in supervised learning requires comparing a model’s predicted labels to the true labels, designing a test tasks is simple. We just need to create a dataset of samples whose labels we know -a test dataset- and ask the model to predict the values of the labels. The predictions on the test dataset can then be used to estimate the deployment quality of the model.</p>
+<p>Structure discovery and in general unsupervised learning models are also trained using a dataset and a notion of cost. The cost in unsupervised learning is however very different from the cost in supervised learning. Specifically, <strong>the unsupervised learning cost cannot generally be linked to the notion of deployment quality</strong>. Having learned that training costs in supervised learning capture a model’s ability to predict the value of a label, you might find this statement confusing. As we shall see, in structure discovery the cost encapsulates prior assumptions about the nature of the constituents that we seek to define. This means that <strong>when we choose a structure discovery approach together with a cost we are imposing how the final constituents will look</strong>. A similar observation will be made about the role of the cost in <a class="reference internal" href="Ch_density.html#density"><span class="std std-ref">density estimation</span></a>. A natural follow-up question is, how do we know if we are choosing the right structure discovery approach? Are we obtaining the <em>true constituents</em> of our population? For instance, in the customer segmentation problem we will ask ourselves, how do we know that we have created the right categories of customers, if their nature depends on a cost that we have chosen?</p>
+<p>As was the case in supervised learning, we can only assess the quality of an unsupervised learning model in deployment conditions. Deployment is however very different in supervised and unsupervised learning. Since unsupervised learning models are usually deployed as a component of the solution of a main problem, <strong>the notion of deployment quality will in general not be defined in terms of the attributes of the population</strong>. Therefore, we might not be able to use a dataset of samples from our population to assess the quality of our solution. Quality assessment in unsupervised learning depends heavily on the nature of the main problem. To illustrate this point, let us get back to our customer segmentation problem. To assess the quality of a customer segmentation solution we need to assess the quality of the whole recommendation system it is a part of, for instance by counting how many movies from the catalog our customers have watched. Note that in this example, the quantity <em>number of watched movies</em> is not provided by any of the attributes of our population (e.g. <em>age</em>, <em>device type</em>, <em>OS version</em>). Furthermore, the same customer segmentation solution could be appropriate for the recommendation system of a video streaming platform, but not for the recommendation system of an e-commerce website. Therefore, rather than asking ourselves whether we have identified the true constituents of our population, <strong>we need to ask ourselves whether the constituents that we have defined are the right ones for the main problem being considered</strong>.</p>
+<p>Since cost and deployment quality in unsupervised learning are assessed differently, designing validation and test tasks is not always straightforward. In some cases, model validation and test tasks cannot rely on previously collected datasets and can only be implemented <strong>live during deployment</strong>. For instance, to compare the quality of several customer segmentation solutions for our video recommendation system, we might need to deploy each customer segmentation solution against different groups of customers formed randomly. Note that in this example of live validation, there is no need to previously create a validation dataset. Once again, im machine learning we should always <strong>first identify the tasks</strong> that we want to carry out, <strong>then decide whether and how to use data</strong>.</p>
+</section>
+</section>
+<section id="clustering">
+<h2><span class="section-number">5.4. </span>Clustering<a class="headerlink" href="#clustering" title="Link to this heading">#</a></h2>
+<p>In this section we introduce <strong>clustering</strong>, our first family of structure discovery methods. Clustering methods split a collection of samples into groups, or clusters, of <strong>similar samples</strong>. Given a dataset consisting of samples extracted from a population, the set of clusters created by clustering can be interpreted as the population’s constituents.</p>
+<p>Customer segmentation is an example of a problem where we can apply clustering methods. In this case, a cluster <span class="math notranslate nohighlight">\(C_k\)</span> can be defined as a collection of <em>similar</em> customers, i.e. customers with similar personal characteristics, preferences, behaviour or background. Each cluster of customers can then be interpreted as a <em>customer category</em> or a <em>customer prototype</em>. Another example of a problem involving human populations where clustering would be useful is the following. Imagine we are interested in manufacturing T-shirts of <span class="math notranslate nohighlight">\(K\)</span> different sizes. We would like the chosen sizes to be suitable for as many individuals as possible. To determine the right sizes we could create a dataset of samples consisting of the chest width and chest length of a collection of individuals. Clustering would allow us to create <span class="math notranslate nohighlight">\(K\)</span> groups of individuals of similar chest width and length. For each cluster of individuals, a T-shirt could be manufactured whose size is the average size of the individuals within the corresponding cluster.</p>
+<p>Since a cluster is defined as a group of <em>similar samples</em>, clustering tecniques require a <strong>notion of similarity</strong> between samples, so that we can determine which samples belong together. A notion of similarity implicitly encapsulates a notion cost and as we shall see, different clustering approaches differ in the notion of cost that they implement.</p>
+<section id="k-means">
+<h3><span class="section-number">5.4.1. </span>K-means<a class="headerlink" href="#k-means" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="#clusters1a"><span class="std std-numref">Fig. 5.3</span></a> represents in the attribute space a dataset consisting of 50 samples described by two attributes <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>. How would you describe this dataset?</p>
+<figure class="align-default" id="clusters1a">
+<img alt="_images/Clustering1A.jpg" src="_images/Clustering1A.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.3 </span><span class="caption-text">Toy dataset consisting of 50 samples described by two attributes <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>. Visually, samples are clumped around the points of coordinates <span class="math notranslate nohighlight">\((0,5)\)</span> and <span class="math notranslate nohighlight">\((10,0)\)</span>.</span><a class="headerlink" href="#clusters1a" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>A simple way to describe the dataset in <a class="reference internal" href="#clusters1a"><span class="std std-numref">Fig. 5.3</span></a> would be as two distinct clumps of samples roughly spread around the points <span class="math notranslate nohighlight">\((0,5)\)</span> and <span class="math notranslate nohighlight">\((10,0)\)</span>, respectively. Note that this is a summarised description of our dataset. Instead of reading the <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> coordinates of each of the 50 samples in the dataset, we have read the coordinates of just two points in the attribute space, namely the centres <span class="math notranslate nohighlight">\((0,5)\)</span> and <span class="math notranslate nohighlight">\((10,0)\)</span>. We can distinguish both clumps visually by assigning one colour to samples in one clump, and another colour to samples in the other clump, as in <a class="reference internal" href="#clusters1b"><span class="std std-numref">Fig. 5.4</span></a>.</p>
+<figure class="align-default" id="clusters1b">
+<img alt="_images/Clustering1B.jpg" src="_images/Clustering1B.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text">Samples in <a class="reference internal" href="#clusters1a"><span class="std std-numref">Fig. 5.3</span></a> that belong to the same clump are shown in the same colour.</span><a class="headerlink" href="#clusters1b" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Incidentally, this summarised description is a clustering arrangement consisting of <span class="math notranslate nohighlight">\(K=2\)</span> constituents, <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span>, where <span class="math notranslate nohighlight">\(C_1\)</span> is the set of all the samples around <span class="math notranslate nohighlight">\((0,5)\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> is the set of all the samples around <span class="math notranslate nohighlight">\((10, 0)\)</span>. In other words, we have inadvertently run a clustering method on the dataset shown in <a class="reference internal" href="#clusters1a"><span class="std std-numref">Fig. 5.3</span></a>. What we want to ask ourselves is, what process have we followed to identify both clusters? Specifically, which notion of similarity have we used to group them together? As it turns out, we have mentally run, unknowingly, K-means clustering. K-means is a clustering algorithm that creates clusters as groups of samples that are close to one another in the attribute space. In K-means, <strong>proximity encodes the notion of similarity</strong> between samples.</p>
+<p>In the name <em>K-means</em>, <span class="math notranslate nohighlight">\(K\)</span> refers to the number of clusters that will be created and is a quantity that needs to be set beforehand. <span class="math notranslate nohighlight">\(K\)</span> is in fact a <strong>hyperparameter</strong> and different values of <span class="math notranslate nohighlight">\(K\)</span> will lead to solutions of different complexity. To see why just ask yourself, is it easier to describe a dataset as a collection of <span class="math notranslate nohighlight">\(K=2\)</span> clusters or as <span class="math notranslate nohighlight">\(K=20\)</span> clusters? The latter would indeed be more complex than the former.</p>
+<section id="similarity-as-proximity">
+<h4><span class="section-number">5.4.1.1. </span>Similarity as proximity<a class="headerlink" href="#similarity-as-proximity" title="Link to this heading">#</a></h4>
+<p>There exist many options to define mathematically the notion of proximity. One of them is based on the so-called <strong>squared distance</strong>. Given two samples <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{x}_j\)</span> consisting of <span class="math notranslate nohighlight">\(D\)</span> attributes <span class="math notranslate nohighlight">\(x_{i,1}, ..., x_{i,D}\)</span> and <span class="math notranslate nohighlight">\(x_{j,1}, ..., x_{j,D}\)</span> respectively, the squared distance <span class="math notranslate nohighlight">\(d^2_{i,j}\)</span> between sample <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> and sample <span class="math notranslate nohighlight">\(\boldsymbol{x}_j\)</span> is defined as the sum of the squared difference between each pair of corresponding attributes:</p>
+<div class="math notranslate nohighlight" id="equation-kmeanssqdist">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-kmeanssqdist" title="Link to this equation">#</a></span>\[
+d^2_{i,j} = (x_{i,1}-x_{j,1})^2 + ... + (x_{i,D}-x_{j,D})^2
+\]</div>
+<p>Two samples will then be close if their square distance is small, far if it is large. Using proximity as our notion of similarity, in a K-means clustering solution samples within the same cluster should be close to one another and samples from different clustres should be far apart. In other words, similar (close) samples should belong to the same cluster and dissimilar (distant) ones to different clusters. Before discussing how K-means uses the squared distance to create clusters, have a look at the dataset shown in <a class="reference internal" href="#simpleclustering"><span class="std std-numref">Table 5.2</span></a>. Plot the samples of the dataset shown in <a class="reference internal" href="#simpleclustering"><span class="std std-numref">Table 5.2</span></a> and have a go at the ensuing question.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="simpleclustering">
+<caption><span class="caption-number">Table 5.2 </span><span class="caption-text">A simple dataset consisting of <span class="math notranslate nohighlight">\(N=8\)</span> samples described by two attributes <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>.</span><a class="headerlink" href="#simpleclustering" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x_2\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_1\)</span></p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_2\)</span></p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_3\)</span></p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_4\)</span></p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_5\)</span></p></td>
+<td><p>5</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_6\)</span></p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_7\)</span></p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_8\)</span></p></td>
+<td><p>5</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="question1 admonition">
+<p class="admonition-title">Question for you</p>
+<p><a class="reference internal" href="#clustersa"><span class="std std-numref">Fig. 5.5</span></a>, <a class="reference internal" href="#clustersb"><span class="std std-numref">Fig. 5.6</span></a> and <a class="reference internal" href="#clustersc"><span class="std std-numref">Fig. 5.7</span></a> show three clustering arrangements <span class="math notranslate nohighlight">\(\mathcal{A}_1\)</span>, <span class="math notranslate nohighlight">\(\mathcal{A}_2\)</span> and <span class="math notranslate nohighlight">\(\mathcal{A}_3\)</span> for the dataset shown in <a class="reference internal" href="#simpleclustering"><span class="std std-numref">Table 5.2</span></a>. Each clustering arrangement consists of <span class="math notranslate nohighlight">\(K=2\)</span> clusters and samples belonging to the same clusters are displayed using the same colour.</p>
+<p>Which clustering arrangement matches the statement <em>samples within the same cluster are close, samples from different clusters are far apart</em>?</p>
+<p>Submit your response here: <a href="" target = "_blank">Your Response</a></p>
+</div>
+<figure class="align-default" id="clustersa">
+<img alt="_images/Clustering2A.jpg" src="_images/Clustering2A.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.5 </span><span class="caption-text">Clustering arrangement <span class="math notranslate nohighlight">\(\mathcal{A}_1\)</span> for the dataset shown in <a class="reference internal" href="#simpleclustering"><span class="std std-numref">Table 5.2</span></a>.</span><a class="headerlink" href="#clustersa" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="clustersb">
+<img alt="_images/Clustering2B.jpg" src="_images/Clustering2B.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.6 </span><span class="caption-text">Clustering arrangement <span class="math notranslate nohighlight">\(\mathcal{A}_2\)</span> for the dataset shown in <a class="reference internal" href="#simpleclustering"><span class="std std-numref">Table 5.2</span></a>.</span><a class="headerlink" href="#clustersb" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="clustersc">
+<img alt="_images/Clustering2C.jpg" src="_images/Clustering2C.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.7 </span><span class="caption-text">Clustering arrangement <span class="math notranslate nohighlight">\(\mathcal{A}_3\)</span> for the dataset shown in <a class="reference internal" href="#simpleclustering"><span class="std std-numref">Table 5.2</span></a>.</span><a class="headerlink" href="#clustersc" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Visually, the clustering arrangement shown in <a class="reference internal" href="#clustersa"><span class="std std-numref">Fig. 5.5</span></a> is the one that represents best the idea that <em>samples within the same cluster are close, samples from different clusters are far apart</em>. Unfortunately, we will not always be able to visualise our datasets and even if we could, we would rarely face trivial scenarios like the one shown in <a class="reference internal" href="#clustersa"><span class="std std-numref">Fig. 5.5</span></a>. We therefore need an approach that will allow us to compare quantitatively, not visually, different clustering arrangements so that we can identify the best one. Specifically, we need a <strong>cost function</strong>.</p>
+<p>K-means uses a cost function that is based on the notions of <strong>intra-cluster sample scatter</strong> <span class="math notranslate nohighlight">\(I(C_k)\)</span> and <strong>inter-cluster sample scatter</strong> <span class="math notranslate nohighlight">\(O(C_k, C_l)\)</span>. Given a cluster <span class="math notranslate nohighlight">\(C_k\)</span>, the intra-cluster scatter <span class="math notranslate nohighlight">\(I(C_k)\)</span> quantifies how far, on average, two samples in <span class="math notranslate nohighlight">\(C_k\)</span> are from one another. The intra-cluster scatter can be quantified as the sum of the squared distances between every pair of samples within the cluster, divided by the number of samples in the cluster, <span class="math notranslate nohighlight">\(N_k\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eqicss">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-eqicss" title="Link to this equation">#</a></span>\[
+I(C_k) = \frac{1}{2}\times \frac{1}{N_k} \sum_{\boldsymbol{x}_i, \boldsymbol{x}_j \in C_k} d^2_{i,j}
+\]</div>
+<p>Note that the square distance between every pair of samples <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> appears twice in the summation expresion. The reason is that the terms <span class="math notranslate nohighlight">\(d^2_{i,j}\)</span> and <span class="math notranslate nohighlight">\(d^2_{j,i}\)</span>, which correspond to the same squared distance between samples <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, are both included in the summation. The factor <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> compensates for this double counting.</p>
+<p>Let us now describe the inter-cluster scatter <span class="math notranslate nohighlight">\(O(C_k, C_l)\)</span>. Given two clusters <span class="math notranslate nohighlight">\(C_k\)</span> and <span class="math notranslate nohighlight">\(C_l\)</span>, the inter-cluster scatter <span class="math notranslate nohighlight">\(O(C_k, C_l)\)</span> quantifies the average distance between two samples belonging to <span class="math notranslate nohighlight">\(C_k\)</span> and <span class="math notranslate nohighlight">\(C_l\)</span> respectively and can be mathematically expressed as</p>
+<div class="math notranslate nohighlight" id="equation-eqocss">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-eqocss" title="Link to this equation">#</a></span>\[
+O(C_k, C_l) = \frac{1}{N_{k,l}}\sum_{\boldsymbol{x}_i \in C_k, \boldsymbol{x}_i \in C_l} d^2_{i,j}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(N_{k,l}\)</span> is the number of pairs of samples, such that the first sample belongs to cluster <span class="math notranslate nohighlight">\(C_k\)</span> and the second to cluster <span class="math notranslate nohighlight">\(C_l\)</span>.</p>
+<p>Using the idea that <em>samples within the same cluster are close, whereas samples from different clusters are far apart</em>, the best clustering arrangement <span class="math notranslate nohighlight">\(\mathcal{A}_{opt}\)</span> can be identified as the one with the <em>lowest intra-cluster scatter</em> or the one with the <em>highest inter-cluster scatter</em>. It can be shown that minimising the intra-cluster scatter also maximises the inter-cluster scatter and therefore, we can choose one quantity or another to define a cost function for K-means. Given a clustering arrangement <span class="math notranslate nohighlight">\(\mathcal{A}=\{C_1,..., C_K\}\)</span>, we will define K-means cost function <span class="math notranslate nohighlight">\(E\{\mathcal{A}\}\)</span> as the sum of the intra-cluster scatter values of each cluster <span class="math notranslate nohighlight">\(C_k\)</span> in <span class="math notranslate nohighlight">\(\mathcal{A}\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eqkmeanscost">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-eqkmeanscost" title="Link to this equation">#</a></span>\[
+E\{\mathcal{A}\} = \sum_{C_k \in \mathcal{A}} I(C_k)
+\]</div>
+<p>The interpretation of the K-means cost <span class="math notranslate nohighlight">\(E\{\mathcal{A}\}\)</span> is strightforward: the closer the samples within each cluster in the arrangement, the better. Now that we have defined a cost function for K-means, if we are given several candidate clustering arrangements, to select the best one we will first calculate the cost of each candidate and then we will select the one with the lowest cost. Let us illustrate this approach using our previous example, where we considered three clustering arrangement <span class="math notranslate nohighlight">\(\mathcal{A}_1\)</span> (<a class="reference internal" href="#clustersa"><span class="std std-numref">Fig. 5.5</span></a>), <span class="math notranslate nohighlight">\(\mathcal{A}_2\)</span> (<a class="reference internal" href="#clustersb"><span class="std std-numref">Fig. 5.6</span></a>) and <span class="math notranslate nohighlight">\(\mathcal{A}_3\)</span> (<a class="reference internal" href="#clustersc"><span class="std std-numref">Fig. 5.7</span></a>). As a first step, go ahead and calculate <span class="math notranslate nohighlight">\(E\{\mathcal{A}_1\}\)</span>, the K-means cost of the clustering arrangement <span class="math notranslate nohighlight">\(\mathcal{A}_1\)</span>.</p>
+<div class="question1 admonition">
+<p class="admonition-title">Question for you</p>
+<p>The clustering arrangement <span class="math notranslate nohighlight">\(\mathcal{A}_1\)</span> (<a class="reference internal" href="#clustersa"><span class="std std-numref">Fig. 5.5</span></a>) consists of two clusters <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> defined as the following collections of samples:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(C_1 = \{ (0, 3), (1, 4), (2, 3), (1, 2)\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_2 = \{ (4, 2), (5, 3), (6, 2) (5, 1)\}\)</span></p></li>
+</ul>
+<p>Calculate <span class="math notranslate nohighlight">\(E\{\mathcal{A}_1\}\)</span>, the K-means cost of clustering arrangement <span class="math notranslate nohighlight">\(\mathcal{A}_1\)</span>.</p>
+<p>Submit your response here: <a href="" target = "_blank">Your Response</a></p>
+</div>
+<p>To calculate the K-means cost <span class="math notranslate nohighlight">\(E\{\mathcal{A}_1\}\)</span>, we need to add the intra-cluster scatter values of clusters <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span>. In this particular example, the intra-cluster scatter value is the same for clusters <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span>, <span class="math notranslate nohighlight">\(I(C_1)=I(C_2)\)</span>, and therefore we only need to calculate one of them, for instance <span class="math notranslate nohighlight">\(I(C_1)\)</span>. Let us calculate <span class="math notranslate nohighlight">\(I(C_1)\)</span> by first obtaining the sum of all the squared distances to each sample in <span class="math notranslate nohighlight">\(C_1\)</span>, and the adding all such sums. Starting from <span class="math notranslate nohighlight">\((0, 3)\)</span> and moving clock-wise we have:</p>
+<ul class="simple">
+<li><p>Sum of squared distances to <span class="math notranslate nohighlight">\((0,3)\)</span>: <span class="math notranslate nohighlight">\((1^2+1^2)+(2^2+0)+(1^2+(-1)^2) = 8\)</span>.</p></li>
+<li><p>Sum of squared distances to <span class="math notranslate nohighlight">\((1,4)\)</span>: <span class="math notranslate nohighlight">\((1^2+(-1)^2)+(0+(-2)^2)+ ((-1)^2+(-1)^2) = 8\)</span>.</p></li>
+<li><p>Sum of squared distances to <span class="math notranslate nohighlight">\((2,3)\)</span>: <span class="math notranslate nohighlight">\(((-1)^2+(-1)^2)+((-2)^2+0)+((-1)^2+1^2) = 8\)</span>.</p></li>
+<li><p>Sum of squared distances to <span class="math notranslate nohighlight">\((1,2)\)</span>: <span class="math notranslate nohighlight">\(((-1)^2+1^2)+(0+2^2)+(1^2+1^2) = 8\)</span>.</p></li>
+</ul>
+<p>Using the sums of squared distances to each sample in <span class="math notranslate nohighlight">\(C_1\)</span>, the intra-cluster scatter value <span class="math notranslate nohighlight">\(I(C_1)\)</span> can be obtained as</p>
+<div class="math notranslate nohighlight">
+\[
+I(C_1)=\frac{1}{2 \times 4} (8+8+8+8)=4
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(I(C_1)=I(C_2)\)</span>, the resulting K-means cost of <span class="math notranslate nohighlight">\(\mathcal{A}_1\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+E\{\mathcal{A}_1\} = I(C_1) + I(C_2) = 4 + 4 = 8
+\]</div>
+<p>Following the same procedure for clustering arrangements <span class="math notranslate nohighlight">\(\mathcal{A}_2\)</span> and <span class="math notranslate nohighlight">\(\mathcal{A}_3\)</span>, their K-means costs are:</p>
+<div class="math notranslate nohighlight">
+\[
+E\{\mathcal{A}_2\} = 27 + 15 = 42
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+E\{\mathcal{A}_3\} = 21 + 21 = 42
+\]</div>
+<p>The best clustering arrangement is therefore <span class="math notranslate nohighlight">\(\mathcal{A}_1\)</span>, which agrees with our previous visual selection.</p>
+<p>In this example, we have compared the K-means cost of three candidate clustering arrangments and have selected the one with the lowest cost. In general, we will be given a dataset and will be asked to <em>find</em> the best clustering arrangement amongst <em>all</em> the possible clustering arrangements. In other words, we will need to solve an <strong>optimisation problem</strong>. As we shall see in the next section, K-means is in fact an optimisation method to find the clustering arrangement that achieves the lowest sum of intra-cluster scatters.</p>
+</section>
+<section id="k-means-as-an-optimisation-method">
+<h4><span class="section-number">5.4.1.2. </span>K-means as an optimisation method<a class="headerlink" href="#k-means-as-an-optimisation-method" title="Link to this heading">#</a></h4>
+<p>Using the notion of intra-cluster scatter we have defined the K-means cost <a class="reference internal" href="#equation-eqkmeanscost">(5.4)</a>. Coming up with a notion of cost is only half of the job, as we still need to find the clustering arrangement that minimises it. In other words, we need to <strong>find the optimal clustering arrangement</strong>. Mathematically, we express this task as the optimisation problem</p>
+<div class="math notranslate nohighlight" id="equation-eqminimea">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-eqminimea" title="Link to this equation">#</a></span>\[
+\mathcal{A}_{opt} = \underset{\mathcal{A} \in \boldsymbol{\mathcal{A}}}{\operatorname{argmin}} E\{\mathcal{A}\}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{A}_{opt}\)</span> is the optimal clustering arrangement, <span class="math notranslate nohighlight">\(E\{\mathcal{A}\}\)</span> is the K-means cost function defined in <a class="reference internal" href="#equation-eqkmeanscost">(5.4)</a> and <span class="math notranslate nohighlight">\(\boldsymbol{\mathcal{A}}\)</span> is the set of all the possible clustering arrangements.</p>
+<p>So how do we find the optimal clustering arrangement <span class="math notranslate nohighlight">\(\mathcal{A}_{opt}\)</span> among all the candidates in <span class="math notranslate nohighlight">\(\boldsymbol{\mathcal{A}}\)</span>? A simple option would be to calculate the cost of every clustering arrangement in <span class="math notranslate nohighlight">\(\boldsymbol{\mathcal{A}}\)</span> and select the one with the lowest cost. This option is unfortunately impractical, as in general we should expect a large number of candidate clustering arrangements. For instance, for the small 8-sample dataset shown in <a class="reference internal" href="#simpleclustering"><span class="std std-numref">Table 5.2</span></a> there are 128 different 2-cluster arrangements. For a still modest dataset like the 50-samples one shown in <a class="reference internal" href="#clusters1a"><span class="std std-numref">Fig. 5.3</span></a>, the number of potential 2-cluster arrangements grows to more than 560 trillion. Computing the K-means cost of every candidate solution is clearly not a sensible avenue to solve <a class="reference internal" href="#equation-eqminimea">(5.5)</a>.</p>
+<p>K-means is an iterative algorithm to solve <a class="reference internal" href="#equation-eqminimea">(5.5)</a> that shares many similarities with gradient descent. In K-means, each cluster <span class="math notranslate nohighlight">\(C_k\)</span> is represented by a <strong>cluster prototype</strong> <span class="math notranslate nohighlight">\(\boldsymbol{c}_k\)</span> defined as the average of all the samples within the cluster:</p>
+<div class="math notranslate nohighlight" id="equation-eqkmeansproto">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-eqkmeansproto" title="Link to this equation">#</a></span>\[
+\boldsymbol{c}_k = \frac{1}{N_k} \sum_{\boldsymbol{x}_i \in C_k} \boldsymbol{x}_i,
+\]</div>
+<p>which explains the name K-<em>means</em>. Each cluster prototype can therefore be interpreted as a summary which indicates where a cluster of samples is centred in the attribute space, as illustrated in <a class="reference internal" href="#clusterscenters"><span class="std std-numref">Fig. 5.8</span></a>.</p>
+<figure class="align-default" id="clusterscenters">
+<img alt="_images/Clustering2ACentres.jpg" src="_images/Clustering2ACentres.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.8 </span><span class="caption-text">Cluster prototypes (represented by the symbol <span class="math notranslate nohighlight">\(+\)</span>) for the clustering arrangement <span class="math notranslate nohighlight">\(\mathcal{A}_1\)</span> shown in <a class="reference internal" href="#clustersa"><span class="std std-numref">Fig. 5.5</span></a>.</span><a class="headerlink" href="#clusterscenters" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Interestingly, the intra-cluster scatter <span class="math notranslate nohighlight">\(I(C_k)\)</span>, which was defined in <a class="reference internal" href="#equation-eqicss">(5.2)</a>, can be calculated using the squared distance <span class="math notranslate nohighlight">\(d^2_i\)</span> between each sample <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> in a cluster <span class="math notranslate nohighlight">\(C_k\)</span> and the cluster prototype <span class="math notranslate nohighlight">\(\boldsymbol{c}_k\)</span> as</p>
+<div class="math notranslate nohighlight" id="equation-eqicss2">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-eqicss2" title="Link to this equation">#</a></span>\[
+I(C_k) = \sum_{\boldsymbol{x}_i \in C_k} d^2_{i}
+\]</div>
+<p>For instance, in <a class="reference internal" href="#clusterscenters"><span class="std std-numref">Fig. 5.8</span></a>, the intra-cluster scatter <span class="math notranslate nohighlight">\(I(C_1)\)</span> can be calculated as the sum of all the squared distances from each sample in <span class="math notranslate nohighlight">\(C_1\)</span> to the prototype <span class="math notranslate nohighlight">\(\boldsymbol{c}_1\)</span> as <span class="math notranslate nohighlight">\(I(C_1) = 1^2+1^2+1^2+1^2=4\)</span>. Note that computing <span class="math notranslate nohighlight">\(I(C_k)\)</span> in terms of the distances to the prototypes involves fewer operations than doing it in terms of the distances between every pair samples in the cluster. For instance, if we calculate the intra-cluster scatter of a cluster consisting of 10 samples, <a class="reference internal" href="#equation-eqicss">(5.2)</a> requires calculating and adding 100 squared distances, whereas <a class="reference internal" href="#equation-eqicss2">(5.7)</a> requires 10 squared distances only.</p>
+<p>Computing the intra-cluster scatter as the sum of the squared distances to the cluster prototype offers the following alternative interpretation of our notion of cost: <em>in a good clustering arrangement, samples are close to their cluster prototypes</em>. As a consequence of this, <strong>K-means favours spherical clusters</strong> consisting of samples surrounding their protoypes. To be more precise, <strong>K-means favours convex clusters</strong>, where every pair of samples in the same cluster can be connected by a segment that does not cross a different cluster.</p>
+<p>To find the best clustering arrangment, K-means proceeds iteratively. K-means starts by placing each of the <span class="math notranslate nohighlight">\(K\)</span> prototypes randomly in the attribute space. From this starting point, K-means iterates on the following two steps:</p>
+<ul class="simple">
+<li><p>Each sample is associated to the closest prototype, resulting in a new set of clusters.</p></li>
+<li><p>New prototypes are calculated as the centers of the newly formed clusters.</p></li>
+</ul>
+<p>As K-means proceeds, we will see samples being reassigned to different clusters until we reach a stable clustering arrangement where no sample is reassigned. This is our final clustering arrangement. <a class="reference internal" href="#kmeans1"><span class="std std-numref">Fig. 5.9</span></a>, <a class="reference internal" href="#kmeans2"><span class="std std-numref">Fig. 5.10</span></a>, <a class="reference internal" href="#kmeans3"><span class="std std-numref">Fig. 5.11</span></a> and <a class="reference internal" href="#kmeans4"><span class="std std-numref">Fig. 5.12</span></a> illustrate how K-means operates using the dataset shown in <a class="reference internal" href="#simpleclustering"><span class="std std-numref">Table 5.2</span></a> as an example. As you can see, K-means refines iteratively an initial arrangement until it finds the clustering arrangement <span class="math notranslate nohighlight">\(\mathcal{A}_1\)</span>.</p>
+<figure class="align-default" id="kmeans1">
+<img alt="_images/kmeans_simple_1.jpg" src="_images/kmeans_simple_1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.9 </span><span class="caption-text">K-means initial arrangement for the dataset shown in <a class="reference internal" href="#simpleclustering"><span class="std std-numref">Table 5.2</span></a>, where <span class="math notranslate nohighlight">\(K=2\)</span>. Prototypes are placed randomly in the attribute space.</span><a class="headerlink" href="#kmeans1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="kmeans2">
+<img alt="_images/kmeans_simple_2.jpg" src="_images/kmeans_simple_2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.10 </span><span class="caption-text">K-means clustering of the dataset shown in <a class="reference internal" href="#simpleclustering"><span class="std std-numref">Table 5.2</span></a>: First iteration.</span><a class="headerlink" href="#kmeans2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="kmeans3">
+<img alt="_images/kmeans_simple_3.jpg" src="_images/kmeans_simple_3.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.11 </span><span class="caption-text">K-means clustering of the dataset shown in <a class="reference internal" href="#simpleclustering"><span class="std std-numref">Table 5.2</span></a>: Second iteration.</span><a class="headerlink" href="#kmeans3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="kmeans4">
+<img alt="_images/kmeans_simple_4.jpg" src="_images/kmeans_simple_4.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.12 </span><span class="caption-text">K-means clustering of the dataset shown in <a class="reference internal" href="#simpleclustering"><span class="std std-numref">Table 5.2</span></a>: Third iteration and final solution.</span><a class="headerlink" href="#kmeans4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#kmeans-randomset-1"><span class="std std-numref">Fig. 5.13</span></a>, <a class="reference internal" href="#kmeans-randomset-2"><span class="std std-numref">Fig. 5.14</span></a> and <a class="reference internal" href="#kmeans-randomset-3"><span class="std std-numref">Fig. 5.15</span></a> illustrate how K-means operates on the dataset shown in <a class="reference internal" href="#clusters1a"><span class="std std-numref">Fig. 5.3</span></a>. From an initial clustering arrangement created by placing <span class="math notranslate nohighlight">\(K=2\)</span> protoypes randomly in the attribute space, K-means progressively improves the arrangement until it finds the solution that best embodies the statements <em>samples are close to their protoypes</em> or <em>samples within the same cluster are close, samples from different clusters are far apart</em>. This solution is precisely the one that we found visually in <a class="reference internal" href="#clusters1b"><span class="std std-numref">Fig. 5.4</span></a>.</p>
+<figure class="align-default" id="kmeans-randomset-1">
+<img alt="_images/kmeans_randomset_1.jpg" src="_images/kmeans_randomset_1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.13 </span><span class="caption-text">K-means initial arrangement for the dataset shown in <a class="reference internal" href="#clusters1a"><span class="std std-numref">Fig. 5.3</span></a>, where <span class="math notranslate nohighlight">\(K=2\)</span>. Prototypes are placed randomly in the attribute space.</span><a class="headerlink" href="#kmeans-randomset-1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="kmeans-randomset-2">
+<img alt="_images/kmeans_randomset_2.jpg" src="_images/kmeans_randomset_2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.14 </span><span class="caption-text">K-means clustering of the dataset shown in <a class="reference internal" href="#clusters1a"><span class="std std-numref">Fig. 5.3</span></a>: First iteration.</span><a class="headerlink" href="#kmeans-randomset-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="kmeans-randomset-3">
+<img alt="_images/kmeans_randomset_3.jpg" src="_images/kmeans_randomset_3.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.15 </span><span class="caption-text">K-means clustering of the dataset shown in <a class="reference internal" href="#clusters1a"><span class="std std-numref">Fig. 5.3</span></a>: Second iteration and final solution.</span><a class="headerlink" href="#kmeans-randomset-3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So far we have explored two examples where K-means returns the exact clustering arrangements that we would identify visually. We have used two simple examples precisely because we can visually find a solution to the clustering probem. In general, the dimensionality of our datasets will prevent us from using visual means. These are precisely the scenarios where K-means and other clustering algorithms demonstrate their power. Since we have no visual means to check whether the solution provided by K-means is indeed the one that minimises the K-means cost, it is important that we ask ourselves if, as an optimisation algorithm, <strong>K-means will always return the optimal arrangement</strong>. Moreover, in the examples that we have presented we have chosen the value <span class="math notranslate nohighlight">\(K=2\)</span> beforehand. This choice was based on our visual observation but in general this avenue will not be available. So how can we <strong>choose the value of <span class="math notranslate nohighlight">\(K\)</span></strong>? In the following two sections, we will turn our attention to both questions.</p>
+</section>
+<section id="local-minima-in-k-means">
+<span id="localk"></span><h4><span class="section-number">5.4.1.3. </span>Local minima in K-means<a class="headerlink" href="#local-minima-in-k-means" title="Link to this heading">#</a></h4>
+<p>We have presented K-means as an optimisation algorithm that shares many similarities with gradient descent. Specifically, K-means starts with a random initial solution that is improved iteratively until a final, stable solution is reached. As it turns out, K-means shares another similarity with gradient descent: there is always a risk that K-means might reach a final solution that is not globally optimal, but locally. To understand how this could happen, have a look at the prototype initialisation in <a class="reference internal" href="#kmeans-local1"><span class="std std-numref">Fig. 5.16</span></a>. In this initialisation, one of the prototypes is positioned closer to every single sample in the dataset than the other prototype. Because of this, all the samples are assigned to the first prototype, resulting in a final clustering arrangement where one cluster includes all the samples in the dataset and the other one is empty. This final clustering arrangement is shown in <a class="reference internal" href="#kmeans-local2"><span class="std std-numref">Fig. 5.17</span></a> and constitutes a local optimum of the cost function <span class="math notranslate nohighlight">\(E\{A\}\)</span>. The global optimum was presented in <a class="reference internal" href="#kmeans-randomset-3"><span class="std std-numref">Fig. 5.15</span></a>.</p>
+<figure class="align-default" id="kmeans-local1">
+<img alt="_images/kmeans_randomset_localminimum_1.jpg" src="_images/kmeans_randomset_localminimum_1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.16 </span><span class="caption-text">K-means initial arrangement for the dataset shown in <a class="reference internal" href="#clusters1a"><span class="std std-numref">Fig. 5.3</span></a>, where <span class="math notranslate nohighlight">\(K=2\)</span>. Prototypes are placed randomly in the attribute space.</span><a class="headerlink" href="#kmeans-local1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="kmeans-local2">
+<img alt="_images/kmeans_randomset_localminimum_2.jpg" src="_images/kmeans_randomset_localminimum_2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.17 </span><span class="caption-text">K-means clustering of the dataset shown in <a class="reference internal" href="#clusters1a"><span class="std std-numref">Fig. 5.3</span></a>: First iteration and final solution. The initial location of the cluster prototypes has resulted in K-means getting stuck in a local minimum: the first cluster has all the samples in the dataset, whereas the second is empty.</span><a class="headerlink" href="#kmeans-local2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In order to reduce the risk of producing as a final solution a poor local optimum of the K-means cost <span class="math notranslate nohighlight">\(E\{A\}\)</span>, we can run K-means several times, using each time different, random initial prototypes. The final solution will be the one with the lowest K-means cost amongst all the solutions produced by each run of K-means. This is the same strategy that we suggested when we were discussing local optima in the context of gradient descent.</p>
+</section>
+<section id="selecting-k">
+<span id="selectk"></span><h4><span class="section-number">5.4.1.4. </span>Selecting <span class="math notranslate nohighlight">\(K\)</span><a class="headerlink" href="#selecting-k" title="Link to this heading">#</a></h4>
+<p>Before running K-means on a dataset, we need to set the number of clusters <span class="math notranslate nohighlight">\(K\)</span>. Which value should we then choose for <span class="math notranslate nohighlight">\(K\)</span>? As previously mentioned, the number of clusters <span class="math notranslate nohighlight">\(K\)</span> is a hyperparameter in K-means and its value leads to models of different degrees of complexity. Specifically, low values of <span class="math notranslate nohighlight">\(K\)</span> lead to simple models (consisting of a few clusters), whereas high values of <span class="math notranslate nohighlight">\(K\)</span> result in complex models (consisting of many clusters).</p>
+<p>To set the value of <span class="math notranslate nohighlight">\(K\)</span> we need to frame our clustering problem within its deployment context. In some cases this value will be directly given by the problem that we want to solve. For instance, imagine that we need to identify 3 average chest sizes to manufacture T-shirts of 3 different sizes. To do so, we can apply K-means to a dataset that records the chest size of a group of individuals using <span class="math notranslate nohighlight">\(K=3\)</span> and use the final prototypes as the desired average chest sizes. Therefore, in this example the value of <span class="math notranslate nohighlight">\(K\)</span> is given. In other cases, our clustering problem will be embedded within a main problem that defines a notion of deployment quality, and the suitability of a particular value of <span class="math notranslate nohighlight">\(K\)</span> will be linked to the quality of the main solution. Finding a suitable customer segmentation solution for a recommendation system is an example of this scenario. If we use K-means for customer segmentation, different values of <span class="math notranslate nohighlight">\(K\)</span> will lead to different customer segmentation solutions. In this problem, the right value of <span class="math notranslate nohighlight">\(K\)</span> will be the one that results in the most effective recomendation system. Therefore, the quality of the main solution dictates what the right value of <span class="math notranslate nohighlight">\(K\)</span> should be.</p>
+<p>It is worth exploring and reflecting on the behaviour of the intra-cluster scatter as we change the value of <span class="math notranslate nohighlight">\(K\)</span>. One basic observation, illustrated in <a class="reference internal" href="#clusteringelbow"><span class="std std-numref">Fig. 5.18</span></a>, the K-means cost <span class="math notranslate nohighlight">\(E\{A\}\)</span> always decreases as <span class="math notranslate nohighlight">\(K\)</span> increases. This behaviour might mislead us into thinking that increasing the number of clusters produces better clustering solutions, as they exhibit a lower cost. Why is this conclusion wrong? First, the described behaviour should not be surprising. Increasing <span class="math notranslate nohighlight">\(K\)</span> results in more, smaller clusters and therefore lower average distance between samples within the same cluster. When we use as many prototypes as samples, each sample will constitute its own cluster and therefore the intra-cluster scatter will be identically zero. Second and more importantly, we need to remember that the K-means cost is not a deployment quality metric. Given a value of <span class="math notranslate nohighlight">\(K\)</span>, the K-means cost is used to find the optimal clustering arrangement. Once we have found the optimal clustering arrangement for each value of <span class="math notranslate nohighlight">\(K\)</span>, we need to quantify its quality in deployment conditions using a quality metric.</p>
+<figure class="align-default" id="clusteringelbow">
+<img alt="_images/kmeans_Elbow_4gaussians.jpg" src="_images/kmeans_Elbow_4gaussians.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.18 </span><span class="caption-text">As we increase the value of the hyperparameter <span class="math notranslate nohighlight">\(K\)</span> in K-means, the intra-cluster sample scatter decreases first sharply, then slowly. The curve representing the dependence of the intra-cluster sample scatter on <span class="math notranslate nohighlight">\(K\)</span> resembles a flexed arm.</span><a class="headerlink" href="#clusteringelbow" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>There is another interesting behaviour that we can observe in <a class="reference internal" href="#clusteringelbow"><span class="std std-numref">Fig. 5.18</span></a>: the rate of decrease of the intra-cluster scatter cost changes as we increase the value of <span class="math notranslate nohighlight">\(K\)</span>. Specifically, for <span class="math notranslate nohighlight">\(K &lt; 4\)</span>, the intra-cluster scatter cost drops quickly, then for <span class="math notranslate nohighlight">\(K &gt; 4\)</span> it drops slowly. This suggests that something might be going on around <span class="math notranslate nohighlight">\(K=4\)</span>. One usual interpretation of this observation is that beyond <span class="math notranslate nohighlight">\(K=4\)</span>, K-means starts splitting <em>true</em> clusters. Let us illustrate this phenomenon using a simple visual example. <a class="reference internal" href="#clusteringelbowk1"><span class="std std-numref">Fig. 5.19</span></a> shows a dataset which visually consists of four distinct clumps of samples. The solutions provided by K-means for <span class="math notranslate nohighlight">\(K=2\)</span> and <span class="math notranslate nohighlight">\(K=4\)</span> are shown in <a class="reference internal" href="#clusteringelbowk2"><span class="std std-numref">Fig. 5.20</span></a> and <a class="reference internal" href="#clusteringelbowk4"><span class="std std-numref">Fig. 5.21</span></a>. For <span class="math notranslate nohighlight">\(K=4\)</span>, K-means creates the same clusters that we identified visually. <a class="reference internal" href="#clusteringelbowk5"><span class="std std-numref">Fig. 5.22</span></a> shows that when we increase the value of the hyperparameter <span class="math notranslate nohighlight">\(K\)</span> to <span class="math notranslate nohighlight">\(K=5\)</span>, K-means splits the clump located around <span class="math notranslate nohighlight">\((10,5)\)</span> into two separate clusters. As we continue to increase <span class="math notranslate nohighlight">\(K\)</span>, we would expect other clumps to be split further.</p>
+<figure class="align-default" id="clusteringelbowk1">
+<img alt="_images/kmeans_4gaussians.jpg" src="_images/kmeans_4gaussians.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.19 </span><span class="caption-text">Simple dataset which visually can be described as four clumps of samples centred at <span class="math notranslate nohighlight">\((0,0)\)</span>, <span class="math notranslate nohighlight">\((0,5)\)</span>, <span class="math notranslate nohighlight">\((10,0)\)</span> and <span class="math notranslate nohighlight">\((10,5)\)</span>.</span><a class="headerlink" href="#clusteringelbowk1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="clusteringelbowk2">
+<img alt="_images/kmeans_4gaussians_k2.jpg" src="_images/kmeans_4gaussians_k2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.20 </span><span class="caption-text">K-means clustering of the dataset shown in <a class="reference internal" href="#clusteringelbowk1"><span class="std std-numref">Fig. 5.19</span></a> using <span class="math notranslate nohighlight">\(K=2\)</span>.</span><a class="headerlink" href="#clusteringelbowk2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="clusteringelbowk4">
+<img alt="_images/kmeans_4gaussians_k4.jpg" src="_images/kmeans_4gaussians_k4.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.21 </span><span class="caption-text">K-means clustering of the dataset shown in <a class="reference internal" href="#clusteringelbowk1"><span class="std std-numref">Fig. 5.19</span></a> using <span class="math notranslate nohighlight">\(K=4\)</span>.</span><a class="headerlink" href="#clusteringelbowk4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="clusteringelbowk5">
+<img alt="_images/kmeans_4gaussians_k5.jpg" src="_images/kmeans_4gaussians_k5.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.22 </span><span class="caption-text">K-means clustering of the dataset shown in <a class="reference internal" href="#clusteringelbowk1"><span class="std std-numref">Fig. 5.19</span></a> using <span class="math notranslate nohighlight">\(K=5\)</span>.</span><a class="headerlink" href="#clusteringelbowk5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In general we won’t be able to visualise our datasets and identify clumps of samples as we did for the dataset shown in <a class="reference internal" href="#clusteringelbowk1"><span class="std std-numref">Fig. 5.19</span></a>. Luckily, we will always be able to plot the dependence of the intra-sample scatter on <span class="math notranslate nohighlight">\(K\)</span>. The corresponding graph looks like a flexed arm where the elbow indicates the value of <span class="math notranslate nohighlight">\(K\)</span> where the drop of the intra-cluster scatter changes from fast to slow, as in <a class="reference internal" href="#clusteringelbow"><span class="std std-numref">Fig. 5.18</span></a>. The elbow can then be used to identify the number of <em>true</em> clusters. This strategy known to select <span class="math notranslate nohighlight">\(K\)</span> is known as the <strong>elbow method</strong>. The elbow method and other similar analyses can reveal useful insights into the structure of the population. However, we need to remember that we should always <strong>select the value of <span class="math notranslate nohighlight">\(K\)</span> based on our notion of deployment quality</strong>.</p>
+</section>
+</section>
+<section id="connectivity-based-methods">
+<h3><span class="section-number">5.4.2. </span>Connectivity-based methods<a class="headerlink" href="#connectivity-based-methods" title="Link to this heading">#</a></h3>
+<p>The dataset represented in <a class="reference internal" href="#dbscan2"><span class="std std-numref">Fig. 5.23</span></a> consists of 100 samples described by two attributes <span class="math notranslate nohighlight">\(x_A\)</span> and <span class="math notranslate nohighlight">\(x_B\)</span>. Visually, the distribution of samples in the attributes space is different from that of the dataset represented in <a class="reference internal" href="#clusters1a"><span class="std std-numref">Fig. 5.3</span></a>, where samples appeared to be clustered around two centres in the attribute space. How would you group visually the samples shown in <a class="reference internal" href="#dbscan2"><span class="std std-numref">Fig. 5.23</span></a>?</p>
+<figure class="align-default" id="dbscan2">
+<img alt="_images/DBSCAN_1.jpg" src="_images/DBSCAN_1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.23 </span><span class="caption-text">Distribution of samples suggesting non-convex clusters.</span><a class="headerlink" href="#dbscan2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we were to apply K-means with <span class="math notranslate nohighlight">\(K=2\)</span> to the dataset represented in <a class="reference internal" href="#dbscan2"><span class="std std-numref">Fig. 5.23</span></a>, we would obtain two clusters like the ones shown in <a class="reference internal" href="#k-means-non-convex"><span class="std std-numref">Fig. 5.24</span></a>. The resulting clusters are convex which, as you will remember, means that between any two samples of the same cluster, we will never find a sample from another cluster. Do you think this is a good clustering arrangement?</p>
+<div class="question1 admonition">
+<p class="admonition-title">Question for you</p>
+<p>Is <a class="reference internal" href="#k-means-non-convex"><span class="std std-numref">Fig. 5.24</span></a> a good clustering arrangement?</p>
+<p>Submit your response here: <a href="" target = "_blank">Your Response</a></p>
+</div>
+<figure class="align-default" id="k-means-non-convex">
+<img alt="_images/DBSCAN_KMEANS.jpg" src="_images/DBSCAN_KMEANS.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.24 </span><span class="caption-text">Cluster centers.</span><a class="headerlink" href="#k-means-non-convex" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As discussed in sections <a class="reference internal" href="#costanddepl"><span class="std std-ref">Cost and quality</span></a> and <a class="reference internal" href="#selectk"><span class="std std-ref">Selecting K</span></a>, the answer to this question depends on the main problem that we want to solve. If we want to manufacture T-shirt of two different sizes and <span class="math notranslate nohighlight">\(x_A\)</span> and <span class="math notranslate nohighlight">\(x_B\)</span> represent the chest width and length of samples from our target population, the prototypes provided by K-means clustering would ensure that on average, our T-shirts are suitable for as many people as possible and hence <a class="reference internal" href="#k-means-non-convex"><span class="std std-numref">Fig. 5.24</span></a> would be the right solution. However not every problem requires convex clusters and there will be cases where the solution provided by K-means migth not be the right one for the main problem at hand.</p>
+<p>Regardless of the main problem, you might feel that the convex solution provided by K-means does not capture the underlying structure of the population. After looking at <a class="reference internal" href="#dbscan2"><span class="std std-numref">Fig. 5.23</span></a>, you might have visually identified <strong>non-convex clusters</strong> where samples are not distributed around a cluster center. If your proposed clusters are non-convex then, unlike K-means, you will have used a notion of similarity that is not based on proximity. What could this notion of similarity be?</p>
+<section id="similarity-as-connectivity-dbscan">
+<h4><span class="section-number">5.4.2.1. </span>Similarity as connectivity: DBSCAN<a class="headerlink" href="#similarity-as-connectivity-dbscan" title="Link to this heading">#</a></h4>
+<p>Imagine that you could jump from one sample to another sample, provided that both samples are close enough. Using this idea, we can define the new <strong>notion of connectivity</strong>. We will say that two samples are connected if you can reach one from the other either jumping directly or using other samples as stepping stones. We can use this notion of connectivity to define <strong>clusters as groups of samples that are connected</strong>.</p>
+<p>When developing a connectivity-based clustering method, it is important to note that:</p>
+<ul class="simple">
+<li><p>We need to specify the <strong>maximum distance</strong> that will connect directly two samples. Using a short maximum distance disconnects samples and result in many small clusters, whereas a long maximum distance connects more samples and result in few, large clusters.</p></li>
+<li><p>A <strong>small deviation</strong> in the location of one single sample could disconnect or connect two or more sets of samples. Therefore, small random deviations in our dataset can result in very different clustering arrangements. To design robust clustering methods, we need to implement strategies that minimise the impact of randomness on the final clustering solution.</p></li>
+</ul>
+<p>Density-based methods are connectivity-based methods that rather than simply connecting individual samples, <strong>connect regions in the attribute space that are locally dense</strong>, in other words, that contain a large number of samples. One of the most popular density-based methods is DBSCAN, which stands for <em>density-based spatial clustering of applications with noise</em>. DBSCAN includes two quantities, namely a <strong>radius</strong> <span class="math notranslate nohighlight">\(r\)</span> and a <strong>threshold</strong> <span class="math notranslate nohighlight">\(t\)</span>, which are used to define dense regions in the attribute space. Using <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, we will say that a sample is in a locally dense region of the attribute space, if within a radius <span class="math notranslate nohighlight">\(r\)</span> we observe more than <span class="math notranslate nohighlight">\(t\)</span> samples.</p>
+<p>DBSCAN distinguishes between three types of samples:</p>
+<ul class="simple">
+<li><p>Samples surrounded by more than <span class="math notranslate nohighlight">\(t\)</span> samples within a radius <span class="math notranslate nohighlight">\(r\)</span> are known as <strong>core samples</strong>. Thus, core samples are in a dense region of the attribute space.</p></li>
+<li><p>Samples surrounded by fewer than <span class="math notranslate nohighlight">\(t\)</span> samples within a radius <span class="math notranslate nohighlight">\(r\)</span> are by definition not in a dense region of the attribute space. If they include at least one core sample within a radius <span class="math notranslate nohighlight">\(r\)</span> they are <strong>border samples</strong>.</p></li>
+<li><p>Samples that do not meet any of the previous conditions are known as <strong>outlier samples</strong>. Note that the term <em>outlier</em> is a name given to these samples by the authors of DBSCAN and should not be confused with the usual meaning of the term outlier.</p></li>
+</ul>
+<p><a class="reference internal" href="#dbscan-illustration"><span class="std std-numref">Fig. 5.25</span></a> shows a simple dataset consisting of samples described by two attributes <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>. As you can see, some regions in the attribute space are more dense than others. For instance, the rectangular region <span class="math notranslate nohighlight">\(-4&lt;x_1&lt;-2\)</span> and <span class="math notranslate nohighlight">\(-1&lt;x_2&lt;0\)</span> contains no samples, the region <span class="math notranslate nohighlight">\(0&lt;x_1&lt;2\)</span> and <span class="math notranslate nohighlight">\(-2&lt;x_2&lt;-1\)</span> contains one sample and <span class="math notranslate nohighlight">\(-2&lt;x_1&lt;0\)</span> and <span class="math notranslate nohighlight">\(0&lt;x_2&lt;1\)</span> contains three samples.</p>
+<figure class="align-default" id="dbscan-illustration">
+<img alt="_images/DBSCAN_illustration.jpg" src="_images/DBSCAN_illustration.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.25 </span><span class="caption-text">Simple dataset consisting of samples described by two attributes <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>.</span><a class="headerlink" href="#dbscan-illustration" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#dbscan-illustration-2"><span class="std std-numref">Fig. 5.26</span></a> identifies the core, border and outlier samples resulting from applying DBSCAN to the dataset shown in <a class="reference internal" href="#dbscan-illustration"><span class="std std-numref">Fig. 5.25</span></a>. In this example, we have used the radius and threshold values <span class="math notranslate nohighlight">\(r=1\)</span> and <span class="math notranslate nohighlight">\(t=3\)</span>. As you can see, DBSCAN separate samples that lie within high-density regions of the attribute space, from samples that lie within low-density regions of the attribute space.</p>
+<figure class="align-default" id="dbscan-illustration-2">
+<img alt="_images/DBSCAN_illustration_2.jpg" src="_images/DBSCAN_illustration_2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.26 </span><span class="caption-text">Core (<span class="math notranslate nohighlight">\(\circ\)</span>), border (<span class="math notranslate nohighlight">\(\oplus\)</span>) and outlier (<span class="math notranslate nohighlight">\(\times\)</span>) samples returned by DBSCAN when applied to the dataset shown in <a class="reference internal" href="#dbscan-illustration"><span class="std std-numref">Fig. 5.25</span></a> using <span class="math notranslate nohighlight">\(r=1\)</span> and <span class="math notranslate nohighlight">\(t=3\)</span>.</span><a class="headerlink" href="#dbscan-illustration-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Once core, border and outlier samples have been identified, DBSCAN proceeds by first excluding outlier samples. Then cluster backbones are created by grouping core samples that lie within each other’s neighbourhoods. Each backbone thus produced defines one DBSCAN cluster. Finally, border samples are assigned to the backbone that they are connected to. Note that by <strong>connecting core samples within reach from one another</strong>, rather than connecting any two samples within reach from one another, we are implicitly <strong>connecting dense regions</strong>. This makes DBSCAN more robust against small, random deviations in the location of our samples.</p>
+</section>
+<section id="dbscan-hyperparameters">
+<h4><span class="section-number">5.4.2.2. </span>DBSCAN hyperparameters<a class="headerlink" href="#dbscan-hyperparameters" title="Link to this heading">#</a></h4>
+<p>In contrast with K-means, DBSCAN does not require that we impose beforehand the number of clusters that we would like to discover. This should not be interpreted as DBSCAN being superior over K-means, in that it finds the appropriate number of clusters on its own. DBSCAN defines two hyperparameters, namely the radius <span class="math notranslate nohighlight">\(r\)</span> and the threshold <span class="math notranslate nohighlight">\(t\)</span>, whose values lead to clustering arrangements of different complexity. For some values of <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(t\)</span> DBSCAN will produce many, small clusters, whereas for other values it will produce few, large clusters. Hence, the role of <span class="math notranslate nohighlight">\(r\)</span> ant <span class="math notranslate nohighlight">\(t\)</span> in DBSCAN is analogous to the role of <span class="math notranslate nohighlight">\(K\)</span> in K-means: they control the degree of complexity of the final solution.</p>
+<p>To understand how <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(t\)</span> control the degree of complexity of the final solution, we need to revisit the basic principles of DBSCAN. In a nutshell, <strong>DBSCAN connects samples that are close and in high-density regions</strong>. Two samples are close if their distance is lower than <span class="math notranslate nohighlight">\(r\)</span>, and they are in a high-density region, in other words, they are core, if they have more than <span class="math notranslate nohighlight">\(t\)</span> neughbouring samples within a radius <span class="math notranslate nohighlight">\(r\)</span>. Reducing the value of <span class="math notranslate nohighlight">\(r\)</span> produces two effects. First, it disconnects core samples which were previously close and now are further than the new, smaller value of <span class="math notranslate nohighlight">\(r\)</span>. And second, it reduces the number of core samples, as within a small radius we will find fewer neighbouring samples than within a large radius. Hence, small values of <span class="math notranslate nohighlight">\(r\)</span> results in solutions consisting of many, small clusters. Increasing <span class="math notranslate nohighlight">\(t\)</span> also results in many, more clusters, as for a sample to be considered core, within the same radius <span class="math notranslate nohighlight">\(r\)</span> more neighbouring samples will be required. Finally, since reducing <span class="math notranslate nohighlight">\(r\)</span> and increasing <span class="math notranslate nohighlight">\(t\)</span> reduces the number of core samples, a greater number of outliers will be produced.</p>
+<p><a class="reference internal" href="#dbscan-r5"><span class="std std-numref">Fig. 5.27</span></a>, <a class="reference internal" href="#dbscan-r4"><span class="std std-numref">Fig. 5.28</span></a> and <a class="reference internal" href="#dbscan-r35"><span class="std std-numref">Fig. 5.29</span></a> show the clusters discovered by DBSCAN when applied to the dataset shown in <a class="reference internal" href="#dbscan2"><span class="std std-numref">Fig. 5.23</span></a>, for a threshold <span class="math notranslate nohighlight">\(t=3\)</span> and radius values <span class="math notranslate nohighlight">\(r=0.7\)</span>, <span class="math notranslate nohighlight">\(r=0.5\)</span> and <span class="math notranslate nohighlight">\(r=0.4\)</span>, respectively. The clustering arrangements produced by DBSCAN clearly identify and group close samples with high-density regions.  As we can see, as the value of the radius <span class="math notranslate nohighlight">\(r\)</span> decreases the number of clusters increase. The number of outliers also increase, as expected.</p>
+<figure class="align-default" id="dbscan-r5">
+<img alt="_images/DBSCAN_r05_x.jpg" src="_images/DBSCAN_r05_x.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.27 </span><span class="caption-text">DBSCAN clustering solution for the dataset shown in <a class="reference internal" href="#dbscan2"><span class="std std-numref">Fig. 5.23</span></a> using <span class="math notranslate nohighlight">\(t=3\)</span> and <span class="math notranslate nohighlight">\(r=0.7\)</span>.</span><a class="headerlink" href="#dbscan-r5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="dbscan-r4">
+<img alt="_images/DBSCAN_r04_x.jpg" src="_images/DBSCAN_r04_x.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.28 </span><span class="caption-text">DBSCAN clustering solution for the dataset shown in <a class="reference internal" href="#dbscan2"><span class="std std-numref">Fig. 5.23</span></a> using <span class="math notranslate nohighlight">\(t=3\)</span> and <span class="math notranslate nohighlight">\(r=0.5\)</span>.</span><a class="headerlink" href="#dbscan-r4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="dbscan-r35">
+<img alt="_images/DBSCAN_r035_x.jpg" src="_images/DBSCAN_r035_x.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.29 </span><span class="caption-text">DBSCAN clustering solution for the dataset shown in <a class="reference internal" href="#dbscan2"><span class="std std-numref">Fig. 5.23</span></a> using <span class="math notranslate nohighlight">\(t=3\)</span> and <span class="math notranslate nohighlight">\(r=0.4\)</span>.</span><a class="headerlink" href="#dbscan-r35" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As with any other machine learning model, to set the values of the hyperparameters <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(t\)</span> we need to implement a validation task. This validation task should allow us to compare in deployment conditions the quality of the DBSCAN solutions built using different values of <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(t\)</span>. This validation task depends on the main problem that we want to solve, which defines the deployment conditions and the notion of deployment quality.</p>
+</section>
+</section>
+<section id="hierarchical-clustering">
+<h3><span class="section-number">5.4.3. </span>Hierarchical clustering<a class="headerlink" href="#hierarchical-clustering" title="Link to this heading">#</a></h3>
+<p>The hyperparameter <span class="math notranslate nohighlight">\(K\)</span> in K-means and the hyperparameters <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(t\)</span> in DBSCAN control the complexity of the final clustering solution. Depending on the value of their hyperparameters, K-means and DBSCAN can provide solutions that range from arrangements consisting of many, small clusters to arrangements that have few, large clusters. Thus, hyperparameters in clustering play a similar role to hyperparameters in supervised learning.</p>
+<p>So far, our discussion around hyperparameters has focused on finding the <em>right</em> values, understood as the ones that result in the highest deployment quality. However, there is nothing intrinsically wrong about the clustering arrangement found for other choices of hyperparameter values. Given any choice of hyperparamenter values, the corresponding clustering solution is valid on its own, although in the context of a specific main problem, one clustering arrangement might be better suited than others. In fact, we can see each clustering arragnement produced by different choices of hyperparameters as a unique description of the underlying population.</p>
+<p>By changing the values of the hyperparameters of a clustering method, we can build a multi-level description of a population, from low-complexity descriptions to high-complexity ones. Given a dataset, there exist two trivial clustering solutions at both ends of this multi-level clustering description. At the top, we have a description consisting of one single cluster that encompasses all the samples in the dataset. At the bottom, we have a description where each sample is its own clusters and there are as many clusters as samples. Changing the hyperparameter values of the clustering method we can build intermediate descriptions between the two extremes.</p>
+<p>The previous interpretation is at the core of the strategy implemented by hierarchical clustering methods. Hierarchical clustering methods build clustering arrangements at multiple levels. The resulting collection of clustering arrangements is hierarchical in the sense that any cluster in one level contains all the samples from one or more clusters in the level below. <a class="reference internal" href="#hier-vis"><span class="std std-numref">Fig. 5.31</span></a> shows the top four levels of a hierarchical clustering solution for the simple dataset shown in <a class="reference internal" href="#hier-dataset"><span class="std std-numref">Fig. 5.30</span></a>. As you can see, at the top of the hierarchy we find a clustering arrangement consisting of just one cluster. As we go down, clusters are split into smaller clusters.</p>
+<figure class="align-default" id="hier-dataset">
+<img alt="_images/Hierarchical_Dataset.jpg" src="_images/Hierarchical_Dataset.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.30 </span><span class="caption-text">Simple dataset consisting of 10 samples.</span><a class="headerlink" href="#hier-dataset" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="hier-vis">
+<img alt="_images/Agglomerative_Hyer.jpg" src="_images/Agglomerative_Hyer.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.31 </span><span class="caption-text">Top four levels of a hyerarchical clustering solution for the dataset shown in <a class="reference internal" href="#hier-dataset"><span class="std std-numref">Fig. 5.30</span></a>.</span><a class="headerlink" href="#hier-vis" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The relationship between clusters at different levels of a hierarchical solution can be represented as a dendrogram. At the bottom of the dendrogram, we find the arrangement where each sample is one cluster and at the top, the whole dataset. A dendrogram for a hierarchical clustering solution for the dataset shown in <a class="reference internal" href="#hier-dataset"><span class="std std-numref">Fig. 5.30</span></a> is shown in <a class="reference internal" href="#hier-dendrogram"><span class="std std-numref">Fig. 5.32</span></a>.</p>
+<figure class="align-default" id="hier-dendrogram">
+<img alt="_images/Dendrogram.jpg" src="_images/Dendrogram.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.32 </span><span class="caption-text">Dendrogram representation of a hyerarchical clustering solution for the dataset shown in <a class="reference internal" href="#hier-dataset"><span class="std std-numref">Fig. 5.30</span></a>. Numbers correspond to the sample identifiers included in <a class="reference internal" href="#hier-dataset"><span class="std std-numref">Fig. 5.30</span></a>.</span><a class="headerlink" href="#hier-dendrogram" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>There are two basic strategies in hierarchical clustering:</p>
+<ul class="simple">
+<li><p>The <strong>divisive</strong> or <strong>top-down</strong> approach splits clusters starting from the top of the dendrogram and stops at the bottom level.</p></li>
+<li><p>The <strong>agglomerative</strong> or <strong>bottom-up</strong> merges clusters, starting from the bottom until we reach the top level.</p></li>
+</ul>
+<p>The main difference between hierarchical approaches is the rule that determines which clusters to split in divisive approaches, and which clusters to merge in agglomerative approaches. Three examples of merging strategies in agglomerative hierarchical clustering include:</p>
+<ul class="simple">
+<li><p><strong>Single linkage</strong>: uses the distance between the two closest samples from every pair of clusters. This option results in clusters of arbitrary shapes.</p></li>
+<li><p><strong>Complete linkage</strong>: uses the distance between the two further samples from every pair of clusters. This choice produces clusters that tend to have a spherical shape.</p></li>
+<li><p><strong>Group average</strong>: uses the average distance between samples in two cluster. It also produces spherical shapes.</p></li>
+</ul>
+<p><a class="reference internal" href="#dbscan-hier-dbscan"><span class="std std-numref">Fig. 5.33</span></a> shows the top 4 levels of a divise hierarchical clustering solution for the dataset shown in <a class="reference internal" href="#dbscan2"><span class="std std-numref">Fig. 5.23</span></a>. As you can see, the top level consists of one single cluster formed by every sample in the dataset and every time we move down the hierarchy of solutions, one of the clusters is split into two new clusters.</p>
+<figure class="align-default" id="dbscan-hier-dbscan">
+<img alt="_images/DBSCAN_hyer_2.jpg" src="_images/DBSCAN_hyer_2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.33 </span><span class="caption-text">Top 4 levels of a divise hierarchical clustering solution for the dataset shown in <a class="reference internal" href="#dbscan2"><span class="std std-numref">Fig. 5.23</span></a>.</span><a class="headerlink" href="#dbscan-hier-dbscan" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>By design, hierarchical clustering methods produce multiple clustering arrangements organised hierarchically. At the top of the hierarchy we find the clustering arrangement with the lowest complexity and at the bottom, the one with the highest complexity. Given a nested problem, each clustering arrangement in the hierarchy constitutes a candidate solution that can be assessed indirectly using the notion of deployment quality that defines the main problem. Moreover, hierarchical clustering solutions are interesting in their own right, and not only as candidate solutions for a nested problem, as they can shed light on the nature of the underlying population. Hierarchical clustering methods are found in many pure scientific endeavours. Language trees and life trees are examples of scientific models that can be built using hierarchical approaches. The structure of language and life trees can provide insight into historical processes for which we otherwise lack evidence, such as immemorial human migrations and the evolution of living organisms. By providing descriptions of the structure of the underlying population, clustering methods and in general unsupervised learning methods, are amongst the most productive tools for scientists in every field of study, from the humanities to the physical sciences.</p>
+</section>
+</section>
+<section id="basis-discovery">
+<h2><span class="section-number">5.5. </span>Basis discovery<a class="headerlink" href="#basis-discovery" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="#pca-example1"><span class="std std-numref">Fig. 5.34</span></a> shows a simple dataset consisting of 50 samples described by two attributes, <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>. How would you describe this dataset?</p>
+<figure class="align-default" id="pca-example1">
+<img alt="_images/PCA_example1.jpg" src="_images/PCA_example1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.34 </span><span class="caption-text">Simple dataset of 50 samples arrenged roughly in a straight line.</span><a class="headerlink" href="#pca-example1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>One prominent feature of the dataset shown in <a class="reference internal" href="#pca-example1"><span class="std std-numref">Fig. 5.34</span></a> is that its samples are roughly arranged in a straight line. Looking for directions along which samples in a dataset are spread out can reveal interesting properties of the underlying population. Specifically, such directions can suggest previously unknown relationships between the attributes of our population. For instance, the linear arrangement observed in <a class="reference internal" href="#pca-example1"><span class="std std-numref">Fig. 5.34</span></a> suggests that population samples whith large <span class="math notranslate nohighlight">\(x_1\)</span> values will also exhibit large <span class="math notranslate nohighlight">\(x_2\)</span> values. Directions of interest can be visually identified in simple datasets, like the one shown in <a class="reference internal" href="#pca-example1"><span class="std std-numref">Fig. 5.34</span></a>. The question arises, how can we identify directions non-visually, in scenarios where the attribute space has many dimensions?</p>
+<p><strong>Basis discovery</strong> is a family of unsupervised learning approaches that use datasets to discover directions of interest in the attribute space. A <em>basis</em> in maths is a term that refers to a set of directions that we can combine to reach every location in a space. In machine learning, given a population defined by a set of attributes, by default we use as our basis the axes defined by each attribute, for instance <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> in <a class="reference internal" href="#pca-example1"><span class="std std-numref">Fig. 5.34</span></a>. This might sound like a platitude, however it is important to recognise that the axes defined by the attributes of the population are not the only choice that exists and other sets of axes can also be used. Basis discovery methods use datasets to come up with new sets of axes for our populations. Each new axis constitutes a new direction of interest and can suggest relationships between the attributes of our population.</p>
+<p>In this section we introduce <strong>principal components analysis</strong> (PCA), one of the most popular basis discovery methods. PCA identifies a set of perpendicular directions in the attribute space along which samples from a dataset spread out. In addition to identifying these directions, PCA quantifies the amount of spread along each direction. To understand PCA, we need to discuss first what we mean by <em>sample spread along a direction</em> and how to quantify it.</p>
+<section id="measuring-sample-spread">
+<h3><span class="section-number">5.5.1. </span>Measuring sample spread<a class="headerlink" href="#measuring-sample-spread" title="Link to this heading">#</a></h3>
+<p>Consider the following two collections of four values, <span class="math notranslate nohighlight">\(a=\{1, 3, 5, 7\}\)</span> and <span class="math notranslate nohighlight">\(b=\{1, 5, 9, 13\}\)</span>. Looking at the values in both collections, we could conclude that the values in <span class="math notranslate nohighlight">\(b\)</span> are more spread out than those in <span class="math notranslate nohighlight">\(a\)</span> or conversely, that the values in <span class="math notranslate nohighlight">\(a\)</span> are more concentrated than the values in <span class="math notranslate nohighlight">\(b\)</span>. The question is, how can we quantify their spread?</p>
+<p>One option to quantify the spread of a collection of values is to measure how far each value in the collection is, on average, from the centre of the collection, which can be identified as its <strong>sample mean</strong> <span class="math notranslate nohighlight">\(\mu\)</span>. Averaging the <strong>square distance</strong> of each value to the sample mean <span class="math notranslate nohighlight">\(\mu\)</span> leads to the notion of <strong>sample variance</strong>, usually denoted by <span class="math notranslate nohighlight">\(\sigma^2\)</span>. A low sample variance indicates that the collection of values are close to the sample mean, or in other words, that they are tightly close together. Given a collection of <span class="math notranslate nohighlight">\(N\)</span> values <span class="math notranslate nohighlight">\(x_i\)</span>, <span class="math notranslate nohighlight">\(1\leq i \leq N\)</span>, its sample mean <span class="math notranslate nohighlight">\(\mu\)</span> can be expressed as</p>
+<div class="math notranslate nohighlight" id="equation-meanpca">
+<span class="eqno">(5.8)<a class="headerlink" href="#equation-meanpca" title="Link to this equation">#</a></span>\[
+\mu = \frac{1}{N}\sum_1^N x_i
+\]</div>
+<p>and its sample variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> as</p>
+<div class="math notranslate nohighlight" id="equation-varpca">
+<span class="eqno">(5.9)<a class="headerlink" href="#equation-varpca" title="Link to this equation">#</a></span>\[
+\sigma^2 = \frac{1}{N}\sum_1^N (x_i-\mu)^2
+\]</div>
+<p>Does this approach sound familiar? It should, as the definition <a class="reference internal" href="#equation-eqicss2">(5.7)</a> of the intra-cluster sample scatter is analogous to the definition of the sample variance <a class="reference internal" href="#equation-varpca">(5.9)</a>, and so are their interpretations. Using <a class="reference internal" href="#equation-meanpca">(5.8)</a>, the sample mean of collections <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are</p>
+<div class="math notranslate nohighlight" id="equation-meana">
+<span class="eqno">(5.10)<a class="headerlink" href="#equation-meana" title="Link to this equation">#</a></span>\[
+\mu_a = \frac{1}{4}\left[1+3+5+7 \right] = 4
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-meanb">
+<span class="eqno">(5.11)<a class="headerlink" href="#equation-meanb" title="Link to this equation">#</a></span>\[
+\mu_b = \frac{1}{4}\left[1+5+9+13 \right] = 7
+\]</div>
+<p>respectively, and using <a class="reference internal" href="#equation-varpca">(5.9)</a> together with the values <span class="math notranslate nohighlight">\(\mu_a = 4\)</span> and <span class="math notranslate nohighlight">\(\mu_b = 7\)</span>, the sample variances of collections <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are obtained as</p>
+<div class="math notranslate nohighlight" id="equation-vara">
+<span class="eqno">(5.12)<a class="headerlink" href="#equation-vara" title="Link to this equation">#</a></span>\[
+\sigma_a^2 = \frac{1}{4}\left[(1-4)^2+(3-4)^2+(5-4)^2+(7-4)^2 \right] = 5
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-varb">
+<span class="eqno">(5.13)<a class="headerlink" href="#equation-varb" title="Link to this equation">#</a></span>\[
+\sigma_b^2 = \frac{1}{4}\left[(1-7)^2+(5-7)^2+(9-7)^2+(13-7)^2 \right] = 20
+\]</div>
+<p>Based on the values <span class="math notranslate nohighlight">\(\sigma_a^2\)</span> and <span class="math notranslate nohighlight">\(\sigma_b^2\)</span> we can easily conclude that the samples in <span class="math notranslate nohighlight">\(b\)</span> are more spread out than the samples in <span class="math notranslate nohighlight">\(a\)</span>, as <span class="math notranslate nohighlight">\(\sigma_b^2 &gt; \sigma_a^2\)</span>. This quantitative conclusion agrees with our intuitive understanding of spread.</p>
+<p>One non-surprising but important property of the sample variance is that it remains the same if a constant is added to all the values in the collection. For instance, the sample variance of the collection <span class="math notranslate nohighlight">\(c=\{6, 8, 10, 12\}\)</span>, which results from adding 5 to all the values in the collection <span class="math notranslate nohighlight">\(a\)</span>, is <span class="math notranslate nohighlight">\(\sigma_c^2 = \sigma_a^2\)</span>. This property reveals that the spread of samples should remain the same, irrespective of where the collection of values are centred. Using definitions <a class="reference internal" href="#equation-meanpca">(5.8)</a> and <a class="reference internal" href="#equation-varpca">(5.9)</a>, it is easy to demonstrate this property as follows. Adding a constant to all the values in a collection results in increasing the sample mean by that same constant. Since while computing the sample variance the sample mean is substracted from every value in the collection, the constant that was added to each value ends up being removed and hence, the sample variance remains unaffected.</p>
+</section>
+<section id="the-directional-sample-variance">
+<h3><span class="section-number">5.5.2. </span>The directional sample variance<a class="headerlink" href="#the-directional-sample-variance" title="Link to this heading">#</a></h3>
+<p>Now that we have found a way to quantify the spread of a collection of values via the sample variance, let us put on solid ground the idea of <em>spread of samples along a direction</em>. The first question that we need to answer is how to represent directions in the attribute space. The answer is, by using the mathematical notion of <em>vector</em>. <a class="reference internal" href="#pca-example-dataset"><span class="std std-numref">Table 5.3</span></a> records a simple dataset consiting of 5 samples, <span class="math notranslate nohighlight">\(S_1\)</span> to <span class="math notranslate nohighlight">\(S_5\)</span>. In <a class="reference internal" href="#pca-ex-dist2-2"><span class="std std-numref">Fig. 5.35</span></a>, this toy dataset is plotted together with three vectors representing three directions in the attribute space. Visually, you might be able to identify the vector corresponding to the direction along which samples are spread out the most. Identifying visually the direction of maximum spread might have been possible for this simple dataset, however we need a general approach to quantify the amount of spread along any direction.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="pca-example-dataset">
+<caption><span class="caption-number">Table 5.3 </span><span class="caption-text">A simple dataset consisting of <span class="math notranslate nohighlight">\(N=8\)</span> samples described by two attributes <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>.</span><a class="headerlink" href="#pca-example-dataset" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x_2\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_1\)</span></p></td>
+<td><p>0</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_2\)</span></p></td>
+<td><p>-11</p></td>
+<td><p>-7</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_3\)</span></p></td>
+<td><p>5</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_4\)</span></p></td>
+<td><p>-8</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_5\)</span></p></td>
+<td><p>9</p></td>
+<td><p>14</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="align-default" id="pca-ex-dist2-2">
+<img alt="_images/PCA_example2_directionsB_2.jpg" src="_images/PCA_example2_directionsB_2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.35 </span><span class="caption-text">Visualisation of the dataset shown in <a class="reference internal" href="#pca-example-dataset"><span class="std std-numref">Table 5.3</span></a> and vectors representing three chosen directions along which we are interested in calculating the spread of samples.</span><a class="headerlink" href="#pca-ex-dist2-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To quantify the sample spread along a given direction, we will proceed as follows. First, we will obtain a straight line which is perpendicular to the direction under investigation. This will be our reference line. Finding a straight line perpendicular to a given direction is not difficult, however we will not discuss it here and for the ensuing discussion we will simply assume that we are able to do it. Next, we will compute the distances from each sample to our reference line. <a class="reference internal" href="#pca-ex-dist3"><span class="std std-numref">Fig. 5.36</span></a>, <a class="reference internal" href="#pca-ex-dist4"><span class="std std-numref">Fig. 5.37</span></a> and <a class="reference internal" href="#pca-ex-dist5"><span class="std std-numref">Fig. 5.38</span></a> illustrate this process for the three directions identified in <a class="reference internal" href="#pca-ex-dist2-2"><span class="std std-numref">Fig. 5.35</span></a>. As we can see, the obtained distances are greatest for the direction represented in <a class="reference internal" href="#pca-ex-dist3"><span class="std std-numref">Fig. 5.36</span></a>. Computing the distance from each sample to the reference line is straightforward. In fact, we already learned how to do it in <code class="xref std std-numref docutils literal notranslate"><span class="pre">log_reg</span></code>!</p>
+<figure class="align-default" id="pca-ex-dist3">
+<img alt="_images/PCA_example2_dir1_2.jpg" src="_images/PCA_example2_dir1_2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.36 </span><span class="caption-text">Reference line for the first direction in <a class="reference internal" href="#pca-ex-dist2-2"><span class="std std-numref">Fig. 5.35</span></a> and distances from every sample in <a class="reference internal" href="#pca-example-dataset"><span class="std std-numref">Table 5.3</span></a> to the reference line.</span><a class="headerlink" href="#pca-ex-dist3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="pca-ex-dist4">
+<img alt="_images/PCA_example2_dir2_2.jpg" src="_images/PCA_example2_dir2_2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.37 </span><span class="caption-text">Reference line for the second direction in <a class="reference internal" href="#pca-ex-dist2-2"><span class="std std-numref">Fig. 5.35</span></a> and distances from every sample in <a class="reference internal" href="#pca-example-dataset"><span class="std std-numref">Table 5.3</span></a> to the reference line.</span><a class="headerlink" href="#pca-ex-dist4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="pca-ex-dist5">
+<img alt="_images/PCA_example2_dir3_2.jpg" src="_images/PCA_example2_dir3_2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.38 </span><span class="caption-text">Reference line for the third direction in <a class="reference internal" href="#pca-ex-dist2-2"><span class="std std-numref">Fig. 5.35</span></a> and distances from every sample in <a class="reference internal" href="#pca-example-dataset"><span class="std std-numref">Table 5.3</span></a> to the reference line.</span><a class="headerlink" href="#pca-ex-dist5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Once we have obtained all the distances between the samples and the reference line, we can compute the sample variance of the collection of distances using <a class="reference internal" href="#equation-varpca">(5.9)</a>. The sample variance of the collection of distances can be used to quantify the spread along the direction under investigation and hence we will call it <strong>directional sample variance</strong>. Given a set of candidate directions, we can use the directional sample variance to compare quantitatively the amount of spread along each direction. If we compute the directional sample variance along the three directions represented in <a class="reference internal" href="#pca-ex-dist2-2"><span class="std std-numref">Fig. 5.35</span></a>, we will indeed discover that the direction shown in <a class="reference internal" href="#pca-ex-dist3"><span class="std std-numref">Fig. 5.36</span></a> is the one exhibiting the largest directional sample variance.</p>
+<p>You might have noticed that for every direction there are an infinite number of possible reference lines that we can choose from. Therefore, given a collection of samples we face an infinite choice of collections of distances that we can use to compute the directional sample variance. Does this mean that the directional sample variance is not unambiguously defined? The answer is no. Moving the reference line will not change the value of the directional sample variance, it will simply add a constant to all the distances and, as we have seen, the sample variance will remain unaffected.</p>
+</section>
+<section id="spread-along-perpendicular-directions">
+<h3><span class="section-number">5.5.3. </span>Spread along perpendicular directions<a class="headerlink" href="#spread-along-perpendicular-directions" title="Link to this heading">#</a></h3>
+<p>Using the notion of directional sample variance we can quantify the spread of samples along a chosen direction in the attribute space. In general, we are free to decide along which directions of the attribute space we would like to explore our dataset. Unfortunately, when our attribute space has two or more dimensions we will face an infinite choice of directions and therefore, we will have to consider whether it is necessary to explore as many directions as possible or whether we can safely focus on a particular small subset of directions.</p>
+<p><a class="reference internal" href="#pca-compare-dirsa"><span class="std std-numref">Fig. 5.39</span></a> and <a class="reference internal" href="#pca-compare-dirsb"><span class="std std-numref">Fig. 5.40</span></a> show one pair of directions each, together with the distances that they produce when exploring the simple dataset recorded in <a class="reference internal" href="#pca-example-dataset"><span class="std std-numref">Table 5.3</span></a>. Note that the pair of directions in <a class="reference internal" href="#pca-compare-dirsa"><span class="std std-numref">Fig. 5.39</span></a> are very closely aligned, whereas the pair of directions in <a class="reference internal" href="#pca-compare-dirsb"><span class="std std-numref">Fig. 5.40</span></a> are perpendicular. Let us focus on <a class="reference internal" href="#pca-compare-dirsa"><span class="std std-numref">Fig. 5.39</span></a> first. As we can see, given one sample in the dataset, the distances to both reference lines are very similar. Consequently, we should expect the directional sample variances associated to each direction in <a class="reference internal" href="#pca-compare-dirsa"><span class="std std-numref">Fig. 5.39</span></a> to be very similar as well. Specifically, if one directional sample variance is large and positive, we would expect the other to be large and positive too. In other words, closely aligned directions roughly observe the same sample spread and are therefore redundant.</p>
+<figure class="align-default" id="pca-compare-dirsa">
+<img alt="_images/PCA_example2_compare_dirsA.jpg" src="_images/PCA_example2_compare_dirsA.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.39 </span><span class="caption-text">Distances to the reference line produced by two directions which are closely aligned.</span><a class="headerlink" href="#pca-compare-dirsa" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="pca-compare-dirsb">
+<img alt="_images/PCA_example2_compare_dirsB.jpg" src="_images/PCA_example2_compare_dirsB.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.40 </span><span class="caption-text">Distances to the reference line produced by two perpendicular directions.</span><a class="headerlink" href="#pca-compare-dirsb" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When considering a pair of perpendicular directions, as in <a class="reference internal" href="#pca-compare-dirsb"><span class="std std-numref">Fig. 5.40</span></a>, the relationship between the distances from one sample to each reference line dissapears. Specifically, given one individual sample, knowing that its distance to the first reference line is large does not help us in guessing whether the distance to the second reference line is large or small, positive or negative. Indeed, <a class="reference internal" href="#pca-compare-dirsb"><span class="std std-numref">Fig. 5.40</span></a> shows examples of pair of samples whose distances to one reference line are very similar, whereas their distances to the other reference line are very different. We can therefore conclude that perpendicular directions capture different sample spreads and provide a different, complementary description of our dataset.</p>
+<p>To investigate the idea that closely aligned directions capture the same sample spread and perpendicular ones different sample spreads, in <a class="reference internal" href="#pca-compare-dirsa-2"><span class="std std-numref">Fig. 5.41</span></a> and <a class="reference internal" href="#pca-compare-dirsb-2"><span class="std std-numref">Fig. 5.42</span></a> we explore the impact that moving one sample has on the directional sample variances. Specifically the chosen sample is displaced along the direction represented as a solid vector. By design, this change in our dataset increases the distance of the affected sample to the solid reference line. It also affects the distance to the reference line of the direction that is closely aligned to the direction under consideration (<a class="reference internal" href="#pca-compare-dirsa-2"><span class="std std-numref">Fig. 5.41</span></a>), however it does not affect the distance to the reference line of the perpendicular direction (<a class="reference internal" href="#pca-compare-dirsb-2"><span class="std std-numref">Fig. 5.42</span></a>). This example reinforces the idea that perpendicular directions capture different sample spreads.</p>
+<figure class="align-default" id="pca-compare-dirsa-2">
+<img alt="_images/PCA_example2_compare_dirsA_2.jpg" src="_images/PCA_example2_compare_dirsA_2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.41 </span><span class="caption-text">Moving the sample with coordinates <span class="math notranslate nohighlight">\(x_1=0\)</span> and <span class="math notranslate nohighlight">\(x_2=10\)</span> to the location <span class="math notranslate nohighlight">\(x_1=4\)</span> and <span class="math notranslate nohighlight">\(x_2=14\)</span> increases the distances to both reference lines and thefore increases both directional sample variances.</span><a class="headerlink" href="#pca-compare-dirsa-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="pca-compare-dirsb-2">
+<img alt="_images/PCA_example2_compare_dirsB_2.jpg" src="_images/PCA_example2_compare_dirsB_2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.42 </span><span class="caption-text">Moving the sample with coordinates <span class="math notranslate nohighlight">\(x_1=0\)</span> and <span class="math notranslate nohighlight">\(x_2=10\)</span> to the location <span class="math notranslate nohighlight">\(x_1=4\)</span> and <span class="math notranslate nohighlight">\(x_2=14\)</span> increases the distance to the solid reference line, but the distance to the dashed reference line remains unaffected. Therefore whereas the directional sample variance associated to the solid direction increases, the one associated to the dahsed line remains the same.</span><a class="headerlink" href="#pca-compare-dirsb-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Since perpendicular directions capture different spreads in our dataset, instead of exploring our dataset along as many directions as possible, it makes sense to focus only on a subset of perpendicular directions. Any other direction which is not part of this subset will capture partially spreads that are already observed by the subset of perpendicular directions. The answer to the question of how many perpendicular directions we need is straightforward: as many as the number of attributes of our dataset. In a 2D attribute space like the one shown in <a class="reference internal" href="#pca-example-dataset"><span class="std std-numref">Table 5.3</span></a> we will need a set of two perpendicular directions, in a 3D attribute space we will need a set of three perpendicular directions and, in general, in a <span class="math notranslate nohighlight">\(D\)</span>-dimensional attribute space we will need a set of <span class="math notranslate nohighlight">\(D\)</span> perpendicular directions.</p>
+</section>
+<section id="principal-component-analysis">
+<h3><span class="section-number">5.5.4. </span>Principal Component Analysis<a class="headerlink" href="#principal-component-analysis" title="Link to this heading">#</a></h3>
+<p>We have introduced the notion of directional sample variance as a quantity that describes the spread of samples along a chosen direction. We have also learned that instead of exploring our dataset along as many directions in the attribute space as we can, it makes more sense for us to focus on a set of perpendicular directions, as they capture different spatial spreads. Unfortunately, we still have an infinite number of perpendicular directions to choose from. Should we just choose any set of perpendicular directions or is there any particular set that is more informative than the rest? As we will see, PCA provides an answer to this question.</p>
+<p>In a nutshell, PCA is a method that, given a dataset, identifies a set of perpendicular directions in the attribute space that capture the <strong>maximum spatial spread</strong> of the dataset. These directions form a set of <span class="math notranslate nohighlight">\(K\)</span> constituents <span class="math notranslate nohighlight">\(\{C_k: 1\leq k \leq K\}\)</span> where <span class="math notranslate nohighlight">\(K\)</span> is the number of dimensions of the attribute space, that describe the structure of the underlying population. The directions are known as the <em>principal components</em> of the dataset, hence the name <em>principal component analysis</em>. In addition to returning the principal components, PCA returns the directional sample variance along each direction. Using the directional sample variance we can rank the principal components, from the greatest directional sample spread, to the lowest.</p>
+<p><a class="reference internal" href="#pca1"><span class="std std-numref">Fig. 5.43</span></a> shows the principal components discovered by PCA for the dataset shown in <a class="reference internal" href="#pca-example1"><span class="std std-numref">Fig. 5.34</span></a>. The two components identified by PCA, <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span>, are represented by vectors in the attribute space whose lengths represent their corresponding directional sample spreads. The firs principal component <span class="math notranslate nohighlight">\(C_1\)</span> clearly corresponds to the direction which visually captures the greatest directional sample spread. The second component <span class="math notranslate nohighlight">\(C_2\)</span> is perpendicular to <span class="math notranslate nohighlight">\(C_1\)</span>. Note that in our representation the length of <span class="math notranslate nohighlight">\(C_1\)</span> is greater than the length of <span class="math notranslate nohighlight">\(C_2\)</span>.</p>
+<figure class="align-default" id="pca1">
+<img alt="_images/PCA_example1_axes.jpg" src="_images/PCA_example1_axes.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.43 </span><span class="caption-text">Principal components <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> for the dataset shown in <a class="reference internal" href="#pca-example1"><span class="std std-numref">Fig. 5.34</span></a>.</span><a class="headerlink" href="#pca1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#pca2"><span class="std std-numref">Fig. 5.44</span></a> explores a dataset on a 3D attribute space. In this case, PCA returns three principal components, <span class="math notranslate nohighlight">\(C_1\)</span>, <span class="math notranslate nohighlight">\(C_2\)</span> and <span class="math notranslate nohighlight">\(C_3\)</span>. The three components are, as expected, perpendicular to one another. The greatest directional sample spread occurs along the direction of <span class="math notranslate nohighlight">\(C_1\)</span>, followed closely by <span class="math notranslate nohighlight">\(C_2\)</span> and finally <span class="math notranslate nohighlight">\(C_3\)</span>. <a class="reference internal" href="#pca2"><span class="std std-numref">Fig. 5.44</span></a> also shows the plane defined by components <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span>. Visually we can observe that our dataset samples are mostly constrained to this plane, exhibiting small deviations along the direction described by <span class="math notranslate nohighlight">\(C_3\)</span>. Using PCA, we could summarise the dataset shown in <a class="reference internal" href="#pca2"><span class="std std-numref">Fig. 5.44</span></a> as one where the samples are distributed across the plane defined by <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span>. Note that in doing this, we have unintentionally moved our samples from a 3D attribute space defined by the original attributes <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span>, to a 3D attribute space defined by two new attributes <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span>. We call this procedure <em>dimensionality reduction</em>.</p>
+<p>It is worth acknowledging explicitly that PCA identifies the main directions of spread in our dataset but is blind to other structural features. For instance, in <a class="reference internal" href="#pca2"><span class="std std-numref">Fig. 5.44</span></a> we can visually identify four distinct clusters. Based on our visual analysis we would be able to conclude that the dataset shown in <a class="reference internal" href="#pca2"><span class="std std-numref">Fig. 5.44</span></a> consists of a collection of samples grouped into four distnct clusters on the plane described by the principal components <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span>. PCA cannot see any clusters however, nor any other interesting structural feature. PCA can only see how much the entire dataset is spread along directions in the attribute space, no more, no less.</p>
+<figure class="align-default" id="pca2">
+<img alt="_images/PCA2_axes.jpg" src="_images/PCA2_axes.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.44 </span><span class="caption-text">Principal components <span class="math notranslate nohighlight">\(C_1\)</span>, <span class="math notranslate nohighlight">\(C_2\)</span> and <span class="math notranslate nohighlight">\(C_3\)</span> for a dataset in a 3D attribute space.</span><a class="headerlink" href="#pca2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To understand how PCA uses a dataset to identify its principal components we need to develop a good understanding of linear algebra. Linear algebra defines an algorithm called <strong>singular value decomposition</strong> (SVD) that can be applied to a dataset to identify its principal components. If you are interested and already have acquired an appreciation for linear algebra, SVD should be your next stop. Here, we will limit ourselves to a description of PCA that will allow us to understand its role as an unsupervised method and how to interpret the components that it produces in terms of the directional sample variance. To check your understanding have a look at the dataset shown in <a class="reference internal" href="#pca3-dataset"><span class="std std-numref">Fig. 5.45</span></a>. What do you expect its principal components to be?</p>
+<figure class="align-default" id="pca3-dataset">
+<img alt="_images/PCA_question_axes.jpg" src="_images/PCA_question_axes.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.45 </span><span class="caption-text">Simple dataset where samples are visually arranged along three different directions. Can you guess what its principal components could be?</span><a class="headerlink" href="#pca3-dataset" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="question1 admonition">
+<p class="admonition-title">Question for you</p>
+<p>What are the principal components of the dataset shown in <a class="reference internal" href="#pca3-dataset"><span class="std std-numref">Fig. 5.45</span></a>?</p>
+<p>Submit your response here: <a href="" target = "_blank">Your Response</a></p>
+</div>
+<p>To answer the previous question, remember that PCA always produces a set of perpendicular directions of interest. Using this fact, you will easily conclude that two of the candidate solutions shown cannot be directions of interest that PCA would produce. Only one of the candidate solutions shows two perpendicular directions. Have a look at it. Does the first principal component capture the main direction along which <em>all the samples</em> in the dataset are roughly aligned?</p>
+</section>
+</section>
+<section id="summary-and-discussion">
+<h2><span class="section-number">5.6. </span>Summary and discussion<a class="headerlink" href="#summary-and-discussion" title="Link to this heading">#</a></h2>
+<p>Many real-world problems are defined over populations and finding a solution for those problems requires that we understand the target populations well. Using datasets, unsupervised learning methods build models that describe our populations. Specifically, unsupervised learning models describe how the samples from a population are distributed in the attribute space. There are two subfamilies of unsupervised learning methods, namely structure discovery and density estimation. In this chapter, we have introduced structure discovery, an approach to describe populations as a discrete set of constituents. Structure discovery methods can be grouped into two broad categories: clustering and basis discovery. In clustering, constituents are defined as <em>clusters</em> of similar samples, whereas in basis discovery constituents are defined as <em>directions of interest</em> in the attribute space, such as the directions along which we observe a high sample spread.</p>
+<p>We have seen that assessing the deployment quality of an unsupervised learning solution is not always straightforward. In contrast to supervised learning, where a notion of deployment quality is always explicitly given, unsupervised learning problems can be formulated without it. The reason is that unsupervised learning problems are typically embedded within a main problem and it is in the main problem, not the in unsupervised learning one, where the notion of deployment quality is defined. Therefore, the suitability of a particular unsupervised learning solution can only be assessed indirectly by assessing the quality of the main solution of which it is a part. As an example, a proposed set of customer segments (the <em>unsupervised learning solution</em>) embedded into a recommendation system (the <em>main solution</em>) cannot be assessed on its own, but only as part of the recommendation system.</p>
+<p>Structure discovery and, in general, unsupervised learning methods do incorporate a notion of cost. Different notions of cost can lead to very different solutions. Take as an example K-means and DBSCAN, two clustering methods that we have examined in detail. K-means defines a cost based on the notion of <em>sample proximity</em> whereas the cost in DBSCAN is based on the notion of <em>sample connectivity</em>. Since they implement two very different notions of cost, K-means and DBSCAN methods may produce very different descriptions for the same population. As part of a main solution, we could conclude that one particular clustering option is better than another, but <strong>intrinsically no clustering solution can be said to be the best</strong>. They simply provide with different descriptions. Furthermore, clustering methods can have hyperparameters that need to be selected, for instance <span class="math notranslate nohighlight">\(K\)</span> in K-means or <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(r\)</span> in DBSCAN. Different choices for these hyperparameters can result in solutions of different degrees of complexity. Once again, there is intrinsically no right or wrong choice for such hyperparameters. Given a particular main problem we will be able to select their value after embedding our solution within the solution to the main problem, where a notion of deployment quality is explicitly defined, but per-se no choice of hyperparameters is superior to another.</p>
+<p>The statement that intrinsically there is no right or wrong clustering solution might sound puzzling. Does it suggest that no solution captures anything particularly meaningful about our population? Quite the contrary, what the statement suggests is that <strong>every clustering solution captures a unique aspect of our population</strong>. Specifically, different values for the hyperparameters of a clustering method can result in solutions that describe our populations at different levels of granularity, where each level reveals a unique aspect of our population. Hierarchical clustering methods build by design multi-level descriptions of our populations. Hierarchical approaches are widely used in sciences and can contribute to revealing interesting aspects of the populations under investigation. Language trees constitute an excellent example of a hierarchical description of a population, in this case the world’s natural languages. In a language tree, two languages might appear unrelated at one level, and related at another. For instance, Gujarati and Danish belong respecively to the Indo-Iranian and Germanic families of languages. Gujarati and Danish appear therefore to be unrelated. The Indo-Iranian and Germanic families are part of the Indo-European family of languages and consequently, at this coarser level, Gujarati and Danish are related. Interestingly, the structure of language trees can have historical significance, as it can be used to explain human migrations that have never be recorded. Another hierarchical structure, the life tree, can be used to build evolutionary narratives that explain the diversity of earth’s living organisms.</p>
+<p>As we have seen structure discovery finds a wide range of applications, from pure exploratory purposes to population modelling for predictive tasks. One of the main applications of PCA is that of dimensionality reduction, so much so that PCA is sometimes presented as a dimensionality reduction method. Dimensionality reduction seeks to reduce the number of attributes needed to describe a population. By using the principal components with the largest sample variance as a new set of derived attributes, the dimensionality of a population can be reduced. The underlying assumption of this approach to dimensionality reduction is that the principal components with the largest sample variance capture the most relevant information about the underlying population, whereas the remaining components provide irrelevant information. This is a convenient working assumption and whether this is indeed appropriate or not, can only be assessed indirectly in the context of a main problem.</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -438,11 +1196,10 @@ document.write(`
 
 
 
-                <footer class="bd-footer-article">
 
-<div class="footer-article-items footer-article__inner">
 
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+
 <div class="prev-next-area">
     <a class="left-prev"
        href="Ch_classification1.html"
@@ -462,15 +1219,57 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-
 </div>
-
                 </footer>
 
             </div>
 
 
+
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-english-we-speaking">5.1. Is English we speaking?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedded-deployment">5.2. Embedded deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulating-structure-discovery-problems">5.3. Formulating structure discovery problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-notation">5.3.1. Mathematical notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-and-quality">5.3.2. Cost and quality</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">5.4. Clustering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means">5.4.1. K-means</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-as-proximity">5.4.1.1. Similarity as proximity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-as-an-optimisation-method">5.4.1.2. K-means as an optimisation method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#local-minima-in-k-means">5.4.1.3. Local minima in K-means</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-k">5.4.1.4. Selecting <span class="math notranslate nohighlight">\(K\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connectivity-based-methods">5.4.2. Connectivity-based methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-as-connectivity-dbscan">5.4.2.1. Similarity as connectivity: DBSCAN</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dbscan-hyperparameters">5.4.2.2. DBSCAN hyperparameters</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-clustering">5.4.3. Hierarchical clustering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis-discovery">5.5. Basis discovery</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-sample-spread">5.5.1. Measuring sample spread</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-directional-sample-variance">5.5.2. The directional sample variance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spread-along-perpendicular-directions">5.5.3. Spread along perpendicular directions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principal-component-analysis">5.5.4. Principal Component Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-discussion">5.6. Summary and discussion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
 
 
           </div>
@@ -488,6 +1287,7 @@ By <a href="https://www.linkedin.com/in/jesus-requena-carrion/" target="_blank">
   </div>
 
   <div class="footer-item">
+
 
   <p class="copyright">
 
@@ -515,8 +1315,8 @@ By <a href="https://www.linkedin.com/in/jesus-requena-carrion/" target="_blank">
   </div>
 
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
